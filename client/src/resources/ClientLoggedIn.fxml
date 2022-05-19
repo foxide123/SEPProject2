@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.client.ClientLoggedInView">
+   <children>
+      <Label layoutX="136.0" layoutY="14.0" prefHeight="49.0" prefWidth="93.0" text="Edit," textFill="#008fcc" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="972.0">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <VBox layoutX="135.0" layoutY="70.0" prefHeight="244.0" prefWidth="530.0" spacing="23.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="535.0">
+         <children>
+            <HBox spacing="28.0">
+               <children>
+                  <TextField fx:id="tf_firstName" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="182.0" promptText="First Name">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></TextField>
+                  <TextField fx:id="tf_lastName" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="182.0" promptText="Last  Name" HBox.hgrow="ALWAYS" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+            <HBox spacing="28.0">
+               <children>
+                  <TextField fx:id="tf_CPR" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="165.0" promptText="CPR" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <TextField fx:id="tf_zip" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="182.0" promptText="Post code" />
+            <TextField fx:id="tf_city" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="182.0" promptText="City" />
+            <HBox layoutX="10.0" layoutY="63.0" spacing="28.0">
+               <children>
+                  <TextArea fx:id="tf_description" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="530.0" promptText="Write a small description about yourself." />
+               </children>
+            </HBox>
+            <TextField fx:id="tf_phone" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="182.0" promptText="Mobile phone" />
+            <TextField fx:id="tf_email" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="393.0" promptText="Email address" />
+            <HBox layoutX="10.0" layoutY="222.0" spacing="28.0">
+               <children>
+                  <PasswordField fx:id="tf_newPassword" layoutX="10.0" layoutY="10.0" minHeight="30.0" minWidth="158.0" prefHeight="30.0" promptText="New password" HBox.hgrow="ALWAYS" />
+                  <PasswordField fx:id="tf_confirmPassword" layoutX="196.0" layoutY="10.0" minHeight="30.0" minWidth="158.0" prefHeight="30.0" promptText="Confirm password" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Label fx:id="label_error" text="Error_label" textFill="RED">
+               <VBox.margin>
+                  <Insets bottom="-20.0" top="-12.0" />
+               </VBox.margin>
+            </Label>
+            <AnchorPane prefHeight="30.0" prefWidth="530.0">
+               <children>
+                  <Button layoutX="466.0" mnemonicParsing="false" onAction="#onSave" prefHeight="30.0" prefWidth="64.0" stylesheets="@../resources/utils/css/style.css" text="Save" textFill="WHITE" AnchorPane.rightAnchor="0.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <AnchorPane prefHeight="765.0" prefWidth="120.0" style="-fx-background-color: #00affe;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" layoutY="52.0" prefHeight="713.0" prefWidth="140.0" spacing="40.0" style="-fx-background-color: #05b384;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="profileButton" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onManageProfile" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Manage Profile" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/account.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="clientFindWorker" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onFindWorker" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Find Worker" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/search_handyman.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onCreateOffer" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Create Offer" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/Create_Offer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onManageOffers" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Manage Offers" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/manag_offers.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Label fx:id="employerProfileCompanyNameLabel" layoutX="227.0" layoutY="10.0" prefHeight="56.0" prefWidth="959.0" text="Label" textFill="#008fcc">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
