@@ -17,5 +17,4 @@ public interface Model
   void createJob(JobOffer job) throws Exception;
   void addPropertyChangeListener(String eventName, PropertyChangeListener listener);
   void removePropertyChangeListener(String eventName, PropertyChangeListener listener);
-  Client getClient();
 }

@@ -324,6 +324,29 @@ public class Database{
             }
     }
 
+    public ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate){
+            ArrayList<Handyman> tmpHandymanList = new ArrayList<>();
+            String SQL = "SELECT * from handyman WHERE  address=? AND hourlyRate=?";
+            ResultSet rs = null;
+            PreparedStatement preparedStatement = null;
+            Connection conn = null;
+            try {
+                conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+                preparedStatement = conn.prepareStatement(SQL);
+                preparedStatement.setInt(1, insertAddress(address));
+                preparedStatement.setString(2, address.getZip());
+                rs = preparedStatement.executeQuery();
+                while (rs.next()) {
+                    Handyman tmpHandyman = new Handyman(0, null, null, null, null, null, null, 0, null, null);
+                    process(rs, tmpHandyman);
+                    tmpHandymanList.add(tmpHandyman);
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            return tmpHandymanList;
+    }
+
 
     public void updateClient(Client client){
         Connection conn = null;
