@@ -50,6 +50,10 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     server.updateHandyman(handyman);
   }
 
+  public void updateClient(Client client) throws Exception{
+    server.updateClient(client);
+  }
+
   public void createJobOffer(JobOffer jobOffer) throws Exception{
     server.createJobOffer(jobOffer);
   }

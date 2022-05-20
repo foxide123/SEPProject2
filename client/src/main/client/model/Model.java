@@ -13,6 +13,7 @@ public interface Model
   void signUpClient(Client client, String password) throws Exception;
   void signUpHandyman(Handyman handyman, String password) throws Exception;
   void updateHandyman(Handyman handyman) throws Exception;
+  void updateClient(Client client) throws Exception;
   void createJob(JobOffer job) throws Exception;
   void addPropertyChangeListener(String eventName, PropertyChangeListener listener);
   void removePropertyChangeListener(String eventName, PropertyChangeListener listener);

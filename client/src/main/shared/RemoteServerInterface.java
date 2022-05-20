@@ -17,5 +17,7 @@ public interface RemoteServerInterface extends Remote
 
    void updateHandyman(Handyman handyman) throws Exception;
 
+   void updateClient(Client client) throws Exception;
+
   void createJobOffer(JobOffer jobOffer) throws Exception;
 }

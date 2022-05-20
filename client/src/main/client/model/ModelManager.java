@@ -68,6 +68,11 @@ public class ModelManager implements Model
     support.firePropertyChange("HandymanUpdated",null,handyman);
   }
 
+  public void updateClient(Client client) throws Exception{
+    server.updateClient(client);
+    support.firePropertyChange("ClientUpdated",null,client);
+  }
+
   public void createJob(JobOffer job) throws Exception {
     server.createJobOffer(job);
   }

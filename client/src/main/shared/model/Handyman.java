@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class Handyman implements Serializable
 {
-  private int CVR;
+  private long CVR;
   private String firstName;
   private String lastName;
   private String description;
@@ -18,7 +18,7 @@ public class Handyman implements Serializable
 
   private static final long serialVersionUID = 2L;
 
-  public Handyman(int CVR, String firstName, String lastName, String email,
+  public Handyman(long CVR, String firstName, String lastName, String email,
       String phone, String description, Address address,
       int hourlyRate, Skills skills, String rating)
   {
@@ -53,7 +53,7 @@ public class Handyman implements Serializable
   public void setCVR(int CVR) {
     this.CVR = CVR;
   }
-  public int getCVR() {
+  public long getCVR() {
     return CVR;
   }
 

@@ -79,6 +79,14 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     }
   }
 
+  public void updateClient(Client client) throws Exception{
+    try{
+      database.updateClient(client);
+    }catch(Exception e){
+      throw new RemoteException(e.getMessage());
+    }
+  }
+
   public void createJobOffer(JobOffer jobOffer) throws Exception {
     try{database.createJob(jobOffer);
     } catch (Exception e){

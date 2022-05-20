@@ -45,7 +45,7 @@ public class HandymanSignUpViewModel
     try {
       if(passwordConfirm.get().equals(password.get())){
         model.signUpHandyman(
-            new Handyman(Integer.parseInt(cvr.get()), firstName.get(), lastName.get(), email.get(), phone.get(), description.get(),
+            new Handyman(Long.parseLong(cvr.get()), firstName.get(), lastName.get(), email.get(), phone.get(), description.get(),
                 new Address(city.get(),zip.get()), Integer.parseInt(hourlyRate.get()),
                 new Skills(plumber, electrician, mason, groundworker), null),
             password.get()

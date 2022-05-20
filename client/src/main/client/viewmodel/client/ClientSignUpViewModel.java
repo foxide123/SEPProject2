@@ -35,7 +35,7 @@ public class ClientSignUpViewModel
     try {
       model.signUpClient(
           new Client(
-              Integer.parseInt(cpr.get()), firstName.get(), lastName.get(), email.get(),
+              Long.parseLong(cpr.get()), firstName.get(), lastName.get(), email.get(),
               new Address(city.get(),zip.get()), description.get()
           ),
           password.get());

@@ -102,7 +102,7 @@ public class Database{
         try {
             conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             posted = conn.prepareStatement(SQL);
-            posted.setInt(1, client.getCPR());
+            posted.setLong(1, client.getCPR());
             posted.setString(2, password);
             posted.setString(3, client.getEmail());
             posted.setString(4, client.getFirstName());
@@ -132,7 +132,7 @@ public class Database{
 
             conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             posted = conn.prepareStatement(SQL);
-            posted.setInt(1, handyman.getCVR());
+            posted.setLong(1, handyman.getCVR());
             posted.setString(2, password);
             posted.setString(3, handyman.getFirstName());
             posted.setString(4, handyman.getLastName());
@@ -166,7 +166,7 @@ public class Database{
             try {
                 conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
                 posted = conn.prepareStatement(SQL);
-                posted.setInt(1, handyman.getCVR());
+                posted.setLong(1, handyman.getCVR());
                 posted.setString(2, handyman.getSkills().get(i));
                 posted.execute();
 
@@ -316,12 +316,42 @@ public class Database{
                 posted.setInt(6, insertAddress(handyman.getAddress()));
                 posted.setInt(7, handyman.getHourlyRate());
                 posted.setString(8, handyman.getRating());
-                posted.setInt(9, handyman.getCVR());
+                posted.setLong(9, handyman.getCVR());
 
                 posted.execute();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+    }
+
+
+    public void updateClient(Client client){
+        Connection conn = null;
+        /*
+         * cvr,password,firstname,lastname,email,phone,
+         * description,address,hourlyRate, rating*/
+        String SQL = "UPDATE client SET "
+            + "firstName=?"
+            + "lastName=?"
+            + "email=?"
+            + "description=?"
+            + "address=?"
+            + " WHERE cpr=?";
+        PreparedStatement posted = null;
+        try {
+            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            posted = conn.prepareStatement(SQL);
+            posted.setString(1, client.getFirstName());
+            posted.setString(2, client.getLastName());
+            posted.setString(3, client.getEmail());
+            posted.setString(4, client.getDescription());
+            posted.setInt(5, insertAddress(client.getAddress()));
+            posted.setLong(6, client.getCPR());
+
+            posted.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 

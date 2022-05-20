@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Client implements Serializable
 {
-  private  int CPR;
+  private  long CPR;
   private  String firstName;
   private  String lastName;
   private  String email;
@@ -13,7 +13,7 @@ public class Client implements Serializable
 
   private static final long serialVersionUID = 1L;
 
-  public Client(int CPR, String firstName, String lastName, String email, Address address, String description) {
+  public Client(long CPR, String firstName, String lastName, String email, Address address, String description) {
     this.CPR = CPR;
     this.firstName = firstName;
     this.lastName = lastName;
@@ -22,7 +22,7 @@ public class Client implements Serializable
     this.description = description;
   }
 
-  public  int getCPR() {
+  public long getCPR() {
     return CPR;
   }
   public void setCPR(int CPR) {
@@ -49,7 +49,7 @@ public class Client implements Serializable
   public Address getAddress(){return address;}
 
   public void setAddress(Address address){
-    address.setAddress(address.getCity(),address.getZip());
+    this.address = address;
   }
 
   public String getDescription(){return description;}

@@ -10,7 +10,7 @@ import main.client.viewmodel.client.ClientLoggedInViewModel;
 
 import java.io.IOException;
 
-public class ClientLoggedInView
+public class ClientLoggedInView extends SwitchTabsView
 {
   private Model model;
   private ClientLoggedInViewModel viewModel;
@@ -22,15 +22,14 @@ public class ClientLoggedInView
   @FXML private TextField tf_zip;
   @FXML private TextField tf_city;
   @FXML private TextArea tf_description;
-  @FXML private TextField tf_phone;
   @FXML private TextField tf_email;
   @FXML private TextField tf_newPassword;
   @FXML private TextField tf_confirmPassword;
 
 
   public void init(ViewHandler viewHandler, ClientLoggedInViewModel viewModel){
+    super.init(viewHandler);
     this.viewModel = viewModel;
-    this.viewHandler = viewHandler;
 
     tf_firstName.textProperty().bindBidirectional(viewModel.getFirstNameProperty());
     tf_lastName.textProperty().bindBidirectional(viewModel.getLastNameProperty());
@@ -38,7 +37,6 @@ public class ClientLoggedInView
     tf_zip.textProperty().bindBidirectional(viewModel.getZipProperty());
     tf_city.textProperty().bindBidirectional(viewModel.getCityProperty());
     tf_description.textProperty().bindBidirectional(viewModel.getDescriptionProperty());
-    tf_phone.textProperty().bindBidirectional(viewModel.getPhoneProperty());
     tf_email.textProperty().bindBidirectional(viewModel.getEmailProperty());
     tf_newPassword.textProperty().bindBidirectional(viewModel.getNewPassword());
     tf_confirmPassword.textProperty().bindBidirectional(viewModel.getConfirmPassword());
@@ -49,25 +47,6 @@ public class ClientLoggedInView
     viewModel.onSave();
   }
 
-  @FXML public void onManageProfile(ActionEvent event) throws IOException
-  {
-    viewHandler.openView("ManageProfile");
-  }
-
-  @FXML public void onFindWorker(ActionEvent event) throws IOException
-  {
-    viewHandler.openView("FindWorker");
-  }
-
-  @FXML public void onCreateOffer(ActionEvent event) throws IOException
-  {
-    viewHandler.openView("CreateOffer");
-  }
-
-  @FXML public void onManageOffers(ActionEvent event) throws IOException
-  {
-    viewHandler.openView("ManageOffers");
-  }
 
 
 

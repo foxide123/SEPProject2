@@ -46,7 +46,6 @@
                   <TextArea fx:id="tf_description" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="530.0" promptText="Write a small description about yourself." />
                </children>
             </HBox>
-            <TextField fx:id="tf_phone" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="182.0" promptText="Mobile phone" />
             <TextField fx:id="tf_email" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="393.0" promptText="Email address" />
             <HBox layoutX="10.0" layoutY="222.0" spacing="28.0">
                <children>
