@@ -25,7 +25,14 @@ public class ModelManager implements Model
     server = new Server();
   }
 
-  public ArrayList<Handyman>
+  @Override
+  public Client getClient() {
+    return client;
+  }
+
+  public Handyman getHandyman() {
+    return handyman;
+  }
 
   public void logInClient(int CPR, String password) throws Exception
   {

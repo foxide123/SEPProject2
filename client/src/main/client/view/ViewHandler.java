@@ -112,7 +112,7 @@ public class ViewHandler
       localStage.setTitle("FindWorker");
     }
 
-    else if("ClientCreateOffer".equals(viewToOpen)){
+    else if("ClientCreateJob".equals(viewToOpen)){
       loader.setLocation(getClass().getResource("/resources/client_create_offer.fxml"));
       root = loader.load();
       ClientCreateJobView view = loader.getController();
