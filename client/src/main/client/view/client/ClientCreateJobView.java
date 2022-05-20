@@ -1,5 +1,6 @@
 package main.client.view.client;
 
+        import javafx.scene.control.TextArea;
         import main.client.view.ViewHandler;
         import main.client.viewmodel.client.ClientCreateJobViewModel;
         import javafx.fxml.FXML;
@@ -8,14 +9,14 @@ package main.client.view.client;
 
         import java.util.ArrayList;
 
-public class ClientCreateJobView  {
+public class ClientCreateJobView  extends SwitchTabsView{
     private ClientCreateJobViewModel viewModel;
     private ViewHandler viewHandler;
 
     @FXML
     private TextField jobTitle;
     @FXML
-    private TextField jobDescription;
+    private TextArea jobDescription;
     @FXML
     private TextField jobBudget;
     @FXML
@@ -30,8 +31,8 @@ public class ClientCreateJobView  {
 
 
     public void init(ViewHandler viewHandler, ClientCreateJobViewModel viewModel) {
+      super.init(viewHandler);
         this.viewModel = viewModel;
-        this.viewHandler = viewHandler;
 
         jobTitle.textProperty().bindBidirectional(viewModel.getJobTitleProperty());
         jobBudget.textProperty().bindBidirectional(viewModel.getJobTitleProperty());

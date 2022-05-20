@@ -127,7 +127,7 @@ public class ViewHandler
       localStage.setTitle("CreateJob");
     }
     else if("ClientManageOffers".equals(viewToOpen)){
-      loader.setLocation(getClass().getResource("/resources/client_manage_offer.fxml"));
+      loader.setLocation(getClass().getResource("/resources/client_manage_offers.fxml"));
       root = loader.load();
       ClientManageOffersView view = loader.getController();
       view.init(this, mvViewModel.getManageOffersViewModel());
