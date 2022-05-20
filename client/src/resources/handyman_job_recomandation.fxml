@@ -12,13 +12,13 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="dk.grouptwo.view.worker.WorkerProfileController">
+            fx:controller="main.client.view.handyman.HandymanJobRecomandationView">
    <children>
       <AnchorPane style="-fx-background-color: #00affe;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <VBox alignment="CENTER" layoutY="52.0" prefHeight="713.0" prefWidth="130.0" spacing="40.0" style="-fx-background-color: #05b384;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button fx:id="profileButton" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToProfile" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Manage Profile" textAlignment="CENTER">
+                  <Button fx:id="profileButton" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onProfile" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Manage Profile" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -30,7 +30,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToFindWork" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Find Work" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                  <Button alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onFindWork" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Find Work" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -45,7 +45,7 @@
                         <Insets />
                      </VBox.margin>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToUpcoming" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Job Recomandations" VBox.vgrow="ALWAYS">
+                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onRecommendation" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Job Recomandations" VBox.vgrow="ALWAYS">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
@@ -57,7 +57,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHistory" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="My Job Offers" VBox.vgrow="ALWAYS">
+                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onMyJobOffers" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="My Job Offers" VBox.vgrow="ALWAYS">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
