@@ -4,6 +4,8 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import main.client.model.Model;
+import main.shared.model.Address;
+import main.shared.model.Skills;
 
 public class ClientFindWorkerViewModel
 {
@@ -20,7 +22,7 @@ public class ClientFindWorkerViewModel
   }
 
   public boolean onSearch(boolean plumber, boolean electrician, boolean mason, boolean groundworker){
-
+    model.findHandyman(new Address(city.get(), zip.get()), new Skills(plumber, electrician, mason, groundworker));
     return plumber;
   }
 
