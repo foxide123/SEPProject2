@@ -2,13 +2,14 @@ package main.client.model;
 
 
 import main.client.server.Server;
-import main.shared.model.*;
+import main.shared.model.Client;
+import main.shared.model.Handyman;
+import main.shared.model.JobOffer;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 
 public class ModelManager implements Model
 {
@@ -24,20 +25,7 @@ public class ModelManager implements Model
     server = new Server();
   }
 
-  public Client getClient()
-  {
-    return client;
-  }
-
-  public Handyman getHandyman()
-  {
-    return handyman;
-  }
-
-  public ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate) throws Exception{
-
-    return server.findHandyman(address,skills,hourlyRate);
-  }
+  public ArrayList<Handyman>
 
   public void logInClient(int CPR, String password) throws Exception
   {

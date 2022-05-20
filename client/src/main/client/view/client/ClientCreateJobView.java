@@ -1,12 +1,15 @@
 package main.client.view.client;
 
+        import javafx.event.ActionEvent;
         import javafx.scene.control.TextArea;
         import main.client.view.ViewHandler;
         import main.client.viewmodel.client.ClientCreateJobViewModel;
         import javafx.fxml.FXML;
         import javafx.scene.control.Label;
         import javafx.scene.control.TextField;
+        import main.shared.model.JobType;
 
+        import java.io.IOException;
         import java.util.ArrayList;
 
 public class ClientCreateJobView  extends SwitchTabsView{
@@ -26,7 +29,7 @@ public class ClientCreateJobView  extends SwitchTabsView{
     @FXML
     private Label error;
 
-    private ArrayList<String> jobSkills;
+    private ArrayList<String> jobType;
 
 
 
@@ -42,5 +45,12 @@ public class ClientCreateJobView  extends SwitchTabsView{
 
 
     }
+    @FXML
+    public void createJob(ActionEvent event) throws IOException {
+        if (viewModel.createJob())
+            viewHandler.openView("client_create_offer");
+    }
+
+
 }
 

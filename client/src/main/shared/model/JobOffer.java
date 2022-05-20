@@ -2,7 +2,6 @@ package main.shared.model;
 
 import java.util.ArrayList;
 import java.io.Serializable;
-import java.util.Objects;
 
 public class JobOffer implements Serializable, JobOfferInterface {
 
@@ -14,13 +13,13 @@ public class JobOffer implements Serializable, JobOfferInterface {
     private Client client;
     private ArrayList<Handyman> aplicants;
     private JobType type;
-    private ArrayList<String> jobTypes;
+
 
     private static final long serialVersionUID = 4;
 
 
 
-    public JobOffer(String jobTitle, String jobDescription, String jobBudget, Address location) {
+    public JobOffer(String jobTitle, String jobDescription, String jobBudget, Address location, long cpr) {
         this.jobTitle = jobTitle;
         this.jobDescription = jobDescription;
         this.jobBudget = jobBudget;
@@ -28,7 +27,7 @@ public class JobOffer implements Serializable, JobOfferInterface {
         this.client = client;
         aplicants = new ArrayList<Handyman>();
         this.type = type;
-        jobTypes = this.type.getJobType();
+
 
     }
 
@@ -69,6 +68,8 @@ public class JobOffer implements Serializable, JobOfferInterface {
     public ArrayList<Handyman> getAplicants() {
         return aplicants;
     }
+    public ArrayList<String> getJobType(){
+        return type.getJobType();}
 
 
     public Address getLocation() {
