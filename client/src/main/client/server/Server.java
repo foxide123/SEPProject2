@@ -1,15 +1,14 @@
 package main.client.server;
 
-import main.shared.model.Client;
-import main.shared.model.Handyman;
+import main.shared.model.*;
 import main.shared.RemoteServerInterface;
-import main.shared.model.JobOffer;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
+import java.util.ArrayList;
 
 public class Server extends UnicastRemoteObject implements RemoteServerInterface
 {
@@ -48,6 +47,10 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
 
   public void updateHandyman(Handyman handyman) throws Exception{
     server.updateHandyman(handyman);
+  }
+
+  public ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate) throws Exception{
+    return server.findHandyman(address, skills, hourlyRate);
   }
 
   public void updateClient(Client client) throws Exception{

@@ -25,6 +25,8 @@ public class ModelManager implements Model
     server = new Server();
   }
 
+  public ArrayList<Handyman>
+
   public void logInClient(int CPR, String password) throws Exception
   {
     if(CPR ==0 || password.isEmpty()){

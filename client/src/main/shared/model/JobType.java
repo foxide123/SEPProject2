@@ -11,10 +11,7 @@ public class JobType implements Serializable
     private boolean groundWorking;
 
     public JobType(boolean plumbing, boolean electrical, boolean masonry, boolean groundWorking){
-        this.plumbing = plumbing;
-        this.electrical = JobType.this.electrical;
-        this.masonry = JobType.this.masonry;
-        this.groundWorking = JobType.this.groundWorking;
+        setValues(plumbing,electrical,masonry,groundWorking);
     }
 
     public ArrayList<String> getJobType(){
@@ -33,5 +30,11 @@ public class JobType implements Serializable
         }
         return tmpList;
     }
+
+    public void setValues(boolean plumbing, boolean electrical, boolean masonry, boolean groundWorking){
+        this.plumbing = plumbing;
+        this.electrical = electrical;
+        this.masonry = masonry;
+        this.groundWorking = groundWorking;}
 
 }
