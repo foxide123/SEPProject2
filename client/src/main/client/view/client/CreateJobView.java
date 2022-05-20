@@ -1,5 +1,7 @@
 package main.client.view.client;
 
+        import javafx.beans.binding.Bindings;
+        import javafx.scene.layout.Region;
         import main.client.view.ViewHandler;
         import main.client.viewmodel.client.CreateJobViewModel;
         import javafx.fxml.FXML;
@@ -10,6 +12,7 @@ package main.client.view.client;
 
 public class CreateJobView  {
     private CreateJobViewModel viewModel;
+    private ViewHandler viewHandler;
 
     @FXML
     private TextField jobTitle;
@@ -28,12 +31,17 @@ public class CreateJobView  {
 
 
 
-    public void init(ViewHandler viewHandler, CreateJobViewModel viewModel){
+    public void init(ViewHandler viewHandler, CreateJobViewModel viewModel) {
         this.viewModel = viewModel;
         this.viewHandler = viewHandler;
 
-        jobTitle.textProperty().bindBidirectional(viewModel.jobTitleProperty());
-        jobDescription.textProperty().bindBidirectional(viewModel.);
+        jobTitle.textProperty().bindBidirectional(viewModel.getJobTitleProperty());
+        jobBudget.textProperty().bindBidirectional(viewModel.getJobTitleProperty());
+        jobDescription.textProperty().bindBidirectional(viewModel.getJobDescriptionProperty());
+        city.textProperty().bindBidirectional(viewModel.getCityProperty());
+        zipCode.textProperty().bindBidirectional(viewModel.getZipCodeProperty());
+
+
     }
 }
 

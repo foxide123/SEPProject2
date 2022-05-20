@@ -1,7 +1,10 @@
 package main.client.viewmodel.client;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import javafx.fxml.FXML;
 import main.client.model.Model;
+import main.shared.model.Address;
+import main.shared.model.Client;
 import main.shared.model.JobOffer;
 
 import java.time.LocalDateTime;
@@ -35,17 +38,22 @@ public class CreateJobViewModel {
 
     public StringProperty getJobDescription(){return jobDescription;}
 
-/*
+
     public boolean createJob() {
         try {
-            model.createJob(new JobOffer(jobTitle.get(), jobDescription.get(), jobBudget.get(), workersNeeded.get(), LocalDateTime.of(startDate.get(), LocalTime.of(startHour.get(), startMinutes.get())),
-                    LocalDateTime.of(endDate.get(), LocalTime.of(endHour.get(), endMinutes.get())), new Address(country.get(), city.get(), street.get(), postCode.get()), "pending", model.getEmployer()));
+            model.createJob(new JobOffer(jobTitle.get(), jobDescription.get(), jobBudget.get(),
+                    new Address( city.get(), zipCode.get())));
             return true;
         } catch (Exception e) {
-            error.set(e.getMessage());
+            e.printStackTrace();
             return false;
         }
     }
-    */
+    @FXML public StringProperty getJobTitleProperty(){return jobTitle;}
+    @FXML public StringProperty getJobBudgetProperty(){return jobBudget;}
+    @FXML public StringProperty getCityProperty(){return city;}
+    @FXML public StringProperty getZipCodeProperty(){return zipCode;}
+    @FXML public StringProperty getJobDescriptionProperty(){return jobDescription;}
+
 
 }

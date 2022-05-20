@@ -14,7 +14,7 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
 
   public Server() throws RemoteException
   {
-    //UnicastRemoteObject.exportObject(this, 0);
+    UnicastRemoteObject.exportObject(this, 0);
     database = new Database();
   }
 

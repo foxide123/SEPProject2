@@ -20,7 +20,7 @@ public class ViewModelProvider
   private final ClientLoggedInViewModel clientLoggedInViewModel;
   private final HandymanLoggedInViewModel handymanLoggedInViewModel;
   private final FindWorkerViewModel findWorkerViewModel;
-  private final CreateOfferViewModel createOfferViewModel;
+  private final CreateJobViewModel createJobViewModel;
   private final ManageOffersViewModel manageOffersViewModel;
 
   public ViewModelProvider(Model model) {
@@ -39,7 +39,7 @@ public class ViewModelProvider
     this.handymanLoggedInViewModel = new HandymanLoggedInViewModel(model);
 
     this.findWorkerViewModel = new FindWorkerViewModel(model);
-    this.createOfferViewModel = new CreateOfferViewModel(model);
+    this.createJobViewModel = new CreateJobViewModel(model);
     this.manageOffersViewModel = new ManageOffersViewModel(model);
 
   }
@@ -62,6 +62,6 @@ public class ViewModelProvider
   public HandymanLoggedInViewModel getHandymanLoggedInViewModel(){return handymanLoggedInViewModel;}
 
   public FindWorkerViewModel getFindWorkerViewModel(){return findWorkerViewModel;}
-  public CreateOfferViewModel getCreateOfferViewModel(){return createOfferViewModel;}
+  public CreateJobViewModel getCreateJobViewModel(){return createJobViewModel;}
   public ManageOffersViewModel getManageOffersViewModel(){return manageOffersViewModel;}
 }

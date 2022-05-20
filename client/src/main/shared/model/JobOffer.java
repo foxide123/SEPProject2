@@ -20,7 +20,7 @@ public class JobOffer implements Serializable, JobOfferInterface {
 
 
 
-    public JobOffer(String jobTitle, String jobDescription, String jobBudget,  Address location, Client client, Handyman applicants, JobType type) {
+    public JobOffer(String jobTitle, String jobDescription, String jobBudget, Address location) {
         this.jobTitle = jobTitle;
         this.jobDescription = jobDescription;
         this.jobBudget = jobBudget;

@@ -117,8 +117,8 @@ public class ViewHandler
     else if("CreateOffer".equals(viewToOpen)){
       loader.setLocation(getClass().getResource("/resources/client_create_offer.fxml"));
       root = loader.load();
-      CreateOfferView view = loader.getController();
-      view.init(this, mvViewModel.getCreateOfferViewModel());
+      CreateJobView view = loader.getController();
+      view.init(this, mvViewModel.getCreateJobViewModel());
       localStage.setTitle("CreateOffer");
     }
     //you can only show one main.client.view per stage
