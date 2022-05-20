@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.client.view.ChooseActorLogInView">
+   <children>
+      <VBox alignment="CENTER" layoutX="35.0" layoutY="120.0" prefHeight="489.0" prefWidth="858.0" spacing="10.0" AnchorPane.bottomAnchor="156.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="307.0" AnchorPane.topAnchor="120.0">
+         <children>
+            <Label text="Sign in as an" VBox.vgrow="ALWAYS">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER" prefHeight="369.0" prefWidth="751.0" spacing="10.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="TOP" minWidth="-Infinity" mnemonicParsing="false" onAction="#onLogInHandyman" prefHeight="267.0" prefWidth="250.0" styleClass="account" stylesheets="@../resources/utils/css/style.css" text="Handyman" HBox.hgrow="ALWAYS">
+                     <graphic>
+                        <ImageView fitHeight="199.0" fitWidth="190.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/handyman.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="38.0" />
+                     </font>
+                  </Button>
+                  <Line endX="100.0" fill="WHITE" startX="100.0" startY="-368.0" />
+                  <Button alignment="CENTER" contentDisplay="TOP" minWidth="-Infinity" mnemonicParsing="false" onAction="#onLogInClient" prefHeight="267.0" prefWidth="250.0" styleClass="account" stylesheets="@../resources/utils/css/style.css" text="Client" HBox.hgrow="ALWAYS">
+                     <graphic>
+                        <ImageView fitHeight="199.0" fitWidth="190.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/client.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="38.0" />
+                     </font>
+                  </Button>
+                  <Line endX="100.0" fill="WHITE" startX="100.0" startY="-368.0" />
+                  <Button alignment="CENTER" contentDisplay="TOP" minWidth="-Infinity" mnemonicParsing="false" onAction="#onLogInAdmin" prefHeight="267.0" prefWidth="250.0" styleClass="account" stylesheets="@../resources/utils/css/style.css" text="Admin">
+                     <graphic>
+                        <ImageView fitHeight="199.0" fitWidth="190.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/admin.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="38.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+            <Label prefHeight="45.0" prefWidth="31.0" text="or">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#onSignUp" prefHeight="58.0" prefWidth="609.0" stylesheets="@../resources/utils/css/style.css" text="CREATE ACCOUNT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="26.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
