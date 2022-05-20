@@ -19,9 +19,9 @@ public class ViewModelProvider
   private final ClientSignUpViewModel clientSignUpViewModel;
   private final ClientLoggedInViewModel clientLoggedInViewModel;
   private final HandymanLoggedInViewModel handymanLoggedInViewModel;
-  private final FindWorkerViewModel findWorkerViewModel;
-  private final CreateJobViewModel createJobViewModel;
-  private final ManageOffersViewModel manageOffersViewModel;
+  private final ClientFindWorkerViewModel findWorkerViewModel;
+  private final ClientCreateJobViewModel createJobViewModel;
+  private final ClientManageOffersViewModel manageOffersViewModel;
 
   public ViewModelProvider(Model model) {
     this.clientLogInViewModel = new ClientLogInViewModel(model);
@@ -38,9 +38,9 @@ public class ViewModelProvider
     this.clientLoggedInViewModel = new ClientLoggedInViewModel(model);
     this.handymanLoggedInViewModel = new HandymanLoggedInViewModel(model);
 
-    this.findWorkerViewModel = new FindWorkerViewModel(model);
-    this.createJobViewModel = new CreateJobViewModel(model);
-    this.manageOffersViewModel = new ManageOffersViewModel(model);
+    this.findWorkerViewModel = new ClientFindWorkerViewModel(model);
+    this.createJobViewModel = new ClientCreateJobViewModel(model);
+    this.manageOffersViewModel = new ClientManageOffersViewModel(model);
 
   }
 
@@ -61,7 +61,7 @@ public class ViewModelProvider
   public ClientLoggedInViewModel getClientLoggedInViewModel(){return clientLoggedInViewModel;}
   public HandymanLoggedInViewModel getHandymanLoggedInViewModel(){return handymanLoggedInViewModel;}
 
-  public FindWorkerViewModel getFindWorkerViewModel(){return findWorkerViewModel;}
-  public CreateJobViewModel getCreateJobViewModel(){return createJobViewModel;}
-  public ManageOffersViewModel getManageOffersViewModel(){return manageOffersViewModel;}
+  public ClientFindWorkerViewModel getFindWorkerViewModel(){return findWorkerViewModel;}
+  public ClientCreateJobViewModel getCreateJobViewModel(){return createJobViewModel;}
+  public ClientManageOffersViewModel getManageOffersViewModel(){return manageOffersViewModel;}
 }

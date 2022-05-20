@@ -5,10 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import main.client.view.ViewHandler;
-import main.client.viewmodel.client.ClientSignUpViewModel;
-import main.client.viewmodel.client.FindWorkerViewModel;
-
-import javax.swing.*;
+import main.client.viewmodel.client.ClientFindWorkerViewModel;
 
 public class ClientFindWorkerView extends SwitchTabsView
 {
@@ -20,9 +17,9 @@ public class ClientFindWorkerView extends SwitchTabsView
   @FXML private TextField tf_zip;
   @FXML private TextField tf_hourlyRate;
 
-  private FindWorkerViewModel viewModel;
+  private ClientFindWorkerViewModel viewModel;
 
-  public void init(ViewHandler viewHandler, FindWorkerViewModel viewModel){
+  public void init(ViewHandler viewHandler, ClientFindWorkerViewModel viewModel){
     super.init(viewHandler);
     this.viewModel = viewModel;
   }

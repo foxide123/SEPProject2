@@ -1,7 +1,6 @@
 package main.client.view;
 
 import main.client.view.client.*;
-import main.client.view.handyman.HandymanFindWorkView;
 import main.client.view.handyman.HandymanLoggedInView;
 import main.client.view.admin.AdminLogInView;
 import javafx.fxml.FXMLLoader;
@@ -12,7 +11,6 @@ import javafx.stage.Stage;
 import main.client.view.handyman.HandymanLogInView;
 import main.client.view.handyman.HandymanSignUpView;
 import main.client.viewmodel.ViewModelProvider;
-import main.client.view.client.ManageOffersView;
 
 import java.io.IOException;
 
@@ -106,20 +104,34 @@ public class ViewHandler
       view.init(this, mvViewModel.getHandymanLoggedInViewModel());
       localStage.setTitle("HandymanLoggedIn");
     }
-    else if("FindWorker".equals(viewToOpen)){
+    else if("ClientFindWorker".equals(viewToOpen)){
       loader.setLocation(getClass().getResource("/resources/client_search.fxml"));
       root = loader.load();
-      FindWorkerView view = loader.getController();
+      ClientFindWorkerView view = loader.getController();
       view.init(this, mvViewModel.getFindWorkerViewModel());
       localStage.setTitle("FindWorker");
     }
 
-    else if("CreateOffer".equals(viewToOpen)){
+    else if("ClientCreateOffer".equals(viewToOpen)){
       loader.setLocation(getClass().getResource("/resources/client_create_offer.fxml"));
       root = loader.load();
-      CreateJobView view = loader.getController();
+      ClientCreateJobView view = loader.getController();
       view.init(this, mvViewModel.getCreateJobViewModel());
       localStage.setTitle("CreateOffer");
+    }
+    else if("ClientCreateJob".equals(viewToOpen)){
+      loader.setLocation(getClass().getResource("/resources/client_create_offer.fxml"));
+      root = loader.load();
+      ClientCreateJobView view = loader.getController();
+      view.init(this, mvViewModel.getCreateJobViewModel());
+      localStage.setTitle("CreateJob");
+    }
+    else if("ClientManageOffers".equals(viewToOpen)){
+      loader.setLocation(getClass().getResource("/resources/client_manage_offer.fxml"));
+      root = loader.load();
+      ClientManageOffersView view = loader.getController();
+      view.init(this, mvViewModel.getManageOffersViewModel());
+      localStage.setTitle("ManageOffers");
     }
     //you can only show one main.client.view per stage
     scene = new Scene(root);

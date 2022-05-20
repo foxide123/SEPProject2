@@ -11,7 +11,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-public class CreateJobViewModel {
+public class ClientCreateJobViewModel
+{
 
     private Model model;
     private StringProperty jobTitle;
@@ -22,7 +23,7 @@ public class CreateJobViewModel {
     private StringProperty errorLabel;
     private ArrayList<String> jobSkills;
 
-    public CreateJobViewModel(Model model){
+    public ClientCreateJobViewModel(Model model){
         this.model = model;
         jobTitle = new SimpleStringProperty("");
         jobDescription = new SimpleStringProperty("");

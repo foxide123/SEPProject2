@@ -1,17 +1,15 @@
 package main.client.view.client;
 
-        import javafx.beans.binding.Bindings;
-        import javafx.scene.layout.Region;
         import main.client.view.ViewHandler;
-        import main.client.viewmodel.client.CreateJobViewModel;
+        import main.client.viewmodel.client.ClientCreateJobViewModel;
         import javafx.fxml.FXML;
         import javafx.scene.control.Label;
         import javafx.scene.control.TextField;
 
         import java.util.ArrayList;
 
-public class CreateJobView  {
-    private CreateJobViewModel viewModel;
+public class ClientCreateJobView  {
+    private ClientCreateJobViewModel viewModel;
     private ViewHandler viewHandler;
 
     @FXML
@@ -31,7 +29,7 @@ public class CreateJobView  {
 
 
 
-    public void init(ViewHandler viewHandler, CreateJobViewModel viewModel) {
+    public void init(ViewHandler viewHandler, ClientCreateJobViewModel viewModel) {
         this.viewModel = viewModel;
         this.viewHandler = viewHandler;
 

@@ -2,10 +2,10 @@ package main.client.viewmodel.client;
 
 import main.client.model.Model;
 
-public class ManageOffersViewModel
+public class ClientFindWorkerViewModel
 {
   private Model model;
-  public ManageOffersViewModel(Model model){
+  public ClientFindWorkerViewModel(Model model){
     this.model = model;
   }
 }
