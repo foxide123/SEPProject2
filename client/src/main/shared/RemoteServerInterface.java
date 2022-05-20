@@ -1,10 +1,9 @@
 package main.shared;
 
-import main.shared.model.Client;
-import main.shared.model.Handyman;
-import main.shared.model.JobOffer;
+import main.shared.model.*;
 
 import java.rmi.Remote;
+import java.util.ArrayList;
 
 public interface RemoteServerInterface extends Remote
 {
@@ -20,4 +19,6 @@ public interface RemoteServerInterface extends Remote
    void updateClient(Client client) throws Exception;
 
   void createJobOffer(JobOffer jobOffer) throws Exception;
+
+  ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate) throws Exception;
 }

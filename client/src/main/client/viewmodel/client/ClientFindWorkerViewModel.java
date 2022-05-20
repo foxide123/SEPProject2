@@ -5,7 +5,10 @@ import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import main.client.model.Model;
 import main.shared.model.Address;
+import main.shared.model.Handyman;
 import main.shared.model.Skills;
+
+import java.util.ArrayList;
 
 public class ClientFindWorkerViewModel
 {
@@ -21,9 +24,12 @@ public class ClientFindWorkerViewModel
     this.hourlyRate = new SimpleStringProperty("");
   }
 
-  public boolean onSearch(boolean plumber, boolean electrician, boolean mason, boolean groundworker){
-    model.findHandyman(new Address(city.get(), zip.get()), new Skills(plumber, electrician, mason, groundworker));
-    return plumber;
+  public ArrayList<Handyman> onSearch(boolean plumber, boolean electrician, boolean mason, boolean groundworker){
+    return model.findHandyman(new Address(
+        city.get(), zip.get()),
+        new Skills(plumber, electrician, mason, groundworker),
+        Integer.parseInt(hourlyRate.get())
+    );
   }
 
   public StringProperty getCityProperty(){return city;}

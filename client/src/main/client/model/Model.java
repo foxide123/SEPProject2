@@ -1,10 +1,9 @@
 package main.client.model;
 
-import main.shared.model.Client;
-import main.shared.model.Handyman;
-import main.shared.model.JobOffer;
+import main.shared.model.*;
 
 import java.beans.PropertyChangeListener;
+import java.util.ArrayList;
 
 public interface Model
 {
@@ -17,4 +16,5 @@ public interface Model
   void createJob(JobOffer job) throws Exception;
   void addPropertyChangeListener(String eventName, PropertyChangeListener listener);
   void removePropertyChangeListener(String eventName, PropertyChangeListener listener);
+  ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate) throws Exception;
 }
