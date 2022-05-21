@@ -43,7 +43,7 @@ public class ClientCreateJobViewModel
     public boolean createJob() {
         try {
             model.createJob(new JobOffer(jobTitle.get(), jobDescription.get(), jobBudget.get(),
-                    new Address( city.get(), zipCode.get()),model.getClient().getCPR()));
+                    new Address( city.get(), zipCode.get()), model.getClient().getCPR()));
             return true;
         } catch (Exception e) {
             e.printStackTrace();

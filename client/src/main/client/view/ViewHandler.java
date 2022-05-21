@@ -104,11 +104,18 @@ public class ViewHandler
       view.init(this, mvViewModel.getHandymanLoggedInViewModel());
       localStage.setTitle("HandymanLoggedIn");
     }
-    else if("ClientFindWorker".equals(viewToOpen)){
+    else if("ClientFindHandyman".equals(viewToOpen)){
       loader.setLocation(getClass().getResource("/resources/client_search.fxml"));
       root = loader.load();
-      ClientFindWorkerView view = loader.getController();
-      view.init(this, mvViewModel.getFindWorkerViewModel());
+      ClientFindHandymanView view = loader.getController();
+      view.init(this, mvViewModel.getFindHandymanViewModel());
+      localStage.setTitle("FindWorker");
+    }
+    else if("FindHandymanResult".equals(viewToOpen)){
+      loader.setLocation(getClass().getResource("/resources/client_search_result.fxml"));
+      root = loader.load();
+      ClientFindHandymanResultView view = loader.getController();
+      view.init(this, mvViewModel.getFindHandymanResultViewModel());
       localStage.setTitle("FindWorker");
     }
 

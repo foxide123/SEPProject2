@@ -22,9 +22,9 @@ public class SwitchTabsView
     viewHandler.openView("ClientLoggedIn");
   }
 
-  @FXML public void onFindWorker(ActionEvent event) throws IOException
+  @FXML public void onFindHandyman(ActionEvent event) throws IOException
   {
-    viewHandler.openView("ClientFindWorker");
+    viewHandler.openView("ClientFindHandyman");
   }
 
   @FXML public void onCreateOffer(ActionEvent event) throws IOException

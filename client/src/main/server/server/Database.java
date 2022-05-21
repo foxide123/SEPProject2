@@ -178,7 +178,7 @@ public class Database{
     }
 
 
-    public Skills getSkills(int cvr) {
+    public Skills getSkills(long cvr) {
 
         Skills skills = new Skills(false,false,false,false);
         String SQL = "SELECT skill FROM skills WHERE cvr=?";
@@ -189,7 +189,7 @@ public class Database{
         try {
             conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             pstm = conn.prepareStatement(SQL);
-            pstm.setInt(1, cvr);
+            pstm.setLong(1, cvr);
             rs = pstm.executeQuery();
             while (rs.next()) {
                 skillsArrayList.add(rs.getString("skill"));
@@ -334,7 +334,7 @@ public class Database{
                 conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
                 preparedStatement = conn.prepareStatement(SQL);
                 preparedStatement.setInt(1, insertAddress(address));
-                preparedStatement.setString(2, address.getZip());
+                preparedStatement.setInt(2, hourlyRate);
                 rs = preparedStatement.executeQuery();
                 while (rs.next()) {
                     Handyman tmpHandyman = new Handyman(0, null, null, null, null, null, null, 0, null, null);
@@ -344,7 +344,18 @@ public class Database{
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            return tmpHandymanList;
+            return findHandymanWithSkills(tmpHandymanList, skills);
+    }
+
+    public ArrayList<Handyman> findHandymanWithSkills(ArrayList<Handyman> tmpHandymanList, Skills skills){
+        ArrayList<Handyman> handymanList = new ArrayList<>();
+
+        for(int i=0; i<tmpHandymanList.size(); i++){
+            if(getSkills(tmpHandymanList.get(i).getCVR()).equalsAtLeastOne(skills)){
+                handymanList.add(tmpHandymanList.get(i));
+            }
+        }
+        return handymanList;
     }
 
 
