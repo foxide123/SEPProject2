@@ -49,7 +49,7 @@ public class ClientFindHandymanView extends SwitchTabsView
   @FXML public void onSearch(ActionEvent event) throws Exception
   {
     if (viewModel.onSearch(rb_plumber.isSelected(), rb_electrician.isSelected(),
-        rb_mason.isSelected(), rb_groundworker.isSelected(), hourlyRateLabel.getText()))
+        rb_mason.isSelected(), rb_groundworker.isSelected()))
     {
       viewHandler.openView("FindHandymanResult");
     }
