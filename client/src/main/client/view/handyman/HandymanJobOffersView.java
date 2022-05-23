@@ -1,7 +1,7 @@
 package main.client.view.handyman;
 
 import main.client.view.ViewHandler;
-import main.client.viewmodel.handyman.HandymanFindWorkViewModel;
+//import main.client.viewmodel.handyman.HandymanFindWorkViewModel;
 import main.client.viewmodel.handyman.HandymanJobOffersViewModel;
 
 public class HandymanJobOffersView extends SwitchTabsView

@@ -12,27 +12,32 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
 
   public Server() throws RemoteException
   {
-    UnicastRemoteObject.exportObject(this, 0);
+    //UnicastRemoteObject.exportObject(this, 0);
     database = new Database();
   }
 
   @Override public Handyman logInHandyman(int CVR, String password)
       throws Exception
   {
+    System.out.println(CVR);
+    System.out.println(password);
     Handyman handyman = null;
     try {
       handyman = database.loginHandyman(CVR, password);
     } catch (Exception e) {
-      throw new RemoteException(e.getMessage());
+      e.printStackTrace();
     }
-    return handyman;
+    if(handyman == null){
+      System.out.println("handyman is null");
+    }else{
+      return handyman;
+    }
+    return null;
   }
 
   @Override public Client loginClient(int CPR, String password)
       throws Exception
   {
-    System.out.println(CPR);
-    System.out.println(password);
     Client client = null;
     try {
       client = database.loginClient(CPR, password);
@@ -40,7 +45,7 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
       throw new RemoteException(e.getMessage());
     }
     if(client == null){
-      System.out.println("main.client is null");
+      System.out.println("client is null");
     }else{
       return client;
     }
@@ -78,10 +83,6 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   }
 
   public ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate) throws Exception{
-    System.out.println(database.getSkills(54321).getElectricianBoolean());
-    System.out.println(database.getSkills(54321).getMasonBoolean());
-    System.out.println(database.getSkills(54321).getPlumberBoolean());
-    System.out.println(database.getSkills(54321).getGroundWorkerBoolean());
     return database.findHandyman(address,skills,hourlyRate);
   }
 

@@ -20,16 +20,20 @@ public class Skills implements Serializable
   public boolean getPlumberBoolean(){
     return plumber;
   }
+  public void setPlumber(boolean value){this.plumber = value;}
 
   public boolean getElectricianBoolean(){
     return electrician;
   }
+  public void setElectrician(boolean value){this.electrician = value;}
 
   public boolean getMasonBoolean(){
     return mason;
   }
+  public void setMason(boolean value){this.mason = value;}
 
   public boolean getGroundWorkerBoolean(){return groundWorker;}
+  public void setGroundWorker(boolean value){this.groundWorker = value;}
 
   public void setSkills(ArrayList<String> skills){
     for(int i=0; i<skills.size();i++){
@@ -65,23 +69,27 @@ public class Skills implements Serializable
     return tmpList;
   }
 
-  public boolean equalsAtLeastOne(Object o) {
-
-
-        /* Check if o is an instance of Complex or not
-          "null instanceof [type]" also returns false */
-    if (!(o instanceof Skills)) {
-      return false;
+  public boolean equalsAtLeastOne(ArrayList<String> skillsFromDatabase)
+  {
+    for(int i=0; i<skillsFromDatabase.size(); i++){
+      if(skillsFromDatabase.get(i).equals("plumber")){
+        plumber = true;
+        return true;
+      }
+      if(skillsFromDatabase.get(i).equals("electrician")){
+        electrician = true;
+        return true;
+      }
+      if(skillsFromDatabase.get(i).equals("groundworker")){
+        groundWorker = true;
+        return true;
+      }
+      if(skillsFromDatabase.get(i).equals("mason")){
+        mason = true;
+        return true;
+      }
     }
-
-    // typecast o to Complex so that we can compare data members
-    Skills s = (Skills) o;
-
-    // Compare the data members and return accordingly
-    return s.getElectricianBoolean()==getElectricianBoolean()
-        || s.getGroundWorkerBoolean()==getGroundWorkerBoolean()
-        || s.getMasonBoolean()==getMasonBoolean()
-        || s.getPlumberBoolean() == getPlumberBoolean();
+    return false;
   }
 
 }
