@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db070ca2-fe34-4951-9d2b-6c36a5f9e28b" name="Changes" comment="change">
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/ViewHandler.class" afterDir="false" />
-    </list>
+    <list default="true" id="db070ca2-fe34-4951-9d2b-6c36a5f9e28b" name="Changes" comment="change" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -166,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653299354514</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="change">
+      <created>1653299728138</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1653299728138</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
