@@ -9,52 +9,39 @@ import main.client.view.ViewHandler;
 
 import java.io.IOException;
 
-public class SwitchTabsView
-{
+public class SwitchTabsView {
 
   private ViewHandler viewHandler;
 
 
-
-  public void init(ViewHandler viewHandler){
-
+  public void init(ViewHandler viewHandler) {
     this.viewHandler = viewHandler;
+
   }
 
   @FXML
-  public void onProfile(ActionEvent event) throws IOException
-  {
+  public void onProfile() throws IOException {
     viewHandler.openView("HandymanLoggedIn");
   }
 
   @FXML
-  public void onFindWork(ActionEvent event) throws IOException
-  {
+  public void onFindWork() throws IOException {
     viewHandler.openView("HandymanFindWork");
   }
 
   @FXML
-  public void onRecommendation(ActionEvent event) throws IOException
-  {
+  public void onRecommendation() throws IOException {
     viewHandler.openView("HandymanJobRecommendation");
   }
 
   @FXML
-  public void onMyJobOffers(ActionEvent event) throws IOException
-  {
+  public void onMyJobOffers() throws IOException {
     viewHandler.openView("HandymanManageOffers");
   }
 
   //todo log out
-
-
-
-
-  public void reset() {
-
-  }
-
-  //public Region getRoot() {
-    //return root;
-  //}
 }
+
+
+
+

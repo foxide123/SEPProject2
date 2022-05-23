@@ -2,7 +2,6 @@ package main.server.server;
 
 import main.shared.model.*;
 import main.shared.RemoteServerInterface;
-
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
 
   public Server() throws RemoteException
   {
-    //UnicastRemoteObject.exportObject(this, 0);
+    UnicastRemoteObject.exportObject(this, 0);
     database = new Database();
   }
 
@@ -84,6 +83,11 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     System.out.println(database.getSkills(54321).getPlumberBoolean());
     System.out.println(database.getSkills(54321).getGroundWorkerBoolean());
     return database.findHandyman(address,skills,hourlyRate);
+  }
+
+  @Override
+  public ArrayList<JobOffer> findWork(Address address, JobType type, double minBudget) throws Exception {
+    return null;
   }
 
   public void updateClient(Client client) throws Exception{

@@ -21,4 +21,6 @@ public interface RemoteServerInterface extends Remote
   void createJobOffer(JobOffer jobOffer) throws Exception;
 
   ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate) throws Exception;
+  ArrayList<JobOffer> findWork(Address address, JobType type, double minBudget) throws Exception;
 }
+

@@ -1,7 +1,6 @@
 package main.client.viewmodel;
 
 import main.client.model.Model;
-import main.client.view.client.ClientFindHandymanResultView;
 import main.client.viewmodel.client.*;
 import main.client.viewmodel.handyman.*;
 import main.client.viewmodel.admin.AdminLogInViewModel;
@@ -71,7 +70,7 @@ public class ViewModelProvider
   public ClientFindHandymanResultViewModel getFindHandymanResultViewModel(){return findHandymanResultViewModel;}
   public ClientCreateJobViewModel getCreateJobViewModel(){return createJobViewModel;}
   public ClientManageOffersViewModel getManageOffersViewModel(){return manageOffersViewModel;}
-  public HandymanFindWorkViewModel getHandymanFindWorkViewModel(){return handymanFindWorkViewModel;}
+  public HandymanFindWorkViewModel getFindWorkViewModel(){return handymanFindWorkViewModel;}
   public HandymanJobRecomandationViewModel getHandymanJobRecomandationViewModel(){return handymanJobRecomandationViewModel;}
   public HandymanJobOffersViewModel getHandymanJobOffersViewModel(){return handymanJobOffersViewModel;}
 }

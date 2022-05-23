@@ -9,7 +9,6 @@ import javafx.scene.Scene;
 
 import javafx.stage.Stage;
 import main.client.viewmodel.ViewModelProvider;
-import main.client.viewmodel.handyman.HandymanFindWorkViewModel;
 
 import java.io.IOException;
 
@@ -141,10 +140,10 @@ public class ViewHandler
     }
     else if("HandymanFindWork".equals(viewToOpen))
     {
-      loader.setLocation(getClass().getResource("/resources/handyman_find_work_result.fxml"));
+      loader.setLocation(getClass().getResource("/resources/handyman_search.fxml"));
       root = loader.load();
       HandymanFindWorkView view = loader.getController();
-      view.init(this, mvViewModel.getHandymanFindWorkViewModel());
+      view.init(this, mvViewModel.getFindWorkViewModel());
       localStage.setTitle("FindWork");
     }
     else if("HandymanJobRecommendation".equals(viewToOpen)){

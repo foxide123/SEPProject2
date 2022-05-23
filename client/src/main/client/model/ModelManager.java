@@ -18,11 +18,13 @@ public class ModelManager implements Model
   private Handyman handyman;
   private Client client;
   private ArrayList<Handyman> findHandymanResultList;
+  private ArrayList<JobOffer> findWorkResultList;
 
   public ModelManager() throws NotBoundException, RemoteException
   {
     this.support = new PropertyChangeSupport(this);
     this.findHandymanResultList = new ArrayList<>();
+    this.findWorkResultList = new ArrayList<>();
     server = new Server();
   }
 
@@ -44,6 +46,15 @@ public class ModelManager implements Model
 
   public ArrayList<Handyman> findHandymanResult(){
     return findHandymanResultList;
+  }
+  public void findWork(Address address, JobType type, double minBudget)
+          throws Exception
+  {
+    findWorkResultList = server.findWork(address,type,minBudget);
+  }
+
+  public ArrayList<JobOffer> findJobResult(){
+    return findWorkResultList;
   }
 
 
@@ -106,5 +117,10 @@ public class ModelManager implements Model
 
   public void removePropertyChangeListener(String eventName, PropertyChangeListener listener) {
     support.removePropertyChangeListener(eventName, listener);
+  }
+
+  @Override
+  public ArrayList<JobOffer> findWorkResultList() {
+    return null;
   }
 }
