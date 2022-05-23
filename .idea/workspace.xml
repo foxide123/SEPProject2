@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be9fb9c4-fdb4-4c40-b880-75e4a2fbdf38" name="Changes" comment="">
+    <list default="true" id="bc1c1454-4411-4737-9109-01fc7b7bf401" name="Changes" comment="Change">
       <change afterPath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanFindWorkView.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/handyman/HandymanFindWorkViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEPProject2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEPProject2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SEPProject22.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEPProject22.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/client/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/client/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/server/Server.java" afterDir="false" />
@@ -20,54 +15,41 @@
       <change beforePath="$PROJECT_DIR$/client/src/main/server/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/server/server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/shared/model/Handyman.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/model/Handyman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/shared/model/Skills.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/model/Skills.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/model/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/ViewHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/client/SwitchTabsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/client/SwitchTabsView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/ViewModelProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/ViewModelProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanLoggedInViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanLoggedInViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/Handyman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/Handyman.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/Skills.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/Skills.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/AdminLogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/AdminLogIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ChooseActor_LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ChooseActor_LogIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ChooseActor_SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ChooseActor_SignUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientLogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientLogIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientLoggedIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientLoggedIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientSignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientSignUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanLogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanLogIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanLoggedIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanLoggedIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanSignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanSignUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/LogInRegister.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/LogInRegister.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/client_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/client_search.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/handyman_find_work_result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/handyman_find_work_result.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/handyman_job_recomandation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/handyman_job_recomandation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/handyman_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/handyman_search.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/job_offer_result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/job_offer_result.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/resources/HandymanLoggedIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/resources/HandymanLoggedIn.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/Model.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/ModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/ModelManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/server/Server.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/ViewHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/handyman/HandymanFindWorkView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/handyman/HandymanFindWorkView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/handyman/HandymanFindWorkView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/handyman/HandymanJobRecomandationView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/handyman/HandymanJobRecomandationView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/handyman/SwitchTabsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/handyman/SwitchTabsView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/ViewModelProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/ViewModelProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/handyman/HandymanFindWorkViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/handyman/HandymanFindWorkViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/handyman/HandymanFindWorkViewModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/handyman/HandymanLoggedInViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/handyman/HandymanLoggedInViewModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/server/server/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/server/server/Database.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/server/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/server/server/Server.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/RemoteServerInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/RemoteServerInterface.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/Handyman.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/Handyman.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/Skills.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/Skills.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/resources/HandymanLoggedIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/resources/HandymanLoggedIn.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="29Z3W2hh2VCcsfqns5MZASlbVBD" />
+  <component name="ProjectId" id="29NpfP2IznqJMHQ0Hx8gnVpsgTX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -76,14 +58,29 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/postgresql-42.3.4.jar" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kubak\OneDrive\Dokumenty\GitHub\SEPProject2" />
+      <recent name="C:\Users\kubak\OneDrive\Dokumenty\GitHub\SEPProject2\client\src" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kubak\OneDrive\Dokumenty\GitHub\SEPProject2\client\src\main\client\viewmodel\handyman" />
+      <recent name="C:\Users\kubak\OneDrive\Dokumenty\GitHub\SEPProject2\client\src\main\client\view\handyman" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="main.client.view.client" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main (1)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="main.client.Main" />
-      <module name="SEPProject2" />
+      <module name="SEPProject22" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.client.*" />
@@ -95,8 +92,10 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="main.server.server.Main" />
-      <module name="SEPProject2" />
+      <module name="SEPProject22" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.server.server.*" />
@@ -117,12 +116,141 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="be9fb9c4-fdb4-4c40-b880-75e4a2fbdf38" name="Changes" comment="" />
-      <created>1653306809025</created>
+      <changelist id="bc1c1454-4411-4737-9109-01fc7b7bf401" name="Changes" comment="" />
+      <created>1652963499940</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1653306809025</updated>
+      <updated>1652963499940</updated>
     </task>
+    <task id="LOCAL-00001" summary="Change">
+      <created>1652963880489</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1652963880489</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Change">
+      <created>1653036926043</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1653036926043</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Change">
+      <created>1653037719607</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1653037719607</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Change">
+      <created>1653041077184</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1653041077184</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Change">
+      <created>1653043146233</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1653043146233</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Change">
+      <created>1653046731241</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1653046731241</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Change">
+      <created>1653048113776</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1653048113776</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Change">
+      <created>1653160731757</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1653160731757</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Change">
+      <created>1653160753754</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1653160753754</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Change">
+      <created>1653163078752</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1653163078752</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Change">
+      <created>1653296061247</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1653296061247</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="8f157dd3-8833-4c07-846a-55cb37fdd64a">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/kubak/OneDrive/Dokumenty/GitHub/SEPProject2/client/src" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="8f157dd3-8833-4c07-846a-55cb37fdd64a" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Change" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SEPProject2$Main.ic" NAME="Main Coverage Results" MODIFIED="1653174904244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.server.server.*</FILTER>
+    </SUITE>
   </component>
 </project>
