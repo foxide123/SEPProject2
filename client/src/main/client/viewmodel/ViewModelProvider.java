@@ -24,6 +24,7 @@ public class ViewModelProvider
   private final ClientManageOffersViewModel manageOffersViewModel;
   private final HandymanFindWorkViewModel handymanFindWorkViewModel;
   private final HandymanJobRecomandationViewModel handymanJobRecomandationViewModel;
+  private final HandymanJobOffersViewModel handymanJobOffersViewModel;
 
   public ViewModelProvider(Model model) {
     this.clientLogInViewModel = new ClientLogInViewModel(model);
@@ -46,7 +47,7 @@ public class ViewModelProvider
     this.manageOffersViewModel = new ClientManageOffersViewModel(model);
     this.handymanFindWorkViewModel = new HandymanFindWorkViewModel(model);
     this.handymanJobRecomandationViewModel = new HandymanJobRecomandationViewModel(model);
-
+    this.handymanJobOffersViewModel = new HandymanJobOffersViewModel(model);
   }
 
   public ClientLogInViewModel getClientLogInViewModel(){return clientLogInViewModel;}
@@ -72,4 +73,5 @@ public class ViewModelProvider
   public ClientManageOffersViewModel getManageOffersViewModel(){return manageOffersViewModel;}
   public HandymanFindWorkViewModel getHandymanFindWorkViewModel(){return handymanFindWorkViewModel;}
   public HandymanJobRecomandationViewModel getHandymanJobRecomandationViewModel(){return handymanJobRecomandationViewModel;}
+  public HandymanJobOffersViewModel getHandymanJobOffersViewModel(){return handymanJobOffersViewModel;}
 }

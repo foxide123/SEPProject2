@@ -152,7 +152,14 @@ public class ViewHandler
       root = loader.load();
       HandymanJobRecomandationView view = loader.getController();
       view.init(this, mvViewModel.getHandymanJobRecomandationViewModel());
-      localStage.setTitle("FindWork");
+      localStage.setTitle("JobOfferRec");
+    }
+    else if("HandymanManageOffers".equals(viewToOpen)){
+      loader.setLocation(getClass().getResource("/resources/job_offer_result.fxml"));
+      root = loader.load();
+      HandymanJobOffersView view = loader.getController();
+      view.init(this, mvViewModel.getHandymanJobOffersViewModel());
+      localStage.setTitle("JobOffer");
     }
     //you can only show one main.client.view per stage
     scene = new Scene(root);
