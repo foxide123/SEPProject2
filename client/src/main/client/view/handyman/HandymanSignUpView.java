@@ -106,6 +106,6 @@ public class HandymanSignUpView
   }
 
   @FXML private void onBack(ActionEvent event) throws IOException{
-
+    viewHandler.openView("LogInRegister");
   }
 }
