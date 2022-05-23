@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="136.0" layoutY="14.0" prefHeight="49.0" prefWidth="243.0" text="Create Offer" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="822.0">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <AnchorPane prefHeight="765.0" prefWidth="120.0" style="-fx-background-color: #00affe;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" layoutY="52.0" prefHeight="713.0" prefWidth="140.0" spacing="40.0" style="-fx-background-color: #05b384;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="profileButton" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToProfile" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Manage Profile" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/account.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="clientFindWorker" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Find Worker" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/search_handyman.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToWork" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Create Offer" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/Create_Offer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHistory" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Manage Offers" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/manag_offers.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="140.0" layoutY="63.0" prefHeight="712.0" prefWidth="530.0">
+         <children>
+            <HBox prefHeight="53.0" prefWidth="530.0">
+               <children>
+                  <TextField fx:id="jobTitle" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="25.0" prefWidth="305.0" promptText="Title">
+                     <HBox.margin>
+                        <Insets left="5.0" top="15.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <Label fx:id="createOfferChoseCategory" prefHeight="27.0" prefWidth="141.0" text="Chose category">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefWidth="530.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="Plumber">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Electrician">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Mason">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Groundworker" />
+               </children>
+            </HBox>
+            <Label text="Chose location">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </Label>
+            <HBox prefHeight="30.0" prefWidth="530.0">
+               <children>
+                  <TextField promptText="Zip Code">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <TextField promptText="City">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <Label text="Chose budget">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+            <TextField fx:id="jobBudget" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="169.0">
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </TextField>
+            <Label text="Description">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="5.0" top="15.0" />
+               </VBox.margin>
+            </Label>
+            <TextArea fx:id="jobDescription" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="141.0" prefWidth="468.0" promptText="Write a short description about work that need to be done.">
+               <VBox.margin>
+                  <Insets left="5.0" />
+               </VBox.margin>
+            </TextArea>
+            <Button mnemonicParsing="false" text="Confirm">
+               <VBox.margin>
+                  <Insets left="5.0" top="30.0" />
+               </VBox.margin>
+            </Button>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="error" contentDisplay="RIGHT" text="error" textFill="RED">
+                     <padding>
+                        <Insets left="300.0" top="30.0" />
+                     </padding>
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

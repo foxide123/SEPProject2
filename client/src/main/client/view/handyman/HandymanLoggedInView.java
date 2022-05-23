@@ -35,7 +35,7 @@ public class HandymanLoggedInView extends SwitchTabsView
 
   public void init(ViewHandler viewHandler, HandymanLoggedInViewModel viewModel){
     this.viewModel = viewModel;
-    this.viewHandler = viewHandler;
+    super.init(viewHandler);
     cvr.textProperty().bindBidirectional(viewModel.getCVRProperty());
     firstName.textProperty().bindBidirectional(viewModel.getFirstNameProperty());
     lastName.textProperty().bindBidirectional(viewModel.getLastNameProperty());

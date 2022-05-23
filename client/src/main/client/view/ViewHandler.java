@@ -1,16 +1,15 @@
 package main.client.view;
 
 import main.client.view.client.*;
-import main.client.view.handyman.HandymanLoggedInView;
+import main.client.view.handyman.*;
 import main.client.view.admin.AdminLogInView;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 import javafx.stage.Stage;
-import main.client.view.handyman.HandymanLogInView;
-import main.client.view.handyman.HandymanSignUpView;
 import main.client.viewmodel.ViewModelProvider;
+import main.client.viewmodel.handyman.HandymanFindWorkViewModel;
 
 import java.io.IOException;
 
@@ -139,6 +138,21 @@ public class ViewHandler
       ClientManageOffersView view = loader.getController();
       view.init(this, mvViewModel.getManageOffersViewModel());
       localStage.setTitle("ManageOffers");
+    }
+    else if("HandymanFindWork".equals(viewToOpen))
+    {
+      loader.setLocation(getClass().getResource("/resources/handyman_find_work_result.fxml"));
+      root = loader.load();
+      HandymanFindWorkView view = loader.getController();
+      view.init(this, mvViewModel.getHandymanFindWorkViewModel());
+      localStage.setTitle("FindWork");
+    }
+    else if("HandymanJobRecommendation".equals(viewToOpen)){
+      loader.setLocation(getClass().getResource("/resources/handyman_job_recomandation.fxml"));
+      root = loader.load();
+      HandymanJobRecomandationView view = loader.getController();
+      view.init(this, mvViewModel.getHandymanJobRecomandationViewModel());
+      localStage.setTitle("FindWork");
     }
     //you can only show one main.client.view per stage
     scene = new Scene(root);

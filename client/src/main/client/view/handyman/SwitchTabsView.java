@@ -13,34 +13,34 @@ public class SwitchTabsView
 {
 
   private ViewHandler viewHandler;
-  private Region root;
 
 
-  public void init(ViewHandler viewHandler, Region root){
+
+  public void init(ViewHandler viewHandler){
+
     this.viewHandler = viewHandler;
-    this.root = root;
   }
 
   @FXML
-  public void onProfile() throws IOException
+  public void onProfile(ActionEvent event) throws IOException
   {
     viewHandler.openView("HandymanLoggedIn");
   }
 
   @FXML
-  public void onFindWork() throws IOException
+  public void onFindWork(ActionEvent event) throws IOException
   {
     viewHandler.openView("HandymanFindWork");
   }
 
   @FXML
-  public void onRecommendation() throws IOException
+  public void onRecommendation(ActionEvent event) throws IOException
   {
     viewHandler.openView("HandymanJobRecommendation");
   }
 
   @FXML
-  public void onMyJobOffers() throws IOException
+  public void onMyJobOffers(ActionEvent event) throws IOException
   {
     viewHandler.openView("HandymanManageOffers");
   }
@@ -54,7 +54,7 @@ public class SwitchTabsView
 
   }
 
-  public Region getRoot() {
-    return root;
-  }
+  //public Region getRoot() {
+    //return root;
+  //}
 }
