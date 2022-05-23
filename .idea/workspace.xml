@@ -2,15 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc1c1454-4411-4737-9109-01fc7b7bf401" name="Changes" comment="Change">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/client/ClientFindHandymanResultView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/client/ClientFindHandymanResultView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/client/ClientFindHandymanView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/client/ClientFindHandymanView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/viewmodel/client/ClientFindHandymanViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/client/ClientFindHandymanViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/server/server/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/server/server/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/server/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/server/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/shared/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/model/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/shared/model/Skills.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/model/Skills.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SEPProject22.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEPProject22.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/client/ClientSignUpView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/client/ClientSignUpView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanSignUpView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanSignUpView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/Model.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/ModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/ModelManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/ViewHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/ClientCreateJobView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/ClientCreateJobView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/ClientFindWorkerView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/ClientManageOffersView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/ClientManageOffersView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/ClientSignUpView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/ClientSignUpView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/SwitchTabsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/SwitchTabsView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/handyman/HandymanSignUpView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/handyman/HandymanSignUpView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/ViewModelProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/ViewModelProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/client/ClientCreateJobViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/client/ClientCreateJobViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/client/ClientFindWorkerViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/server/server/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/server/server/Database.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/server/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/server/server/Server.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/RemoteServerInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/RemoteServerInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/Address.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/JobOffer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/JobOffer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/JobType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/JobType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/Skills.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/Skills.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/resources/ClientLoggedIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/resources/ClientLoggedIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/resources/client_create_offer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/resources/client_create_offer.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/resources/client_manage_offers.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/resources/client_manage_offers.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/resources/client_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/resources/client_search.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/resources/handyman_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/resources/handyman_search.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,8 +57,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/postgresql-42.3.4.jar" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Software-A21/Software-A21/ForLater/openjfx-11.0.2_windows-x64_bin-sdk/javafx-sdk-11.0.2/lib/javafx.web.jar" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -52,8 +73,10 @@
   </component>
   <component name="RunManager" selected="Application.Main (1)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="main.client.Main" />
-      <module name="client" />
+      <module name="SEPProject22" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.client.*" />
@@ -65,14 +88,29 @@
       </method>
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="main.server.server.Main" />
-      <module name="client" />
+      <module name="SEPProject22" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="main.server.server.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="client" />
+      <option name="filePath" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

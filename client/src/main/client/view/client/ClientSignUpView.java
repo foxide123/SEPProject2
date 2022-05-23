@@ -62,9 +62,8 @@ public class ClientSignUpView
     }
   }
 
-  @FXML private void onBack(ActionEvent event) throws IOException
-  {
-    viewHandler.openView("ChooseActorLogIn");
+  @FXML private void onBack(ActionEvent event) throws IOException{
+    viewHandler.openView("LogInRegister");
   }
 /*
   @FXML private void onSignUp(ActionEvent event){
