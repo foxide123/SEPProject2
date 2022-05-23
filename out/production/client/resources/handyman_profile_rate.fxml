@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="136.0" layoutY="14.0" prefHeight="49.0" prefWidth="274.0" text="Handyman name" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="791.0">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+      </Label>
+      <AnchorPane prefHeight="765.0" prefWidth="120.0" style="-fx-background-color: #00affe;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" layoutY="52.0" prefHeight="713.0" prefWidth="140.0" spacing="40.0" style="-fx-background-color: #05b384;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="profileButton" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToProfile" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Manage Profile" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/account.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="clientFindWorker" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Find Worker" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/search_handyman.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToWork" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Create Offer" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/Create_Offer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHistory" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Manage Offers" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/manag_offers.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="140.0" layoutY="63.0" prefHeight="712.0" prefWidth="530.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextArea fx:id="handymanProfileDescription" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="200.0" prefWidth="409.0" />
+                  <TextArea fx:id="handimanProfileHourlyRate" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="102.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </TextArea>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ListView fx:id="handimanProfileSkils" maxWidth="-Infinity" prefHeight="90.0" prefWidth="233.0">
+                     <HBox.margin>
+                        <Insets top="10.0" />
+                     </HBox.margin>
+                  </ListView>
+                  <HBox prefHeight="100.0" prefWidth="296.0">
+                     <children>
+                        <TextArea fx:id="handymanRatingNumber" maxHeight="-Infinity" prefHeight="51.0" prefWidth="54.0">
+                           <HBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </HBox.margin>
+                        </TextArea>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/star-rating.jpg" />
+                           </image>
+                           <HBox.margin>
+                              <Insets top="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="528.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <VBox maxHeight="-Infinity" minHeight="-Infinity" prefHeight="118.0" prefWidth="235.0">
+                     <children>
+                        <TextField fx:id="handymaPhone" prefHeight="58.0" prefWidth="242.0" />
+                        <TextField fx:id="handymanEmail" prefHeight="58.0" prefWidth="235.0" />
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="118.0" prefWidth="255.0">
+                     <children>
+                        <Label text="Rate">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <HBox.margin>
+                              <Insets left="10.0" top="10.0" />
+                           </HBox.margin>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                        </Label>
+                        <TextField fx:id="handymanGiveRating" prefHeight="51.0" prefWidth="54.0" />
+                        <Button mnemonicParsing="false" text="Save">
+                           <HBox.margin>
+                              <Insets left="20.0" top="90.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

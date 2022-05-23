@@ -38,9 +38,11 @@ public class Handyman implements Serializable
     this.address = tmpAddress;
   }
 
-  public ArrayList<String> getSkills(){
-    return skills.getSkills();
+  public Skills getSkills(){
+    return skills;
   }
+
+  public ArrayList<String> getSkillsList(){return skills.getSkills();}
 
   public void setSkills(Skills skills){
     this.skills=skills;

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.client.ClientManageOffersView">
+   <children>
+      <Label layoutX="136.0" layoutY="14.0" prefHeight="49.0" prefWidth="243.0" text="Manage Offers" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="822.0">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <AnchorPane prefHeight="765.0" prefWidth="120.0" style="-fx-background-color: #00affe;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" layoutY="52.0" prefHeight="713.0" prefWidth="140.0" spacing="40.0" style="-fx-background-color: #05b384;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="profileButton" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onManageProfile" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Manage Profile" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/account.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="clientFindWorker" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onFindWorker" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Find Worker" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/search_handyman.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onCreateOffer" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Create Offer" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/Create_Offer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onManageOffers" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../resources/utils/css/style.css" text="Manage Offers" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/utils/images/manag_offers.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Label fx:id="employerProfileCompanyNameLabel" layoutX="227.0" layoutY="10.0" prefHeight="56.0" prefWidth="959.0" textFill="#008fcc">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <ListView layoutX="139.0" layoutY="63.0" prefHeight="703.0" prefWidth="531.0" />
+      <Pagination layoutX="276.0" layoutY="566.0" prefHeight="200.0" prefWidth="200.0" />
+   </children>
+</AnchorPane>
