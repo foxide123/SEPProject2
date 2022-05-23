@@ -22,6 +22,7 @@ public class ModelManager implements Model
   public ModelManager() throws NotBoundException, RemoteException
   {
     this.support = new PropertyChangeSupport(this);
+    this.findHandymanResultList = new ArrayList<>();
     server = new Server();
   }
 

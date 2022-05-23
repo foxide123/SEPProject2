@@ -19,36 +19,30 @@ public class ClientFindHandymanViewModel
   private Model model;
   @FXML private StringProperty city;
   @FXML private StringProperty zip;
-  @FXML private DoubleProperty hourlyRate;
-  @FXML private StringProperty hourlyRateLabel;
 
   public ClientFindHandymanViewModel(Model model){
     this.model = model;
     this.city = new SimpleStringProperty("");
     this.zip = new SimpleStringProperty("");
-    this.hourlyRate = new SimpleDoubleProperty();
-    this.hourlyRateLabel = new SimpleStringProperty("budget");
-
-    hourlyRate.addListener(
-        new ChangeListener<Number>() {
-
-          public void changed(ObservableValue<? extends Number >
-              observable, Number oldValue, Number newValue)
-          {
-
-            hourlyRateLabel.setValue("value: " + hourlyRate.getValue());
-          }
-        });
   }
 
-  public boolean onSearch(boolean plumber, boolean electrician, boolean mason, boolean groundworker)
+  public boolean onSearch(boolean plumber, boolean electrician, boolean mason,
+      boolean groundworker, String hourlyRate)
       throws Exception
   {
+    System.out.println("city: " + city.get());
+    System.out.println("zip: " + zip.get());
+    System.out.println("plumber: " + plumber);
+    System.out.println("electrician: " + electrician);
+    System.out.println("mason: " + mason);
+    System.out.println("groundworker: " + groundworker);
+    System.out.println("hourlyRate: " + hourlyRate);
+
     try{
        model.findHandyman(new Address(
               city.get(), zip.get()),
           new Skills(plumber, electrician, mason, groundworker),
-          Integer.parseInt(String.valueOf(hourlyRate.get()))
+          Integer.parseInt(hourlyRate)
       );
       return true;
     }catch (Exception e){
@@ -58,6 +52,4 @@ public class ClientFindHandymanViewModel
 
   public StringProperty getCityProperty(){return city;}
   public StringProperty getZipProperty(){return zip;}
-  public DoubleProperty getHourlyRateProperty(){return hourlyRate;}
-  public StringProperty getHourlyRateLabelProperty(){return hourlyRateLabel;}
 }

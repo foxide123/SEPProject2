@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class ClientFindHandymanResultView extends SwitchTabsView
 {
   @FXML private ListView listView;
-  @FXML private Label errorLabel;
+  @FXML private Label labelError;
   private ViewHandler viewHandler;
   private ClientFindHandymanResultViewModel viewModel;
 
@@ -21,17 +21,17 @@ public class ClientFindHandymanResultView extends SwitchTabsView
     super.init(viewHandler);
     this.viewHandler = viewHandler;
     this.viewModel = viewModel;
-    errorLabel.textProperty().bindBidirectional(viewModel.getLabelError());
+    labelError.textProperty().bindBidirectional(viewModel.getLabelError());
     setListView();
   }
 
   public void setListView(){
     ArrayList<Handyman> handymanList = viewModel.getHandymanList();
     if(handymanList.isEmpty()){
-      errorLabel.setText("No handyman found");
+      labelError.setText("No handyman found");
     }else{
       for(int i=0; i<handymanList.size(); i++){
-        listView.getItems().add(handymanList.get(i).getFirstName() + " " + handymanList.get(i).getLastName());
+        listView.getItems().add(handymanList.get(i).getCVR());
       }
     }
   }

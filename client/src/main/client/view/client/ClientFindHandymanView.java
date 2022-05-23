@@ -31,8 +31,6 @@ public class ClientFindHandymanView extends SwitchTabsView
     this.viewModel = viewModel;
     tf_city.textProperty().bindBidirectional(viewModel.getCityProperty());
     tf_zip.textProperty().bindBidirectional(viewModel.getZipProperty());
-    hourlyRate.blockIncrementProperty().bindBidirectional(viewModel.getHourlyRateProperty());
-    hourlyRateLabel.textProperty().bindBidirectional(viewModel.getHourlyRateLabelProperty());
 
     hourlyRate.valueProperty().addListener(
         new ChangeListener<Number>() {
@@ -41,20 +39,21 @@ public class ClientFindHandymanView extends SwitchTabsView
               observable, Number oldValue, Number newValue)
           {
 
-            hourlyRateLabel.setText("value: " + hourlyRate.getValue());
+            hourlyRateLabel.setText(String.valueOf((int) hourlyRate.getValue()));
           }
         });
   }
 
   @FXML public void onSearch(ActionEvent event) throws Exception
   {
-    if (viewModel.onSearch(rb_plumber.isSelected(), rb_electrician.isSelected(),
-        rb_mason.isSelected(), rb_groundworker.isSelected()))
-    {
-      viewHandler.openView("FindHandymanResult");
-    }
-    else{
-      System.out.println("Didn't create hanydman account");
+    try{
+      if (viewModel.onSearch(rb_plumber.isSelected(), rb_electrician.isSelected(),
+          rb_mason.isSelected(), rb_groundworker.isSelected(), hourlyRateLabel.getText()))
+      {
+        viewHandler.openView("FindHandymanResult");
+      }
+    }catch (Exception e){
+      e.printStackTrace();
     }
   }
 

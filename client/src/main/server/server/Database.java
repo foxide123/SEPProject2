@@ -158,7 +158,6 @@ public class Database{
 
     public void insertSkills(Handyman handyman) {
 
-        for(int i=0; i<handyman.getSkills().size(); i++){
             String SQL =
                 "INSERT INTO skills(CVR, skill)" + "VALUES(?,?)";
             PreparedStatement posted = null;
@@ -166,15 +165,17 @@ public class Database{
             try {
                 conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
                 posted = conn.prepareStatement(SQL);
-                posted.setLong(1, handyman.getCVR());
-                posted.setString(2, handyman.getSkills().get(i));
-                posted.execute();
+                for(int i=0; i<handyman.getSkills().size(); i++)
+                {
+                    posted.setLong(1, handyman.getCVR());
+                    posted.setString(2, handyman.getSkills().get(i));
+                    posted.execute();
+                }
 
             } catch (SQLException e) {
 
                 e.printStackTrace();
             }
-        }
     }
 
 
@@ -205,6 +206,7 @@ public class Database{
 
 
     public int insertAddress(Address address) {
+        //(!getAllAddress().contains(address))
         if (!getAllAddress().contains(address)) {
             String SQL =
                 "INSERT INTO address(city,zip)" + "VALUES(?,?)";
@@ -285,6 +287,10 @@ public class Database{
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        for(int i=0; i<addresses.size(); i++){
+            System.out.println(addresses.get(i).getCity() + addresses.get(i).getZip());
+        }
         return addresses;
     }
 
@@ -326,14 +332,16 @@ public class Database{
 
     public ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate){
             ArrayList<Handyman> tmpHandymanList = new ArrayList<>();
-            String SQL = "SELECT * from handyman WHERE  address=? AND hourlyRate=?";
+
+
+            String SQL = "SELECT * from handyman WHERE address=? AND  hourlyRate<=?";
             ResultSet rs = null;
             PreparedStatement preparedStatement = null;
             Connection conn = null;
             try {
                 conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
                 preparedStatement = conn.prepareStatement(SQL);
-                preparedStatement.setInt(1, insertAddress(address));
+                preparedStatement.setInt(1, getAddressID(address));
                 preparedStatement.setInt(2, hourlyRate);
                 rs = preparedStatement.executeQuery();
                 while (rs.next()) {
@@ -344,14 +352,15 @@ public class Database{
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            return findHandymanWithSkills(tmpHandymanList, skills);
+            return findHandymanWithSkills(tmpHandymanList,skills);
     }
 
     public ArrayList<Handyman> findHandymanWithSkills(ArrayList<Handyman> tmpHandymanList, Skills skills){
         ArrayList<Handyman> handymanList = new ArrayList<>();
 
         for(int i=0; i<tmpHandymanList.size(); i++){
-            if(getSkills(tmpHandymanList.get(i).getCVR()).equalsAtLeastOne(skills)){
+            if(getSkills(tmpHandymanList.get(i).getCVR())
+                .equalsAtLeastOne(skills)){
                 handymanList.add(tmpHandymanList.get(i));
             }
         }

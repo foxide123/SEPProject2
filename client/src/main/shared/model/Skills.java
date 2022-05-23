@@ -67,10 +67,6 @@ public class Skills implements Serializable
 
   public boolean equalsAtLeastOne(Object o) {
 
-    // If the object is compared with itself then return true
-    if (o == this) {
-      return true;
-    }
 
         /* Check if o is an instance of Complex or not
           "null instanceof [type]" also returns false */
@@ -82,10 +78,10 @@ public class Skills implements Serializable
     Skills s = (Skills) o;
 
     // Compare the data members and return accordingly
-    return s.getElectricianBoolean()==this.getElectricianBoolean()
-        || s.getGroundWorkerBoolean()==this.getGroundWorkerBoolean()
-        || s.getMasonBoolean()==this.getMasonBoolean()
-        || s.getPlumberBoolean() == this.getPlumberBoolean();
+    return s.getElectricianBoolean()==getElectricianBoolean()
+        || s.getGroundWorkerBoolean()==getGroundWorkerBoolean()
+        || s.getMasonBoolean()==getMasonBoolean()
+        || s.getPlumberBoolean() == getPlumberBoolean();
   }
 
 }

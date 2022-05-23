@@ -32,4 +32,24 @@ public class Address implements Serializable
   public void setZip(String zip) {
     this.zip = zip;
   }
+
+  public boolean equals(Object o) {
+
+    // If the object is compared with itself then return true
+    if (o == this) {
+      return true;
+    }
+
+        /* Check if o is an instance of Complex or not
+          "null instanceof [type]" also returns false */
+    if (!(o instanceof Address)) {
+      return false;
+    }
+
+    // typecast o to Complex so that we can compare data members
+    Address address = (Address) o;
+
+    // Compare the data members and return accordingly
+    return this.getZip().equals(address.getZip()) && this.getCity().equals(address.getCity());
+  }
 }
