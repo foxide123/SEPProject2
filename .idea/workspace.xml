@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db070ca2-fe34-4951-9d2b-6c36a5f9e28b" name="Changes" comment="Change">
-      <change afterPath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanJobOffersView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/handyman/HandymanJobOffersViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/viewmodel/ViewModelProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/ViewModelProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/resources/job_offer_result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/resources/job_offer_result.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/ModelManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/ModelManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/server/Server.class" afterDir="false" />
+    <list default="true" id="db070ca2-fe34-4951-9d2b-6c36a5f9e28b" name="Changes" comment="change">
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/ViewHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/ClientCreateJobView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/ClientManageOffersView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/ClientManageOffersView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/SwitchTabsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/view/client/SwitchTabsView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/ViewModelProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/ViewModelProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/client/ClientCreateJobViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/client/viewmodel/client/ClientCreateJobViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/server/server/Database.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/server/server/Database.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/server/server/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/server/server/Server.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/RemoteServerInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/RemoteServerInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/Address.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/Address.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/JobOffer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/JobOffer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/JobType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/JobType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/Skills.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/main/shared/model/Skills.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/resources/ClientLoggedIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/resources/ClientLoggedIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/resources/client_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/resources/client_search.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/resources/job_offer_result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject22/resources/job_offer_result.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653163078752</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="change">
+      <created>1653299354514</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1653299354514</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -230,7 +213,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change" />
+    <MESSAGE value="change" />
+    <option name="LAST_COMMIT_MESSAGE" value="change" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SEPProject2$Main.ic" NAME="Main Coverage Results" MODIFIED="1653174904244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
