@@ -53,6 +53,12 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     return server.findHandyman(address, skills, hourlyRate);
   }
 
+  @Override public ArrayList<JobOffer> findWork(Address address, JobType type,
+      double minBudget) throws Exception
+  {
+    return server.findWork(address,type, minBudget);
+  }
+
   public void updateClient(Client client) throws Exception{
     server.updateClient(client);
   }

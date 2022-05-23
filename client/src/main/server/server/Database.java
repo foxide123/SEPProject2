@@ -165,10 +165,10 @@ public class Database{
             try {
                 conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
                 posted = conn.prepareStatement(SQL);
-                for(int i=0; i<handyman.getSkills().size(); i++)
+                for(int i=0; i<handyman.getSkillsList().size(); i++)
                 {
                     posted.setLong(1, handyman.getCVR());
-                    posted.setString(2, handyman.getSkills().get(i));
+                    posted.setString(2, handyman.getSkillsList().get(i));
                     posted.execute();
                 }
 
@@ -179,7 +179,7 @@ public class Database{
     }
 
 
-    public Skills getSkills(long cvr) {
+    public ArrayList<String> getSkills(long cvr) {
 
         Skills skills = new Skills(false,false,false,false);
         String SQL = "SELECT skill FROM skills WHERE cvr=?";
@@ -199,7 +199,7 @@ public class Database{
             e.printStackTrace();
         }
         skills.setSkills(skillsArrayList);
-        return skills;
+        return skillsArrayList;
     }
 
 
@@ -357,13 +357,17 @@ public class Database{
 
     public ArrayList<Handyman> findHandymanWithSkills(ArrayList<Handyman> tmpHandymanList, Skills skills){
         ArrayList<Handyman> handymanList = new ArrayList<>();
-
         for(int i=0; i<tmpHandymanList.size(); i++){
-            if(getSkills(tmpHandymanList.get(i).getCVR())
-                .equalsAtLeastOne(skills)){
+            if(skills.equalsAtLeastOne(getSkills(tmpHandymanList.get(i).getCVR()))){
                 handymanList.add(tmpHandymanList.get(i));
             }
+            /*
+            if(skills.equalsAtLeastOne(getSkills(tmpHandymanList.get(i).getCVR()))){
+                handymanList.add(tmpHandymanList.get(i));
+            }
+             */
         }
+
         return handymanList;
     }
 
@@ -464,6 +468,7 @@ public class Database{
         client.setAddress(getAddressByID(rs.getInt("address")));
         client.setDescription(rs.getString("description"));
     }
+
 
 
 }

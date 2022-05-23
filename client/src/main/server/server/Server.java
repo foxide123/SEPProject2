@@ -12,7 +12,7 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
 
   public Server() throws RemoteException
   {
-    UnicastRemoteObject.exportObject(this, 0);
+//    UnicastRemoteObject.exportObject(this, 0);
     database = new Database();
   }
 
@@ -78,10 +78,6 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   }
 
   public ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate) throws Exception{
-    System.out.println(database.getSkills(54321).getElectricianBoolean());
-    System.out.println(database.getSkills(54321).getMasonBoolean());
-    System.out.println(database.getSkills(54321).getPlumberBoolean());
-    System.out.println(database.getSkills(54321).getGroundWorkerBoolean());
     return database.findHandyman(address,skills,hourlyRate);
   }
 
