@@ -104,10 +104,10 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   public void createJobOffer(JobOffer jobOffer) throws Exception {
     try{
       System.out.println("jobType: " + jobOffer.getJobTypeList().get(0));
-      System.out.println("addressID: " + database.insertAddress(jobOffer.getLocation()));
-      database.insertJobType(jobOffer);
-      Thread.sleep(1000);
+      System.out.println(jobOffer.getLocation().getCity());
+      System.out.println(jobOffer.getLocation().getZip());
       database.createJob(jobOffer);
+      database.insertJobType(jobOffer);
     } catch (Exception e){
       throw new RemoteException(e.getMessage());
     }

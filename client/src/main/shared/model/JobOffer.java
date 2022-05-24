@@ -61,4 +61,6 @@ public class JobOffer implements Serializable, JobOfferInterface {
     public void setJobType(JobType jobType){this.jobType = jobType;}
 
     public ArrayList<String> getJobTypeList(){return jobType.getJobTypes();}
+
+    public long getCpr(){return cpr;}
 }

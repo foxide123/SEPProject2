@@ -205,7 +205,6 @@ public class Database{
 
 
     public int insertAddress(Address address) {
-        //(!getAllAddress().contains(address))
         if (!getAllAddress().contains(address)) {
             String SQL =
                 "INSERT INTO address(city,zip)" + "VALUES(?,?)";
@@ -226,7 +225,7 @@ public class Database{
         return getAddressID(address);
     }
 
-    private int getAddressID(Address address) {
+    public int getAddressID(Address address) {
         String SQL = "SELECT addressID from address WHERE  city=? AND zip=?"/*+"VALUES(?,?,?,?)"*/;
         int id = 0;
         ResultSet rs = null;
@@ -428,7 +427,8 @@ public class Database{
             posted.setString(1, job.getJobTitle());
             posted.setString(2, job.getJobDescription());
             posted.setInt(3, job.getJobBudget());
-            posted.setInt(4, insertAddress(job.getLocation()));
+            posted.setInt(4, 14);
+            //posted.setInt(4, insertAddress(job.getLocation()));
             posted.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -438,19 +438,20 @@ public class Database{
     public void insertJobType(JobOffer job){
         Connection conn = null;
         String SQL =
-            "INSERT INTO category(jobTitle, category)"
-                + "VALUES(?,?)";
+            "INSERT INTO category(cpr, jobTitle, category)"
+                + "VALUES(?,?,?)";
         PreparedStatement posted = null;
         try {
             conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             posted = conn.prepareStatement(SQL);
 
-           // for(int i=0; i<job.getJobTypeList().size(); i++)
-           // {
-                posted.setString(1, job.getJobTitle());
-                posted.setString(2, "mason"/*job.getJobTypeList().get(0)*/);
+           for(int i=0; i<job.getJobTypeList().size(); i++)
+           {
+                posted.setLong(1, job.getCpr());
+                posted.setString(2, job.getJobTitle());
+                posted.setString(3, job.getJobTypeList().get(i));
                 posted.executeUpdate();
-           // }
+           }
         } catch (SQLException e) {
             e.printStackTrace();
         }

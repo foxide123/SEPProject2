@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc1c1454-4411-4737-9109-01fc7b7bf401" name="Changes" comment="Change">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEPProject2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEPProject2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/client/ClientCreateJobView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/client/ClientCreateJobView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/viewmodel/client/ClientCreateJobViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/client/ClientCreateJobViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/server/server/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/server/server/Database.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/server/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/server/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/shared/model/Handyman.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/model/Handyman.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/shared/model/JobOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/model/JobOffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/shared/model/JobType.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/model/JobType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/resources/client_create_offer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/resources/client_create_offer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/resources/handyman_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/resources/handyman_search.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/RunApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/RunApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/model/Model.class" afterDir="false" />
@@ -186,7 +177,7 @@
       <recent name="main.client.view.client" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -219,8 +210,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -317,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653330573887</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Change">
+      <created>1653380821614</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1653380821614</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
