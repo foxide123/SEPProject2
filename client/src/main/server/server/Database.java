@@ -40,7 +40,7 @@ public class Database{
         try {
             conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             pstm = conn.prepareStatement( SQL );
-            pstm.setInt(1, CVR);
+            pstm.setLong(1, CVR);
             pstm.setString(2, password);
             rs = pstm.executeQuery();
             while (rs.next()) {
@@ -71,7 +71,7 @@ public class Database{
         try {
             conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             pstm = conn.prepareStatement(SQL);
-            pstm.setInt(1, CPR);
+            pstm.setLong(1, CPR);
             pstm.setString(2, password);
             rs = pstm.executeQuery();
             while (rs.next()) {
@@ -198,7 +198,6 @@ public class Database{
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        skills.setSkills(skillsArrayList);
         return skillsArrayList;
     }
 
@@ -455,7 +454,6 @@ public class Database{
         handyman.setAddress(getAddressByID(rs.getInt("address")));
         handyman.setHourlyRate(rs.getInt("hourlyRate"));
         handyman.setRating(rs.getString("rating"));
-        handyman.setSkills(getSkills(rs.getInt("cvr")));
     }
 
 

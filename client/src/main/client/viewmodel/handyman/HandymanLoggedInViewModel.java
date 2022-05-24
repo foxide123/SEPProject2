@@ -72,6 +72,7 @@ public class HandymanLoggedInViewModel
     email.setValue(tmpHandyman.getEmail());
     hourlyRate.setValue(String.valueOf(tmpHandyman.getHourlyRate()));
 
+/*
     for(int i=0; i<tmpHandyman.getSkillsList().size(); i++){
       if(tmpHandyman.getSkillsList().get(i).equals("plumber")){
         plumber.set(true);
@@ -86,6 +87,7 @@ public class HandymanLoggedInViewModel
         groundworker.set(true);
       }
     }
+    */
   }
 
   public void onSave(boolean plumber, boolean electrician, boolean mason, boolean groundworker){
