@@ -120,7 +120,7 @@ public class ModelManager implements Model
   }
 
   @Override
-  public ArrayList<JobOffer> findWorkResultList() {
+  public ArrayList<JobOffer> handymanFindWorkResult() {
     return null;
   }
 }
