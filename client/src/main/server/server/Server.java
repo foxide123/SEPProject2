@@ -19,10 +19,6 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   @Override public Handyman logInHandyman(int CVR, String password)
       throws Exception
   {
-    System.out.println(database.getSkills(54321).get(0));
-    System.out.println(database.getSkills(54321).get(1));
-    System.out.println(database.getSkills(54321).get(2));
-    System.out.println(database.getSkills(54321).get(3));
     Handyman handyman = null;
     try {
       handyman = database.loginHandyman(CVR, password);
