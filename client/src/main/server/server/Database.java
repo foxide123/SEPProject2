@@ -427,9 +427,30 @@ public class Database{
             posted = conn.prepareStatement(SQL);
             posted.setString(1, job.getJobTitle());
             posted.setString(2, job.getJobDescription());
-            posted.setString(3, job.getJobBudget());
+            posted.setInt(3, job.getJobBudget());
             posted.setInt(4, insertAddress(job.getLocation()));
             posted.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void insertJobType(JobOffer job){
+        Connection conn = null;
+        String SQL =
+            "INSERT INTO category(jobTitle, category)"
+                + "VALUES(?,?)";
+        PreparedStatement posted = null;
+        try {
+            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            posted = conn.prepareStatement(SQL);
+
+           // for(int i=0; i<job.getJobTypeList().size(); i++)
+           // {
+                posted.setString(1, job.getJobTitle());
+                posted.setString(2, "mason"/*job.getJobTypeList().get(0)*/);
+                posted.executeUpdate();
+           // }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -454,6 +475,13 @@ public class Database{
         handyman.setAddress(getAddressByID(rs.getInt("address")));
         handyman.setHourlyRate(rs.getInt("hourlyRate"));
         handyman.setRating(rs.getString("rating"));
+
+        ArrayList<String> skillsList = getSkills(rs.getLong("cvr"));
+        for(int i=0; i<skillsList.size();i++){
+            if(skillsList.get(i).equals("plumber")){
+                //handyman.setSkills();
+            }
+        }
     }
 
 

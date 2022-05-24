@@ -6,6 +6,7 @@ import main.client.model.Model;
 import main.shared.model.Address;
 import main.shared.model.Client;
 import main.shared.model.JobOffer;
+import main.shared.model.JobType;
 
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -35,15 +36,13 @@ public class ClientCreateJobViewModel
 
     }
 
-    public StringProperty jobTitleProperty(){return jobTitle;}
 
-    public StringProperty getJobDescription(){return jobDescription;}
-
-
-    public boolean createJob() {
+    public boolean createJob(JobType jobType) {
         try {
-            model.createJob(new JobOffer(jobTitle.get(), jobDescription.get(), jobBudget.get(),
-                    new Address( city.get(), zipCode.get()), model.getClient().getCPR()));
+            model.createJob(new JobOffer(jobTitle.get(), jobDescription.get(), Integer.parseInt(jobBudget.get()),
+                    new Address(city.get(), zipCode.get()),
+                model.getClient().getCPR(), jobType
+                ));
             return true;
         } catch (Exception e) {
             e.printStackTrace();

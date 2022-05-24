@@ -14,7 +14,7 @@ public class JobType implements Serializable
         setValues(plumbing,electrical,masonry,groundWorking);
     }
 
-    public ArrayList<String> getJobType(){
+    public ArrayList<String> getJobTypes(){
         ArrayList<String> tmpList = new ArrayList<>();
         if(plumbing==true){
             tmpList.add("plumbing");
