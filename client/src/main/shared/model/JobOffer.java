@@ -8,27 +8,23 @@ public class JobOffer implements Serializable, JobOfferInterface {
 
     private String jobTitle;
     private String jobDescription;
-    private String jobBudget;
+    private int jobBudget;
     private Address location;
-    private Client client;
-    private ArrayList<Handyman> aplicants;
-    private JobType type;
+    private long cpr;
+    private JobType jobType;
 
 
     private static final long serialVersionUID = 4;
 
 
 
-    public JobOffer(String jobTitle, String jobDescription, String jobBudget, Address location, long cpr) {
+    public JobOffer(String jobTitle, String jobDescription, int jobBudget, Address location, long cpr, JobType jobType) {
         this.jobTitle = jobTitle;
         this.jobDescription = jobDescription;
         this.jobBudget = jobBudget;
         this.location = location;
-        this.client = client;
-        aplicants = new ArrayList<Handyman>();
-        this.type = type;
-
-
+        this.cpr = cpr;
+        this.jobType = jobType;
     }
 
 
@@ -36,7 +32,6 @@ public class JobOffer implements Serializable, JobOfferInterface {
     public String getJobTitle() {
         return jobTitle;
     }
-
     public void setJobTitle(String jobTitle) {
         this.jobTitle = jobTitle;
     }
@@ -44,41 +39,26 @@ public class JobOffer implements Serializable, JobOfferInterface {
     public String getJobDescription() {
         return jobDescription;
     }
-
     public void setJobDescription(String jobDescription) {
         this.jobDescription = jobDescription;
     }
 
-    public String getJobBudget() {
+    public int getJobBudget() {
         return jobBudget;
     }
-
-    public void setJobBudget(String jobBudget) {
+    public void setJobBudget(int jobBudget) {
         this.jobBudget = jobBudget;
     }
-
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
-    public ArrayList<Handyman> getAplicants() {
-        return aplicants;
-    }
-    public ArrayList<String> getJobType(){
-        return type.getJobType();}
-
 
     public Address getLocation() {
         return location;
     }
-
     public void setLocation(Address location) {
         this.location = location;
     }
 
+    public JobType getJobType(){return jobType;}
+    public void setJobType(JobType jobType){this.jobType = jobType;}
 
+    public ArrayList<String> getJobTypeList(){return jobType.getJobTypes();}
 }

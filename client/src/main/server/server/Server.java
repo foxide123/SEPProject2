@@ -19,8 +19,10 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   @Override public Handyman logInHandyman(int CVR, String password)
       throws Exception
   {
-    System.out.println(CVR);
-    System.out.println(password);
+    System.out.println(database.getSkills(54321).get(0));
+    System.out.println(database.getSkills(54321).get(1));
+    System.out.println(database.getSkills(54321).get(2));
+    System.out.println(database.getSkills(54321).get(3));
     Handyman handyman = null;
     try {
       handyman = database.loginHandyman(CVR, password);
@@ -100,7 +102,12 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   }
 
   public void createJobOffer(JobOffer jobOffer) throws Exception {
-    try{database.createJob(jobOffer);
+    try{
+      System.out.println("jobType: " + jobOffer.getJobTypeList().get(0));
+      System.out.println("addressID: " + database.insertAddress(jobOffer.getLocation()));
+      database.insertJobType(jobOffer);
+      Thread.sleep(1000);
+      database.createJob(jobOffer);
     } catch (Exception e){
       throw new RemoteException(e.getMessage());
     }
