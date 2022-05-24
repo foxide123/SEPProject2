@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="136.0" layoutY="14.0" prefHeight="49.0" prefWidth="243.0" text="JobTitle" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="822.0">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <AnchorPane prefHeight="765.0" prefWidth="120.0" style="-fx-background-color: #00affe;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" layoutY="52.0" prefHeight="713.0" prefWidth="140.0" spacing="40.0" style="-fx-background-color: #05b384;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Button fx:id="profileButton" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToProfile" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../../../../../Desktop/Sep2.1/src/resources/css/style.css" text="Manage Profile" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Desktop/Sep2.1/src/resources/images/account.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="clientFindWorker" alignment="CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../../../../../Desktop/Sep2.1/src/resources/css/style.css" text="Find Worker" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Desktop/Sep2.1/src/resources/images/search_handyman.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToWork" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../../../../../Desktop/Sep2.1/src/resources/css/style.css" text="Create Offer" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Desktop/Sep2.1/src/resources/images/Create%20Offer.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="151.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#switchToHistory" opacity="0.9" prefHeight="111.0" prefWidth="137.0" stylesheets="@../../../../../Desktop/Sep2.1/src/resources/css/style.css" text="Manage Offers" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="69.0" fitWidth="69.0" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../Desktop/Sep2.1/src/resources/images/manag_offers.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <Label fx:id="employerProfileCompanyNameLabel" layoutX="227.0" layoutY="10.0" prefHeight="56.0" prefWidth="959.0" textFill="#008fcc">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <VBox layoutX="140.0" layoutY="100.0" prefHeight="693.0" prefWidth="530.0" spacing="17.0">
+         <children>
+            <TextArea fx:id="jobDescription" minHeight="-Infinity" prefHeight="208.0" prefWidth="530.0" />
+            <HBox prefWidth="530.0">
+               <children>
+                  <RadioButton mnemonicParsing="false" text="Plumber">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Electrician">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Mason">
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
+                  </RadioButton>
+                  <RadioButton mnemonicParsing="false" text="Groundworker" />
+               </children>
+            </HBox>
+            <HBox prefHeight="30.0" prefWidth="530.0">
+               <children>
+                  <TextField promptText="Zip Code">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <TextField promptText="City">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="24.0" prefWidth="530.0">
+               <children>
+                  <Label text="Budget">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" text="Save">
+                     <HBox.margin>
+                        <Insets left="250.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefHeight="38.0" prefWidth="530.0">
+               <children>
+                  <TextField maxWidth="-Infinity" prefHeight="28.0" prefWidth="151.0" />
+                  <Button mnemonicParsing="false" text="Delete">
+                     <HBox.margin>
+                        <Insets left="170.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
