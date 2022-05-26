@@ -13,8 +13,17 @@ public class Database{
     private static String dataPassword = "yn6B1EMc4s4pB9QgbbpCzH-tNxFxTSTF";
     private static String dataUser = "kxbpghuf";
 
-    public Database() {
-
+    private Connection conn;
+    public Database()
+    {
+        try
+        {
+            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     /*
@@ -36,9 +45,9 @@ public class Database{
         String SQL = "SELECT * FROM handyman WHERE cvr=? AND password=?";
         ResultSet rs = null;
         PreparedStatement pstm = null;
-        Connection conn = null;
+        //Connection conn = null;
         try {
-            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             pstm = conn.prepareStatement( SQL );
             pstm.setLong(1, CVR);
             pstm.setString(2, password);
@@ -68,9 +77,9 @@ public class Database{
         String SQL = "SELECT * FROM client WHERE cpr=? AND password=?";
         ResultSet rs = null;
         PreparedStatement pstm = null;
-        Connection conn = null;
+        //Connection conn = null;
         try {
-            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             pstm = conn.prepareStatement(SQL);
             pstm.setLong(1, CPR);
             pstm.setString(2, password);
@@ -99,9 +108,9 @@ public class Database{
 
                         + "VALUES(?,?,?,?,?,?,?)";
         PreparedStatement posted = null;
-        Connection conn = null;
+        //Connection conn = null;
         try {
-            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             posted = conn.prepareStatement(SQL);
             posted.setLong(1, client.getCPR());
             posted.setString(2, password);
@@ -127,11 +136,11 @@ public class Database{
                 "INSERT INTO handyman(cvr,password,firstname,lastname,email,phone,description,address,hourlyRate, rating)"
                         + "VALUES(?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement posted = null;
-        Connection conn = null;
+        //Connection conn = null;
         try {
 
 
-            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             posted = conn.prepareStatement(SQL);
             posted.setLong(1, handyman.getCVR());
             posted.setString(2, password);
@@ -162,9 +171,9 @@ public class Database{
             String SQL =
                 "INSERT INTO skills(CVR, skill)" + "VALUES(?,?)";
             PreparedStatement posted = null;
-            Connection conn = null;
+            //Connection conn = null;
             try {
-                conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+                //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
                 posted = conn.prepareStatement(SQL);
                 for(int i=0; i<handyman.getSkillsList().size(); i++)
                 {
@@ -187,9 +196,9 @@ public class Database{
         ArrayList<String> skillsArrayList = new ArrayList<>();
         ResultSet rs = null;
         PreparedStatement pstm = null;
-        Connection conn = null;
+        //Connection conn = null;
         try {
-            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             pstm = conn.prepareStatement(SQL);
             pstm.setLong(1, cvr);
             rs = pstm.executeQuery();
@@ -210,9 +219,9 @@ public class Database{
             String SQL =
                 "INSERT INTO address(city,zip)" + "VALUES(?,?)";
             PreparedStatement posted = null;
-            Connection conn = null;
+            //Connection conn = null;
             try {
-                conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+               // conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
                 posted = conn.prepareStatement(SQL);
                 posted.setString(1, address.getCity());
                 posted.setString(2, address.getZip());
@@ -231,9 +240,9 @@ public class Database{
         int id = 0;
         ResultSet rs = null;
         PreparedStatement preparedStatement = null;
-        Connection conn = null;
+        //Connection conn = null;
         try {
-            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+           // conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             preparedStatement = conn.prepareStatement(SQL);
             preparedStatement.setString(1, address.getCity());
             preparedStatement.setString(2, address.getZip());
@@ -252,9 +261,9 @@ public class Database{
         String SQL = "SELECT * FROM address WHERE addressID=?";
         ResultSet rs = null;
         PreparedStatement pstm = null;
-        Connection conn = null;
+        //Connection conn = null;
         try {
-            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+          //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             pstm = conn.prepareStatement(SQL);
             pstm.setInt(1, id);
             rs = pstm.executeQuery();
@@ -271,9 +280,9 @@ public class Database{
         ArrayList<Address> addresses = new ArrayList<>();
         ResultSet rs = null;
         Statement stmt = null;
-        Connection conn = null;
+        //Connection conn = null;
         try {
-            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+          //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             stmt = conn.createStatement();
             String SQL = "Select * FROM address";
             rs = stmt.executeQuery(SQL);
@@ -295,7 +304,7 @@ public class Database{
 
 
     public void updateHandyman(Handyman handyman){
-            Connection conn = null;
+            //Connection conn = null;
             /*
             * cvr,password,firstname,lastname,email,phone,
             * description,address,hourlyRate, rating*/
@@ -311,7 +320,7 @@ public class Database{
                 + " WHERE cvr=?";
             PreparedStatement posted = null;
             try {
-                conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+              //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
                 posted = conn.prepareStatement(SQL);
                 posted.setString(1, handyman.getFirstName());
                 posted.setString(2, handyman.getLastName());
@@ -338,9 +347,9 @@ public class Database{
             String SQL = "SELECT * from handyman WHERE address=? AND  hourlyRate<=?";
             ResultSet rs = null;
             PreparedStatement preparedStatement = null;
-            Connection conn = null;
+            //Connection conn = null;
             try {
-                conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+              //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
                 preparedStatement = conn.prepareStatement(SQL);
                 preparedStatement.setInt(1, getAddressID(address));
                 preparedStatement.setInt(2, hourlyRate);
@@ -374,7 +383,7 @@ public class Database{
 
 
     public void updateClient(Client client){
-        Connection conn = null;
+        //Connection conn = null;
         /*
          * cvr,password,firstname,lastname,email,phone,
          * description,address,hourlyRate, rating*/
@@ -387,7 +396,7 @@ public class Database{
             + " WHERE cpr=?";
         PreparedStatement posted = null;
         try {
-            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+          //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             posted = conn.prepareStatement(SQL);
             posted.setString(1, client.getFirstName());
             posted.setString(2, client.getLastName());
@@ -407,9 +416,9 @@ public class Database{
         String SQL = "DELETE FROM handyman WHERE cvr=?";
         ResultSet rs = null;
         PreparedStatement pstm = null;
-        Connection conn = null;
+        //Connection conn = null;
         try {
-            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             pstm = conn.prepareStatement(SQL);
             pstm.setInt(1, cvr);
             rs = pstm.executeQuery();
@@ -419,13 +428,13 @@ public class Database{
     }
 
     public void createJob(JobOffer job) {
-        Connection conn = null;
+        //Connection conn = null;
         String SQL =
             "INSERT INTO job_offer(jobTitle,description,budget,address)"
                 + "VALUES(?,?,?,?)";
         PreparedStatement posted = null;
         try {
-            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+          //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             posted = conn.prepareStatement(SQL);
             posted.setString(1, job.getJobTitle());
             posted.setString(2, job.getJobDescription());
@@ -440,13 +449,13 @@ public class Database{
     }
 
     public void insertJobType(JobOffer job){
-        Connection conn = null;
+        //Connection conn = null;
         String SQL =
             "INSERT INTO category(cpr, jobTitle, category)"
                 + "VALUES(?,?,?)";
         PreparedStatement posted = null;
         try {
-            conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+          //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             posted = conn.prepareStatement(SQL);
 
            for(int i=0; i<job.getJobTypeList().size(); i++)

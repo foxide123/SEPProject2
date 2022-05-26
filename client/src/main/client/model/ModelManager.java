@@ -19,6 +19,7 @@ public class ModelManager implements Model
   private Client client;
   private ArrayList<Handyman> findHandymanResultList;
   private ArrayList<JobOffer> findWorkResultList;
+  private ArrayList<JobOffer> jobOffers;
 
 
   private ArrayList<Handyman> handymanAccounts;
@@ -29,6 +30,7 @@ public class ModelManager implements Model
     this.support = new PropertyChangeSupport(this);
     this.findHandymanResultList = new ArrayList<>();
     this.findWorkResultList = new ArrayList<>();
+    this.jobOffers = new ArrayList<>();
     server = new Server();
   }
 
@@ -122,7 +124,12 @@ public class ModelManager implements Model
   }
 
   public void createJob(JobOffer job) throws Exception {
+    jobOffers.add(job);
     server.createJobOffer(job);
+  }
+
+  public ArrayList<JobOffer> getJobOffers(){
+    return jobOffers;
   }
 
   public void addPropertyChangeListener(
