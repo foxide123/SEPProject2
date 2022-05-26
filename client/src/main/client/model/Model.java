@@ -22,6 +22,7 @@ public interface Model
   void addPropertyChangeListener(String eventName, PropertyChangeListener listener);
   void removePropertyChangeListener(String eventName, PropertyChangeListener listener);
   ArrayList<JobOffer> handymanFindWorkResult();
-  void findWork(Address address, JobType type, double minBudget)
+  void findWork(Address address, JobType type, int minBudget)
       throws Exception;
+  public ArrayList<JobOffer> findJobResult();
 }

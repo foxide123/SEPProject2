@@ -236,7 +236,7 @@ public class Database{
     }
 
     public int getAddressID(Address address) {
-        String SQL = "SELECT addressID from address WHERE  city=? AND zip=?"/*+"VALUES(?,?,?,?)"*/;
+        String SQL = "SELECT addressid from address WHERE  city=? AND zip=?"/*+"VALUES(?,?,?,?)"*/;
         int id = 0;
         ResultSet rs = null;
         PreparedStatement preparedStatement = null;
@@ -248,7 +248,7 @@ public class Database{
             preparedStatement.setString(2, address.getZip());
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
-                id = rs.getInt("addressID");
+                id = rs.getInt("addressid");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -258,7 +258,7 @@ public class Database{
 
     public Address getAddressByID(int id) {
         Address tmpAddress = new Address(null, null);
-        String SQL = "SELECT * FROM address WHERE addressID=?";
+        String SQL = "SELECT * FROM address WHERE addressid=?";
         ResultSet rs = null;
         PreparedStatement pstm = null;
         //Connection conn = null;
@@ -294,10 +294,6 @@ public class Database{
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        }
-
-        for(int i=0; i<addresses.size(); i++){
-            System.out.println(addresses.get(i).getCity() + addresses.get(i).getZip());
         }
         return addresses;
     }
@@ -430,8 +426,8 @@ public class Database{
     public void createJob(JobOffer job) {
         //Connection conn = null;
         String SQL =
-            "INSERT INTO job_offer(jobTitle,description,budget,address)"
-                + "VALUES(?,?,?,?)";
+            "INSERT INTO job_offer(jobTitle,description,budget,address,cpr)"
+                + "VALUES(?,?,?,?,?)";
         PreparedStatement posted = null;
         try {
           //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
@@ -440,6 +436,7 @@ public class Database{
             posted.setString(2, job.getJobDescription());
             posted.setInt(3, job.getJobBudget());
             posted.setInt(4, 14);
+            posted.setLong(5, job.getCpr());
             //posted.setInt(4, insertAddress(job.getLocation()));
             //adress is equal to 0
             posted.executeUpdate();
@@ -451,8 +448,8 @@ public class Database{
     public void insertJobType(JobOffer job){
         //Connection conn = null;
         String SQL =
-            "INSERT INTO category(cpr, jobTitle, category)"
-                + "VALUES(?,?,?)";
+            "INSERT INTO category(jobTitle, category)"
+                + "VALUES(?,?)";
         PreparedStatement posted = null;
         try {
           //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
@@ -460,9 +457,8 @@ public class Database{
 
            for(int i=0; i<job.getJobTypeList().size(); i++)
            {
-                posted.setLong(1, job.getCpr());
-                posted.setString(2, job.getJobTitle());
-                posted.setString(3, job.getJobTypeList().get(i));
+                posted.setString(1, job.getJobTitle());
+                posted.setString(2, job.getJobTypeList().get(i));
                 posted.executeUpdate();
            }
         } catch (SQLException e) {
@@ -471,6 +467,63 @@ public class Database{
     }
 
 
+
+    public ArrayList<JobOffer> findWork(Address address, JobType type, int minBudget)
+    {
+        ArrayList<JobOffer> jobOffers = new ArrayList<>();
+        String SQL = "SELECT * FROM job_offer WHERE  budget<=? AND address=?";
+        ResultSet rs = null;
+        PreparedStatement preparedStatement = null;
+        //Connection conn = null;
+        try {
+            // conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            preparedStatement = conn.prepareStatement(SQL);
+            preparedStatement.setInt(1, minBudget);
+            preparedStatement.setInt(2, getAddressID(address));
+            rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                JobOffer tmpJobOffer = new JobOffer(null, null, 0,null,0,null);
+                process(rs, tmpJobOffer);
+                jobOffers.add(tmpJobOffer);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return findWorkType(jobOffers, type);
+    }
+
+    public ArrayList<JobOffer> findWorkType(ArrayList<JobOffer> jobOffers, JobType type){
+        ArrayList<JobOffer> tmpList = new ArrayList<>();
+        for(int i=0; i<jobOffers.size(); i++){
+            if(JobType.containsAny(jobOffers.get(i).getJobTypeList(), type.getJobTypes())){
+                tmpList.add(jobOffers.get(i));
+            }
+        }
+        return tmpList;
+    }
+
+    public JobType getJobType(String jobTitle){
+        ArrayList<String> jobTypes = new ArrayList<>();
+        JobType jobType = new JobType(false, false, false, false);
+
+        String SQL = "SELECT category FROM category WHERE jobTitle=?";
+        ResultSet rs = null;
+        PreparedStatement pstm = null;
+        //Connection conn = null;
+        try {
+            //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            pstm = conn.prepareStatement(SQL);
+            pstm.setString(1, jobTitle);
+            rs = pstm.executeQuery();
+            while (rs.next()) {
+                jobTypes.add(rs.getString("category"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        jobType.setValuesFromList(jobTypes);
+        return jobType;
+    }
 
 
     private void process(ResultSet rs, Address address) throws SQLException {
@@ -491,11 +544,6 @@ public class Database{
         handyman.setRating(rs.getString("rating"));
 
         ArrayList<String> skillsList = getSkills(rs.getLong("cvr"));
-        for(int i=0; i<skillsList.size();i++){
-            if(skillsList.get(i).equals("plumber")){
-                //handyman.setSkills();
-            }
-        }
     }
 
 
@@ -510,5 +558,12 @@ public class Database{
     }
 
 
-
+    private void process(ResultSet rs, JobOffer jobOffer) throws SQLException {
+        jobOffer.setJobTitle(rs.getString("jobTitle"));
+        jobOffer.setJobDescription(rs.getString("description"));
+        jobOffer.setJobBudget(rs.getInt("budget"));
+        jobOffer.setLocation(getAddressByID(rs.getInt("address")));
+        jobOffer.setCpr(rs.getLong("cpr"));
+        jobOffer.setJobType(getJobType(rs.getString("jobTitle")));
+    }
 }

@@ -54,7 +54,7 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   }
 
   @Override public ArrayList<JobOffer> findWork(Address address, JobType type,
-      double minBudget) throws Exception
+      int minBudget) throws Exception
   {
     return server.findWork(address,type, minBudget);
   }

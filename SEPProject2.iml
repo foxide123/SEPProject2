@@ -18,6 +18,23 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="javafx.graphics" level="application" />
-    <orderEntry type="library" name="JavaFX11" level="application" />
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../commons-net-3.8.0/commons-net-3.8.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES />
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$MODULE_DIR$/../../commons-net-3.8.0/commons-net-3.8.0-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -10,6 +10,8 @@ public class JobType implements Serializable
     private boolean masonry;
     private boolean groundWorking;
 
+    private static final long serialVersionUID = 5626982982634456134L;
+
     public JobType(boolean plumbing, boolean electrical, boolean masonry, boolean groundWorking){
         setValues(plumbing,electrical,masonry,groundWorking);
     }
@@ -31,10 +33,66 @@ public class JobType implements Serializable
         return tmpList;
     }
 
+
+    public static boolean containsAny(ArrayList<String> firstList, ArrayList<String> secondList){
+        if(firstList.size() < secondList.size()){
+            for(Object aFirstList : secondList){
+                if(secondList.contains(aFirstList)){
+                    return true;
+                }
+            }
+        }else{
+            for(Object aSecondList: secondList){
+                if(firstList.contains(aSecondList)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+/*
+    public static boolean containsAny(final Collection<?> coll1, final Collection<?> coll2) {
+            if (coll1.size() < coll2.size()) {
+                    for (final Object aColl1 : coll1) {
+                           if (coll2.contains(aColl1)) {
+                                return true;
+                               }
+                       }
+            } else {
+                    for (final Object aColl2 : coll2) {
+                              if (coll1.contains(aColl2)) {
+                                     return true;
+                                 }
+                        }
+               }
+            return false;
+        }
+
+
+ */
     public void setValues(boolean plumbing, boolean electrical, boolean masonry, boolean groundWorking){
         this.plumbing = plumbing;
         this.electrical = electrical;
         this.masonry = masonry;
-        this.groundWorking = groundWorking;}
+        this.groundWorking = groundWorking;
+    }
+
+    public void setValuesFromList(ArrayList<String> list){
+        for(int i=0; i<list.size(); i++){
+            if(list.get(i).equals("plumbing")){
+                plumbing=true;
+            }
+            if(list.get(i).equals("electrician")){
+                electrical=true;
+            }
+            if(list.get(i).equals("masonry")){
+                masonry=true;
+            }
+            if(list.get(i).equals("groundworking")){
+                groundWorking=true;
+            }
+        }
+    }
 
 }

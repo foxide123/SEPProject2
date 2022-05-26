@@ -12,15 +12,17 @@ import main.client.view.ViewHandler;
 import main.client.viewmodel.handyman.HandymanFindWorkViewModel;
 
 public class HandymanFindWorkView extends SwitchTabsView {
-    @FXML
-    private RadioButton plumbing_ct;
-    @FXML private RadioButton electricity_ct;
-    @FXML private RadioButton masonry_ct;
-    @FXML private RadioButton groundworking_ct;
-    @FXML private TextField city_ad;
-    @FXML private TextField zip_ad;
-    @FXML private Slider minBudget;
-    @FXML private Label minBudgetLabel;
+
+    @FXML private RadioButton rb_plumber;
+    @FXML private RadioButton rb_electrician;
+    @FXML private RadioButton rb_mason;
+    @FXML private RadioButton rb_groundworker;
+
+    @FXML private TextField tf_city;
+    @FXML private TextField tf_zip;
+
+    @FXML private Slider hourlyRate;
+    @FXML private Label hourlyRateLabel;
 
     private HandymanFindWorkViewModel viewModel;
     private ViewHandler viewHandler;
@@ -29,29 +31,30 @@ public class HandymanFindWorkView extends SwitchTabsView {
         super.init(viewHandler);
         this.viewHandler = viewHandler;
         this.viewModel = viewModel;
-        city_ad.textProperty().bindBidirectional(viewModel.getCityProperty());
-        zip_ad.textProperty().bindBidirectional(viewModel.getZipProperty());
-        minBudget.blockIncrementProperty().bindBidirectional(viewModel.getHourlyRateProperty());
-        minBudgetLabel.textProperty().bindBidirectional(viewModel.getHourlyRateLabelProperty());
+        tf_city.textProperty().bindBidirectional(viewModel.getCityProperty());
+        tf_zip.textProperty().bindBidirectional(viewModel.getZipProperty());
+        //hourlyRate.blockIncrementProperty().bindBidirectional(viewModel.getHourlyRateProperty());
+        //hourlyRateLabel.textProperty().bindBidirectional(viewModel.getHourlyRateLabelProperty());
 
-        minBudget.valueProperty().addListener(
+        hourlyRate.valueProperty().addListener(
                 new ChangeListener<Number>() {
 
                     public void changed(ObservableValue<? extends Number >
                                                 observable, Number oldValue, Number newValue)
                     {
 
-                        minBudgetLabel.setText("value: " + minBudget.getValue());
+                        hourlyRateLabel.setText(String.valueOf((int) hourlyRate.getValue()));
                     }
                 });
     }
 
-    @FXML public void lookForWork(ActionEvent event) throws Exception
+    @FXML public void onSearch(ActionEvent event) throws Exception
     {
-        if (viewModel.lookForWork(plumbing_ct.isSelected(), electricity_ct.isSelected(),
-                masonry_ct.isSelected(), groundworking_ct.isSelected()))
+        if (viewModel.lookForWork(rb_plumber.isSelected(), rb_electrician.isSelected(),
+                rb_mason.isSelected(), rb_groundworker.isSelected(),
+            hourlyRateLabel.getText()))
         {
-            viewHandler.openView("FindWorkResult");
+            viewHandler.openView("HandymanFindWorkResult");
         }
         else{
             System.out.println("Nothing found");

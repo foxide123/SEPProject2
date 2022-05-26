@@ -53,7 +53,8 @@ public class ModelManager implements Model
   public ArrayList<Handyman> findHandymanResult(){
     return findHandymanResultList;
   }
-  public void findWork(Address address, JobType type, double minBudget)
+
+  public void findWork(Address address, JobType type, int minBudget)
           throws Exception
   {
     findWorkResultList = server.findWork(address,type,minBudget);
@@ -143,6 +144,6 @@ public class ModelManager implements Model
 
   @Override
   public ArrayList<JobOffer> handymanFindWorkResult() {
-    return null;
+    return jobOffers;
   }
 }

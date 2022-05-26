@@ -14,7 +14,7 @@ public class JobOffer implements Serializable, JobOfferInterface {
     private JobType jobType;
 
 
-    private static final long serialVersionUID = 4;
+    private static final long serialVersionUID = 4L;
 
 
 
@@ -62,5 +62,6 @@ public class JobOffer implements Serializable, JobOfferInterface {
 
     public ArrayList<String> getJobTypeList(){return jobType.getJobTypes();}
 
+    public void setCpr(long cpr){this.cpr = cpr;}
     public long getCpr(){return cpr;}
 }

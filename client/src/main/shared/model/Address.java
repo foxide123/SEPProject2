@@ -7,6 +7,7 @@ public class Address implements Serializable
   private String city;
   private String zip;
 
+  private static final long serialVersionUID = 8304845500963165000L;
 
   public Address(String city, String zip) {
     setAddress(city,zip);

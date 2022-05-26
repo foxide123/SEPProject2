@@ -10,6 +10,8 @@ public class Skills implements Serializable
   private boolean mason;
   private boolean groundWorker;
 
+  private static final long serialVersionUID = 1L;
+
   public Skills(boolean plumber, boolean electrician, boolean mason, boolean groundWorker){
     this.plumber = plumber;
     this.electrician = electrician;
