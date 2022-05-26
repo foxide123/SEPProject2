@@ -435,9 +435,9 @@ public class Database{
             posted.setString(1, job.getJobTitle());
             posted.setString(2, job.getJobDescription());
             posted.setInt(3, job.getJobBudget());
-            posted.setInt(4, 14);
+            posted.setInt(4, insertAddress(job.getLocation()));
+            //posted.setInt(4, 14);
             posted.setLong(5, job.getCpr());
-            //posted.setInt(4, insertAddress(job.getLocation()));
             //adress is equal to 0
             posted.executeUpdate();
         } catch (SQLException e) {
