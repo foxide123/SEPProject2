@@ -1,5 +1,6 @@
 package main.client.view;
 
+import main.client.view.admin.AdminMainView;
 import main.client.view.client.*;
 import main.client.view.handyman.*;
 import main.client.view.admin.AdminLogInView;
@@ -152,6 +153,13 @@ public class ViewHandler
       HandymanJobOffersView view = loader.getController();
       view.init(this, mvViewModel.getHandymanJobOffersViewModel());
       localStage.setTitle("JobOffer");
+    }
+    else if("AdminMain".equals(viewToOpen)){
+      loader.setLocation((getClass().getResource("/resources/Admin_Main.fxml")));
+      root = loader.load();
+      AdminMainView view = loader.getController();
+      view.init(this, mvViewModel.getAdminMainViewModel());
+      localStage.setTitle("Accounts");
     }
     //you can only show one main.client.view per stage
     scene = new Scene(root);

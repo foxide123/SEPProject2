@@ -60,6 +60,7 @@ public class Database{
     }
 
 
+
     public Client loginClient(int CPR, String password)
             throws Exception {
         Client tmpClient = new Client(0, null, null, null,null,null);
@@ -328,6 +329,8 @@ public class Database{
             }
     }
 
+
+
     public ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate){
             ArrayList<Handyman> tmpHandymanList = new ArrayList<>();
 
@@ -429,6 +432,7 @@ public class Database{
             posted.setInt(3, job.getJobBudget());
             posted.setInt(4, 14);
             //posted.setInt(4, insertAddress(job.getLocation()));
+            //adress is equal to 0
             posted.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -87,6 +87,12 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   public ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate) throws Exception{
     return database.findHandyman(address,skills,hourlyRate);
   }
+  /*
+  public ArrayList<Handyman> getHandymanAccount(){
+    return database.f
+  }
+
+   */
 
   @Override
   public ArrayList<JobOffer> findWork(Address address, JobType type, double minBudget) throws Exception {

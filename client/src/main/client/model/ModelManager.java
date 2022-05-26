@@ -20,6 +20,10 @@ public class ModelManager implements Model
   private ArrayList<Handyman> findHandymanResultList;
   private ArrayList<JobOffer> findWorkResultList;
 
+
+  private ArrayList<Handyman> handymanAccounts;
+  private ArrayList<Client> clientAccounts;
+
   public ModelManager() throws NotBoundException, RemoteException
   {
     this.support = new PropertyChangeSupport(this);
@@ -52,6 +56,17 @@ public class ModelManager implements Model
   {
     findWorkResultList = server.findWork(address,type,minBudget);
   }
+
+  // dono
+  //public ArrayList<Handyman> getHandymanAccounts(){
+
+  //}
+
+
+
+
+
+  //might need to delete
 
   public ArrayList<JobOffer> findJobResult(){
     return findWorkResultList;

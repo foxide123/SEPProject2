@@ -27,7 +27,7 @@ public class AdminLogInView
     viewHandler.openView("LogInRegister");
   }
 
-  @FXML private void onLogIn(){
-
+  @FXML private void onLogIn() throws IOException{
+    viewHandler.openView("AdminMain");
   }
 }
