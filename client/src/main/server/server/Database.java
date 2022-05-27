@@ -364,9 +364,9 @@ public class Database{
     public ArrayList<Handyman> findHandymanWithSkills(ArrayList<Handyman> tmpHandymanList, Skills skills){
         ArrayList<Handyman> handymanList = new ArrayList<>();
         for(int i=0; i<tmpHandymanList.size(); i++){
-            if(skills.equalsAtLeastOne(getSkills(tmpHandymanList.get(i).getCVR()))){
-                handymanList.add(tmpHandymanList.get(i));
-            }
+            //if(Skills.containsAny(getSkills(tmpHandymanList.get(i).getCVR()), skills.getSkills())){
+            //    handymanList.add(tmpHandymanList.get(i));
+           // }
             /*
             if(skills.equalsAtLeastOne(getSkills(tmpHandymanList.get(i).getCVR()))){
                 handymanList.add(tmpHandymanList.get(i));
@@ -506,7 +506,7 @@ public class Database{
         ArrayList<String> jobTypes = new ArrayList<>();
         JobType jobType = new JobType(false, false, false, false);
 
-        String SQL = "SELECT category FROM category WHERE jobTitle=?";
+        String SQL = "SELECT category FROM category WHERE jobtitle=?";
         ResultSet rs = null;
         PreparedStatement pstm = null;
         //Connection conn = null;
@@ -559,7 +559,7 @@ public class Database{
 
 
     private void process(ResultSet rs, JobOffer jobOffer) throws SQLException {
-        jobOffer.setJobTitle(rs.getString("jobTitle"));
+        jobOffer.setJobTitle(rs.getString("jobtitle"));
         jobOffer.setJobDescription(rs.getString("description"));
         jobOffer.setJobBudget(rs.getInt("budget"));
         jobOffer.setLocation(getAddressByID(rs.getInt("address")));

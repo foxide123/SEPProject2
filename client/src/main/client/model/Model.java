@@ -25,4 +25,7 @@ public interface Model
   void findWork(Address address, JobType type, int minBudget)
       throws Exception;
   public ArrayList<JobOffer> findJobResult();
+  JobOffer findJobOfferWithTitle(String title);
+  void addToAppliedJobs(JobOffer jobOffer);
+  ArrayList<JobOffer> getAppliedJobs();
 }

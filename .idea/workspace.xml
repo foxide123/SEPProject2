@@ -2,28 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc1c1454-4411-4737-9109-01fc7b7bf401" name="Changes" comment="Change">
+      <change afterPath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanManageJobOffersView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanSelectedWorkView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/handyman/HandymanManageJobOffersViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/handyman/HandymanSelectedWorkViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/resources/handyman_selected_offer.fxml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/lib/commons-net-3.8.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEPProject2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEPProject2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/client/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/client/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/model/ModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/client/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/ViewHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanFindWorkResultView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanFindWorkResultView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanFindWorkView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanFindWorkView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanJobOffersView.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/client/viewmodel/ViewModelProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/ViewModelProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/client/viewmodel/handyman/HandymanFindWorkResultViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/handyman/HandymanFindWorkResultViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/viewmodel/handyman/HandymanFindWorkViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/handyman/HandymanFindWorkViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/viewmodel/handyman/HandymanJobOffersViewModel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/server/server/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/server/server/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/server/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/server/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/shared/RemoteServerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/RemoteServerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/shared/model/Address.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/model/Address.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/shared/model/JobOffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/model/JobOffer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/shared/model/JobType.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/model/JobType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/shared/model/Skills.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/model/Skills.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/resources/client_search_result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/resources/client_search_result.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/resources/handyman_find_work_result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/resources/handyman_search_result.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/resources/handyman_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/resources/handyman_search.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/resources/job_offer_result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/resources/job_offer_result.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/RunApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/RunApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/model/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/model/Model.class" afterDir="false" />
@@ -45,7 +41,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/client/SwitchTabsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/client/SwitchTabsView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanFindWorkView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanFindWorkView$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanFindWorkView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanFindWorkView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanJobOffersView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanJobOffersView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanJobOffersView.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanJobRecomandationView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanJobRecomandationView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanLogInView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanLogInView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanLoggedInView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanLoggedInView.class" afterDir="false" />
@@ -65,7 +61,7 @@
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/client/ClientSignUpViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/client/ClientSignUpViewModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanFindWorkViewModel$1.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanFindWorkViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanFindWorkViewModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanJobOffersViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanJobOffersViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanJobOffersViewModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanJobRecomandationViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanJobRecomandationViewModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanLogInViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanLogInViewModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanLoggedInViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/handyman/HandymanLoggedInViewModel.class" afterDir="false" />
@@ -80,20 +76,12 @@
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/JobOfferInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/JobOfferInterface.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/JobType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/JobType.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/Skills.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/Skills.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/AdminLogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/AdminLogIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ChooseActor_LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ChooseActor_LogIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ChooseActor_SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ChooseActor_SignUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientLogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientLogIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientSignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientSignUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanLogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanLogIn.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanLoggedIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanLoggedIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanSignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanSignUp.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/LogInRegister.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/LogInRegister.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/client_create_offer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/client_create_offer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/client_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/client_search.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/client_search_result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/client_search_result.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/handyman_find_work_result.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/handyman_search.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/handyman_search.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/job_offer_result.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/job_offer_result.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/RunApplication.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject22/main/client/model/Model.class" beforeDir="false" />
@@ -372,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653391445501</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Change">
+      <created>1653563402869</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1653563402869</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

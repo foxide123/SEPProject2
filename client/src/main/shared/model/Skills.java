@@ -94,4 +94,44 @@ public class Skills implements Serializable
     return false;
   }
 
+
+  public static boolean containsAny(ArrayList<String> firstList, ArrayList<String> secondList){
+    if(firstList.size() < secondList.size()){
+      for(int i=0; i<firstList.size(); i++){
+        if(secondList.contains(firstList.get(i))){
+          return true;
+        }
+      }
+    }else{
+      for(int i=0; i<secondList.size(); i++){
+        if(firstList.contains(secondList.get(i))){
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+
+
+/*
+  public static boolean containsAny(ArrayList<String> firstList, ArrayList<String> secondList){
+    if(firstList.size() < secondList.size()){
+      for(Object aFirstList : secondList){
+        if(secondList.contains(aFirstList)){
+          return true;
+        }
+      }
+    }else{
+      for(Object aSecondList: secondList){
+        if(firstList.contains(aSecondList)){
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+ */
+
 }

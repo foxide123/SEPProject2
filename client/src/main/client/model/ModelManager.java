@@ -20,6 +20,7 @@ public class ModelManager implements Model
   private ArrayList<Handyman> findHandymanResultList;
   private ArrayList<JobOffer> findWorkResultList;
   private ArrayList<JobOffer> jobOffers;
+  private ArrayList<JobOffer> appliedOffers;
 
 
   private ArrayList<Handyman> handymanAccounts;
@@ -31,6 +32,7 @@ public class ModelManager implements Model
     this.findHandymanResultList = new ArrayList<>();
     this.findWorkResultList = new ArrayList<>();
     this.jobOffers = new ArrayList<>();
+    this.appliedOffers = new ArrayList<>();
     server = new Server();
   }
 
@@ -65,16 +67,33 @@ public class ModelManager implements Model
 
   //}
 
-
-
-
-
   //might need to delete
 
   public ArrayList<JobOffer> findJobResult(){
     return findWorkResultList;
   }
 
+  public JobOffer findJobOfferWithTitle(String title){
+    for(int i=0; i<findWorkResultList.size(); i++){
+      System.out.println("title: " + title);
+      System.out.println("title: " + i + ", " + findWorkResultList.get(i).getJobTitle());
+      if(findWorkResultList.get(i).getJobTitle().equals(title)){
+        support.firePropertyChange("JobOfferFound",null,findWorkResultList.get(i));
+        return findWorkResultList.get(i);
+      }
+    }
+    return null;
+  }
+
+
+
+  public void addToAppliedJobs(JobOffer jobOffer){
+    appliedOffers.add(jobOffer);
+  }
+
+  public ArrayList<JobOffer> getAppliedJobs(){
+    return appliedOffers;
+  }
 
   public void logInClient(int CPR, String password) throws Exception
   {

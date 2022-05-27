@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="495.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.handyman.HandymanSelectedWorkView">
+   <children>
+      <Label fx:id="jobTitle" layoutX="382.0" layoutY="48.0" text="JobTitle" />
+      <Label fx:id="description" layoutX="382.0" layoutY="100.0" text="Description" />
+      <Label fx:id="budget" layoutX="383.0" layoutY="144.0" text="Budget" />
+      <Label fx:id="city" layoutX="392.0" layoutY="191.0" text="City" />
+      <Label fx:id="cpr" layoutX="393.0" layoutY="292.0" text="Cpr" />
+      <Label fx:id="zip" layoutX="393.0" layoutY="240.0" text="Zip" />
+      <Label layoutX="181.0" layoutY="48.0" text="Job TItle" />
+      <Label layoutX="181.0" layoutY="100.0" text="Description" />
+      <Label layoutX="181.0" layoutY="144.0" text="Budget" />
+      <Label layoutX="181.0" layoutY="191.0" text="City" />
+      <Label layoutX="181.0" layoutY="240.0" text="Zip" />
+      <Label layoutX="181.0" layoutY="292.0" text="Cpr" />
+      <Button layoutX="205.0" layoutY="422.0" mnemonicParsing="false" onAction="#onBack" text="Back" />
+      <Button layoutX="358.0" layoutY="422.0" mnemonicParsing="false" onAction="#onApply" text="Apply" />
+      <Label layoutX="177.0" layoutY="338.0" text="Job Types" />
+      <Label fx:id="jobTypes" layoutX="380.0" layoutY="338.0" text="JobTypes" />
+      <Label fx:id="errorLabel" layoutX="276.0" layoutY="381.0" />
+   </children>
+</AnchorPane>

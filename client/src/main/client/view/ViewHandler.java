@@ -147,6 +147,13 @@ public class ViewHandler
       view.init(this, mvViewModel.getFindWorkResultViewModel());
       localStage.setTitle("FindWork");
     }
+    else if("SelectedWork".equals(viewToOpen)){
+      loader.setLocation(getClass().getResource("/resources/handyman_selected_offer.fxml"));
+      root = loader.load();
+      HandymanSelectedWorkView view = loader.getController();
+      view.init(this, mvViewModel.getHandymanSelectedWorkViewModel());
+      localStage.setTitle("FindWork");
+    }
     else if("HandymanJobRecommendation".equals(viewToOpen)){
       loader.setLocation(getClass().getResource("/resources/handyman_job_recomandation.fxml"));
       root = loader.load();
@@ -157,9 +164,9 @@ public class ViewHandler
     else if("HandymanManageOffers".equals(viewToOpen)){
       loader.setLocation(getClass().getResource("/resources/job_offer_result.fxml"));
       root = loader.load();
-      HandymanJobOffersView view = loader.getController();
-      view.init(this, mvViewModel.getHandymanJobOffersViewModel());
-      localStage.setTitle("JobOffer");
+      HandymanManageJobOffersView view = loader.getController();
+      view.init(this, mvViewModel.getHandymanManageJobOffersViewModel());
+      localStage.setTitle("ManageOffers");
     }
     else if("AdminMain".equals(viewToOpen)){
       loader.setLocation((getClass().getResource("/resources/Admin_Main.fxml")));

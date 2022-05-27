@@ -1,11 +1,10 @@
 package main.client.viewmodel;
 
 import main.client.model.Model;
-import main.client.view.admin.AdminMainView;
+import main.client.viewmodel.admin.AdminLogInViewModel;
 import main.client.viewmodel.admin.AdminMainViewModel;
 import main.client.viewmodel.client.*;
 import main.client.viewmodel.handyman.*;
-import main.client.viewmodel.admin.AdminLogInViewModel;
 
 public class ViewModelProvider
 {
@@ -25,8 +24,10 @@ public class ViewModelProvider
   private final ClientManageOffersViewModel manageOffersViewModel;
   private final HandymanFindWorkViewModel handymanFindWorkViewModel;
   private final HandymanFindWorkResultViewModel handymanFindWorkResultViewModel;
+  private final HandymanSelectedWorkViewModel handymanSelectedWorkViewModel;
+
   private final HandymanJobRecomandationViewModel handymanJobRecomandationViewModel;
-  private final HandymanJobOffersViewModel handymanJobOffersViewModel;
+  private final HandymanManageJobOffersViewModel handymanManageJobOffersViewModel;
   private final AdminMainViewModel adminMainViewModel;
 
   public ViewModelProvider(Model model) {
@@ -50,8 +51,10 @@ public class ViewModelProvider
     this.manageOffersViewModel = new ClientManageOffersViewModel(model);
     this.handymanFindWorkViewModel = new HandymanFindWorkViewModel(model);
     this.handymanFindWorkResultViewModel = new HandymanFindWorkResultViewModel(model);
+    this.handymanSelectedWorkViewModel = new HandymanSelectedWorkViewModel(model);
+
     this.handymanJobRecomandationViewModel = new HandymanJobRecomandationViewModel(model);
-    this.handymanJobOffersViewModel = new HandymanJobOffersViewModel(model);
+    this.handymanManageJobOffersViewModel = new HandymanManageJobOffersViewModel(model);
 
     this.adminMainViewModel = new AdminMainViewModel(model);
   }
@@ -80,7 +83,8 @@ public class ViewModelProvider
   public HandymanFindWorkViewModel getFindWorkViewModel(){return handymanFindWorkViewModel;}
   public HandymanFindWorkResultViewModel getFindWorkResultViewModel(){return handymanFindWorkResultViewModel;}
   public HandymanJobRecomandationViewModel getHandymanJobRecomandationViewModel(){return handymanJobRecomandationViewModel;}
-  public HandymanJobOffersViewModel getHandymanJobOffersViewModel(){return handymanJobOffersViewModel;}
+  public HandymanManageJobOffersViewModel getHandymanManageJobOffersViewModel(){return handymanManageJobOffersViewModel;}
+  public HandymanSelectedWorkViewModel getHandymanSelectedWorkViewModel(){return handymanSelectedWorkViewModel;}
 
   public AdminMainViewModel getAdminMainViewModel(){return adminMainViewModel;}
 }
