@@ -48,6 +48,8 @@ public class Handyman implements Serializable
     this.skills=skills;
   }
 
+  public void setSkillsFromList(ArrayList<String> list){this.skills.setSkills(list);}
+
 
   public void setCVR(int CVR) {
     this.CVR = CVR;

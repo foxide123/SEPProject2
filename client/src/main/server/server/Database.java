@@ -189,7 +189,7 @@ public class Database{
     }
 
 
-    public ArrayList<String> getSkills(long cvr) {
+    public Skills getSkills(long cvr) {
 
         Skills skills = new Skills(false,false,false,false);
         String SQL = "SELECT skill FROM skills WHERE cvr=?";
@@ -202,13 +202,20 @@ public class Database{
             pstm = conn.prepareStatement(SQL);
             pstm.setLong(1, cvr);
             rs = pstm.executeQuery();
+
+            while (rs.next()) {
+                process(rs, skills);
+            }
+            /*
             while (rs.next()) {
                 skillsArrayList.add(rs.getString("skill"));
             }
+
+             */
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return skillsArrayList;
+        return skills;
     }
 
 
@@ -532,6 +539,22 @@ public class Database{
 
     }
 
+    private void process(ResultSet rs, Skills skills) throws SQLException {
+        if(rs.getString("skill").equals("plumber")){
+            skills.setPlumber(true);
+        }
+        if(rs.getString("skill").equals("electrician")){
+            skills.setElectrician(true);
+        }
+        if(rs.getString("skill").equals("mason")){
+            skills.setMason(true);
+        }
+        if(rs.getString("skill").equals("groundworker")){
+            skills.setGroundWorker(true);
+        }
+
+    }
+
     private void process(ResultSet rs, Handyman handyman) throws SQLException {
         handyman.setCVR(rs.getInt("cvr"));
         handyman.setFirstName(rs.getString("firstName"));
@@ -542,8 +565,7 @@ public class Database{
         handyman.setAddress(getAddressByID(rs.getInt("address")));
         handyman.setHourlyRate(rs.getInt("hourlyRate"));
         handyman.setRating(rs.getString("rating"));
-
-        ArrayList<String> skillsList = getSkills(rs.getLong("cvr"));
+        handyman.setSkills(getSkills(rs.getLong("cvr")));
     }
 
 
@@ -559,7 +581,7 @@ public class Database{
 
 
     private void process(ResultSet rs, JobOffer jobOffer) throws SQLException {
-        jobOffer.setJobTitle(rs.getString("jobtitle"));
+        jobOffer.setJobTitle(rs.getString("jobTitle"));
         jobOffer.setJobDescription(rs.getString("description"));
         jobOffer.setJobBudget(rs.getInt("budget"));
         jobOffer.setLocation(getAddressByID(rs.getInt("address")));

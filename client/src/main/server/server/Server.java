@@ -92,18 +92,11 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
 
   @Override
   public ArrayList<JobOffer> findWork(Address address, JobType type, int minBudget) throws Exception {
-    ArrayList<JobOffer> tmpList;
-    System.out.println("address id: ");
-    System.out.println(database.getAddressID(address));
-    System.out.println(address.getZip());
-    System.out.println(address.getCity());
-    System.out.println(minBudget);
     try{
-       tmpList = database.findWork(address,type,minBudget);
+       return database.findWork(address,type,minBudget);
     }catch (Exception e) {
       throw new RemoteException(e.getMessage());
     }
-    return tmpList;
 
   }
 

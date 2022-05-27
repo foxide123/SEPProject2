@@ -46,9 +46,17 @@ public class HandymanSelectedWorkViewModel
     cpr.setValue(String.valueOf(jobOffer.getCpr()));
 
     String type = "";
+
+    for(int i=0; i<jobOffer.getJobType().getJobTypes().size(); i++){
+      type+= jobOffer.getJobType().getJobTypes().get(i);
+    }
+
+    /*
     for(int i=0; i<jobOffer.getJobTypeList().size(); i++){
       type += jobOffer.getJobTypeList().get(i) + " ";
     }
+
+     */
     jobTypes.setValue(type);
   }
 

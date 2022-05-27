@@ -72,22 +72,19 @@ public class HandymanLoggedInViewModel
     email.setValue(tmpHandyman.getEmail());
     hourlyRate.setValue(String.valueOf(tmpHandyman.getHourlyRate()));
 
-/*
-    for(int i=0; i<tmpHandyman.getSkillsList().size(); i++){
-      if(tmpHandyman.getSkillsList().get(i).equals("plumber")){
+      if(tmpHandyman.getSkills().getPlumberBoolean() == true){
         plumber.set(true);
       }
-      if(tmpHandyman.getSkillsList().get(i).equals("electrician")){
+      if(tmpHandyman.getSkills().getElectricianBoolean() == true){
         electrician.set(true);
       }
-      if(tmpHandyman.getSkillsList().get(i).equals("mason")){
+      if(tmpHandyman.getSkills().getMasonBoolean() == true){
         mason.set(true);
       }
-      if(tmpHandyman.getSkillsList().get(i).equals("groundworker")){
+      if(tmpHandyman.getSkills().getGroundWorkerBoolean() == true){
         groundworker.set(true);
       }
-    }
-    */
+
   }
 
   public void onSave(boolean plumber, boolean electrician, boolean mason, boolean groundworker){

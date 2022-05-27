@@ -16,6 +16,11 @@ public class JobType implements Serializable
         setValues(plumbing,electrical,masonry,groundWorking);
     }
 
+    public boolean getPlumbing(){return plumbing;}
+    public boolean getElectrical(){return electrical;}
+    public boolean getMasonry(){return masonry;}
+    public boolean getGroundworking(){return groundWorking;}
+
     public ArrayList<String> getJobTypes(){
         ArrayList<String> tmpList = new ArrayList<>();
         if(plumbing==true){
@@ -33,7 +38,27 @@ public class JobType implements Serializable
         return tmpList;
     }
 
+/*
+    public static boolean containsAny(ArrayList<String> firstList, ArrayList<String> secondList){
+        if(firstList.size() < secondList.size()){
+            for(int i=0; i<firstList.size(); i++){
+                System.out.println(firstList.get(i));
+                if(secondList.contains(firstList.get(i))){
+                    return true;
+                }
+            }
+        }else{
+            for(int i=0; i<secondList.size(); i++){
+                System.out.println(secondList.get(i));
+                if(firstList.contains(secondList.get(i))){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
+ */
     public static boolean containsAny(ArrayList<String> firstList, ArrayList<String> secondList){
         if(firstList.size() < secondList.size()){
             for(Object aFirstList : secondList){
@@ -50,6 +75,7 @@ public class JobType implements Serializable
         }
         return false;
     }
+
 
 /*
     public static boolean containsAny(final Collection<?> coll1, final Collection<?> coll2) {
