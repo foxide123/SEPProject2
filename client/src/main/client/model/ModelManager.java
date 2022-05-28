@@ -21,6 +21,8 @@ public class ModelManager implements Model
   private ArrayList<JobOffer> findWorkResultList;
   private ArrayList<JobOffer> jobOffers;
   private ArrayList<JobOffer> appliedOffers;
+  private ArrayList<Handyman> appliedHandymanList;
+  private Handyman appliedHandyman;
 
   private ArrayList<JobOffer> clientManageOfferList;
   private JobOffer clientSelectedOffer;
@@ -99,18 +101,23 @@ public class ModelManager implements Model
     return null;
   }
 
-
-
   public void addToAppliedJobs(JobOffer jobOffer) throws Exception
   {
     server.addApplied(jobOffer, getHandyman().getCVR());
     appliedOffers.add(jobOffer);
   }
 
-  public ArrayList<Handyman> getAppliedHandyman(String jobTitle) throws Exception
+  public ArrayList<Handyman> getAppliedHandymanList(String jobTitle) throws Exception
   {
-    return server.getAppliedHandyman(jobTitle);
+    appliedHandymanList = server.getAppliedHandyman(jobTitle);
+    return appliedHandymanList;
   }
+
+  public void setSelectedAppliedHandyman(Handyman handyman){
+    appliedHandyman = handyman;
+    support.firePropertyChange("AppliedHandyman",null,appliedHandyman);
+  }
+
 
   public ArrayList<JobOffer> getAppliedJobs(){
     return appliedOffers;

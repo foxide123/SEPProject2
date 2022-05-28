@@ -147,6 +147,13 @@ public class ViewHandler
       view.init(this, mvViewModel.getFindWorkResultViewModel());
       localStage.setTitle("FindWork");
     }
+    else if("SelectedHandyman".equals(viewToOpen)){
+      loader.setLocation(getClass().getResource("/resources/selected_handyman.fxml"));
+      root = loader.load();
+      SelectedHandymanView view = loader.getController();
+      view.init(this, mvViewModel.getSelectedHandymanViewModel());
+      localStage.setTitle("SelectedHandyman");
+    }
     else if("SelectedWork".equals(viewToOpen)){
       loader.setLocation(getClass().getResource("/resources/handyman_selected_offer.fxml"));
       root = loader.load();

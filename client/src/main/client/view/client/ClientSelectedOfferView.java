@@ -1,5 +1,7 @@
 package main.client.view.client;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -57,15 +59,41 @@ public class ClientSelectedOfferView extends SwitchTabsView
   }
 
   public void setValues(){
+    final String[] selectedHandyman = {null};
+
     for(int i=0; i<handymanList.size(); i++){
       System.out.println("handymanList: " + handymanList.get(i).getFirstName());
-      listView.getItems().add(handymanList.get(i).getFirstName() + handymanList.get(i).getLastName());
+      listView.getItems().add(handymanList.get(i).getCVR() + "," + handymanList.get(i).getFirstName() + " " + handymanList.get(i).getLastName());
     }
+
+    listView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>(){
+
+      @Override public void changed(
+          ObservableValue<? extends String> observableValue,
+          String s, String t1)
+      {
+        selectedHandyman[0] = (String) listView.getSelectionModel().getSelectedItem();
+        String[] arrOfStr = selectedHandyman[0].split(",", 2);
+        for(int i=0; i<handymanList.size(); i++){
+          if(Long.parseLong(arrOfStr[0]) == handymanList.get(i).getCVR()){
+            viewModel.setSelectedAppliedHandyman(handymanList.get(i));
+            try
+            {
+              viewHandler.openView("SelectedHandyman");
+            }
+            catch (IOException e)
+            {
+              e.printStackTrace();
+            }
+          }
+        }
+      }
+    });
   }
 
   public void onBack(ActionEvent event) throws IOException
   {
-    viewHandler.openView("HandymanFindWorkResult");
+    viewHandler.openView("ClientManageOffers");
   }
 
 }

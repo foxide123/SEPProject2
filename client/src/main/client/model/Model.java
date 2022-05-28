@@ -30,7 +30,8 @@ public interface Model
   JobOffer findJobOfferWithTitle(String title);
   JobOffer getClientSelectedOffer(String title) throws RemoteException;
   void addToAppliedJobs(JobOffer jobOffer) throws Exception;
-  ArrayList<Handyman> getAppliedHandyman(String jobTitle) throws Exception;
+  ArrayList<Handyman> getAppliedHandymanList(String jobTitle) throws Exception;
+  void setSelectedAppliedHandyman(Handyman handyman);
   ArrayList<JobOffer> getAppliedJobs();
 
 }

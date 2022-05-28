@@ -63,7 +63,11 @@ public class ClientSelectedOfferViewModel
   public ArrayList<Handyman> getAppliedHandyman(String jobTitle)
       throws Exception
   {
-    return model.getAppliedHandyman(jobTitle);
+    return model.getAppliedHandymanList(jobTitle);
+  }
+
+  public void setSelectedAppliedHandyman(Handyman handyman){
+    model.setSelectedAppliedHandyman(handyman);
   }
 
   public StringProperty getJobTitleProperty(){return jobTitle;}
