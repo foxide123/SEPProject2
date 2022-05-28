@@ -11,11 +11,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="main.client.view.handyman.HandymanLoggedInView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.handyman.HandymanLoggedInView">
    <children>
       <AnchorPane style="-fx-background-color: #00affe;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -115,6 +115,17 @@
                </children>
             </HBox>
             <TextField fx:id="hourlyRate" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="182.0" promptText="Hourly rate" />
+            <HBox prefHeight="29.0" prefWidth="530.0">
+               <children>
+                  <Label text="Show contact" />
+                  <Pane prefHeight="39.0" prefWidth="24.0" />
+                  <RadioButton fx:id="rb_contact" mnemonicParsing="false" prefHeight="18.0" prefWidth="19.0">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </RadioButton>
+               </children>
+            </HBox>
             <HBox prefWidth="530.0">
                <children>
                   <RadioButton fx:id="rb_plumber" mnemonicParsing="false" text="Plumber">

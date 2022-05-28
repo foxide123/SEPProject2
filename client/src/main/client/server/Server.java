@@ -66,4 +66,17 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   public void createJobOffer(JobOffer jobOffer) throws Exception{
     server.createJobOffer(jobOffer);
   }
+
+  public void addApplied(JobOffer jobOffer, long cvr) throws Exception{
+    server.addApplied(jobOffer, cvr);
+  }
+
+  public ArrayList<Handyman> getAppliedHandyman(String jobTitle) throws RemoteException{
+    return server.getAppliedHandyman(jobTitle);
+  }
+
+  public ArrayList<JobOffer> clientManageOffers(long CPR) throws RemoteException
+  {
+    return server.clientManageOffers(CPR);
+  }
 }

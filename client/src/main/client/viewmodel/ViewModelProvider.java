@@ -24,7 +24,8 @@ public class ViewModelProvider
   private final ClientManageOffersViewModel manageOffersViewModel;
   private final HandymanFindWorkViewModel handymanFindWorkViewModel;
   private final HandymanFindWorkResultViewModel handymanFindWorkResultViewModel;
-  private final HandymanSelectedWorkViewModel handymanSelectedWorkViewModel;
+  private final HandymanSelectedOfferViewModel handymanSelectedWorkViewModel;
+  private final ClientSelectedOfferViewModel clientSelectedOfferViewModel;
 
   private final HandymanJobRecomandationViewModel handymanJobRecomandationViewModel;
   private final HandymanManageJobOffersViewModel handymanManageJobOffersViewModel;
@@ -51,7 +52,8 @@ public class ViewModelProvider
     this.manageOffersViewModel = new ClientManageOffersViewModel(model);
     this.handymanFindWorkViewModel = new HandymanFindWorkViewModel(model);
     this.handymanFindWorkResultViewModel = new HandymanFindWorkResultViewModel(model);
-    this.handymanSelectedWorkViewModel = new HandymanSelectedWorkViewModel(model);
+    this.handymanSelectedWorkViewModel = new HandymanSelectedOfferViewModel(model);
+    this.clientSelectedOfferViewModel = new ClientSelectedOfferViewModel(model);
 
     this.handymanJobRecomandationViewModel = new HandymanJobRecomandationViewModel(model);
     this.handymanManageJobOffersViewModel = new HandymanManageJobOffersViewModel(model);
@@ -84,7 +86,8 @@ public class ViewModelProvider
   public HandymanFindWorkResultViewModel getFindWorkResultViewModel(){return handymanFindWorkResultViewModel;}
   public HandymanJobRecomandationViewModel getHandymanJobRecomandationViewModel(){return handymanJobRecomandationViewModel;}
   public HandymanManageJobOffersViewModel getHandymanManageJobOffersViewModel(){return handymanManageJobOffersViewModel;}
-  public HandymanSelectedWorkViewModel getHandymanSelectedWorkViewModel(){return handymanSelectedWorkViewModel;}
+  public HandymanSelectedOfferViewModel getHandymanSelectedWorkViewModel(){return handymanSelectedWorkViewModel;}
+  public ClientSelectedOfferViewModel getClientSelectedOfferViewModel(){return clientSelectedOfferViewModel;}
 
   public AdminMainViewModel getAdminMainViewModel(){return adminMainViewModel;}
 }

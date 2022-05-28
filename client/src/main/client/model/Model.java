@@ -3,6 +3,7 @@ package main.client.model;
 import main.shared.model.*;
 
 import java.beans.PropertyChangeListener;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 public interface Model
@@ -16,6 +17,7 @@ public interface Model
   void updateHandyman(Handyman handyman) throws Exception;
   void updateClient(Client client) throws Exception;
   void createJob(JobOffer job) throws Exception;
+  ArrayList<JobOffer> getJobOffers() throws RemoteException;
   void findHandyman(Address address, Skills skills, int hourlyRate)
       throws Exception;
   ArrayList<Handyman> findHandymanResult();
@@ -26,6 +28,9 @@ public interface Model
       throws Exception;
   public ArrayList<JobOffer> findJobResult();
   JobOffer findJobOfferWithTitle(String title);
-  void addToAppliedJobs(JobOffer jobOffer);
+  JobOffer getClientSelectedOffer(String title) throws RemoteException;
+  void addToAppliedJobs(JobOffer jobOffer) throws Exception;
+  ArrayList<Handyman> getAppliedHandyman(String jobTitle) throws Exception;
   ArrayList<JobOffer> getAppliedJobs();
+
 }

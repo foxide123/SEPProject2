@@ -41,7 +41,7 @@ public class Database{
 
     public Handyman loginHandyman(int CVR, String password)
             throws Exception {
-        Handyman tmpHandyman = new Handyman(0, null, null, null, null,null,null,0,null,null);
+        Handyman tmpHandyman = new Handyman(0, null, null, null, null,null,null,0,null,null, false);
         String SQL = "SELECT * FROM handyman WHERE cvr=? AND password=?";
         ResultSet rs = null;
         PreparedStatement pstm = null;
@@ -133,8 +133,8 @@ public class Database{
 //        new Thread(() -> {
 
         String SQL =
-                "INSERT INTO handyman(cvr,password,firstname,lastname,email,phone,description,address,hourlyRate, rating)"
-                        + "VALUES(?,?,?,?,?,?,?,?,?,?)";
+                "INSERT INTO handyman(cvr,password,firstname,lastname,email,phone,description,address,hourlyRate, rating, contact)"
+                        + "VALUES(?,?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement posted = null;
         //Connection conn = null;
         try {
@@ -152,6 +152,7 @@ public class Database{
             posted.setInt(8, insertAddress(handyman.getAddress()));
             posted.setInt(9, handyman.getHourlyRate());
             posted.setString(10, handyman.getRating());
+            posted.setBoolean(11,handyman.getContactVisibility());
 
             posted.execute();
 
@@ -165,6 +166,32 @@ public class Database{
     }
 
 
+    public Handyman getHandyman(long CVR) throws Exception
+    {
+        Handyman tmpHandyman = new Handyman(0, null, null, null,null,null,null,0,null,null,false);
+
+        String SQL = "SELECT * FROM handyman WHERE cvr=?";
+        ResultSet rs = null;
+        PreparedStatement pstm = null;
+        //Connection conn = null;
+        try {
+            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            pstm = conn.prepareStatement(SQL);
+            pstm.setLong(1, CVR);
+            rs = pstm.executeQuery();
+            while (rs.next()) {
+                process(rs, tmpHandyman);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } /*finally {
+            close(rs, pstm, conn);
+        }*/
+        if (tmpHandyman.getCVR() == 0) {
+            throw new Exception("Account not found");
+        } else
+            return tmpHandyman;
+    }
 
     public void insertSkills(Handyman handyman) {
 
@@ -320,6 +347,7 @@ public class Database{
                 + "address=?"
                 + "hourlyRate=?"
                 + "rating=?"
+                + "contact=?"
                 + " WHERE cvr=?";
             PreparedStatement posted = null;
             try {
@@ -334,6 +362,7 @@ public class Database{
                 posted.setInt(7, handyman.getHourlyRate());
                 posted.setString(8, handyman.getRating());
                 posted.setLong(9, handyman.getCVR());
+                posted.setBoolean(10,handyman.getContactVisibility());
 
                 posted.execute();
             } catch (SQLException e) {
@@ -358,7 +387,7 @@ public class Database{
                 preparedStatement.setInt(2, hourlyRate);
                 rs = preparedStatement.executeQuery();
                 while (rs.next()) {
-                    Handyman tmpHandyman = new Handyman(0, null, null, null, null, null, null, 0, null, null);
+                    Handyman tmpHandyman = new Handyman(0, null, null, null, null, null, null, 0, null, null, false);
                     process(rs, tmpHandyman);
                     tmpHandymanList.add(tmpHandyman);
                 }
@@ -371,9 +400,9 @@ public class Database{
     public ArrayList<Handyman> findHandymanWithSkills(ArrayList<Handyman> tmpHandymanList, Skills skills){
         ArrayList<Handyman> handymanList = new ArrayList<>();
         for(int i=0; i<tmpHandymanList.size(); i++){
-            //if(Skills.containsAny(getSkills(tmpHandymanList.get(i).getCVR()), skills.getSkills())){
-            //    handymanList.add(tmpHandymanList.get(i));
-           // }
+            if(Skills.containsAny(getSkills(tmpHandymanList.get(i).getCVR()).getSkills(), skills.getSkills())){
+               handymanList.add(tmpHandymanList.get(i));
+            }
             /*
             if(skills.equalsAtLeastOne(getSkills(tmpHandymanList.get(i).getCVR()))){
                 handymanList.add(tmpHandymanList.get(i));
@@ -450,6 +479,72 @@ public class Database{
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public void addApplied(JobOffer jobOffer, long cvr){
+        //Connection conn = null;
+        String SQL =
+            "INSERT INTO apply(jobtitle, cvr)"
+                + "VALUES(?,?)";
+        PreparedStatement posted = null;
+        try {
+            //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            posted = conn.prepareStatement(SQL);
+            posted.setString(1, jobOffer.getJobTitle());
+            posted.setLong(2, cvr);
+            posted.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public ArrayList<Handyman> getAppliedHandyman(String jobTitle) throws Exception
+    {
+        ArrayList<Handyman> tmpHandymanList = new ArrayList<>();
+
+        long CVR = 0;
+
+        String SQL = "SELECT * from apply WHERE jobtitle=?";
+        ResultSet rs = null;
+        PreparedStatement preparedStatement = null;
+        //Connection conn = null;
+        try {
+            //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            preparedStatement = conn.prepareStatement(SQL);
+            preparedStatement.setString(1, jobTitle);
+            rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                CVR = rs.getLong("cvr");
+                tmpHandymanList.add(getHandyman(CVR));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return tmpHandymanList;
+    }
+
+    public ArrayList<JobOffer> clientManageOffers(long cpr){
+        ArrayList<JobOffer> jobOffers = new ArrayList<>();
+        String SQL = "Select * FROM job_offer WHERE cpr=?";
+        ResultSet rs = null;
+        PreparedStatement preparedStatement = null;
+        //Connection conn = null;
+        try {
+            //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            preparedStatement = conn.prepareStatement(SQL);
+            preparedStatement.setLong(1, cpr);
+            rs = preparedStatement.executeQuery();
+
+            while (rs.next()) {
+                JobOffer tmpJobOffer = new JobOffer(null, null,0,null,0,null);
+                process(rs, tmpJobOffer);
+                jobOffers.add(tmpJobOffer);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return jobOffers;
     }
 
     public void insertJobType(JobOffer job){
@@ -566,6 +661,7 @@ public class Database{
         handyman.setHourlyRate(rs.getInt("hourlyRate"));
         handyman.setRating(rs.getString("rating"));
         handyman.setSkills(getSkills(rs.getLong("cvr")));
+        handyman.setContactVisibility(rs.getBoolean("contact"));
     }
 
 

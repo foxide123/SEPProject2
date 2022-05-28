@@ -3,6 +3,7 @@ package main.shared;
 import main.shared.model.*;
 
 import java.rmi.Remote;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 public interface RemoteServerInterface extends Remote
@@ -20,7 +21,13 @@ public interface RemoteServerInterface extends Remote
 
   void createJobOffer(JobOffer jobOffer) throws Exception;
 
+  void addApplied(JobOffer jobOffer, long cvr) throws Exception;
+
+  ArrayList<Handyman> getAppliedHandyman(String jobTitle) throws RemoteException;
+
   ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate) throws Exception;
   ArrayList<JobOffer> findWork(Address address, JobType type, int minBudget) throws Exception;
+
+  ArrayList<JobOffer> clientManageOffers(long CPR) throws RemoteException;
 }
 

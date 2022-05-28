@@ -25,6 +25,8 @@ public class HandymanLoggedInViewModel
   @FXML private StringProperty hourlyRate;
   @FXML private StringProperty error_label;
 
+  @FXML private BooleanProperty contact;
+
   @FXML private BooleanProperty plumber;
   @FXML private BooleanProperty electrician;
   @FXML private BooleanProperty mason;
@@ -46,6 +48,8 @@ public class HandymanLoggedInViewModel
     this.confirmPassword = new SimpleStringProperty("");
     this.hourlyRate = new SimpleStringProperty("");
     this.error_label = new SimpleStringProperty("");
+
+    this.contact = new SimpleBooleanProperty(false);
 
     this.plumber = new SimpleBooleanProperty(false);
     this.electrician = new SimpleBooleanProperty(false);
@@ -84,6 +88,9 @@ public class HandymanLoggedInViewModel
       if(tmpHandyman.getSkills().getGroundWorkerBoolean() == true){
         groundworker.set(true);
       }
+      if(tmpHandyman.getContactVisibility()==true){
+        contact.set(true);
+      }
 
   }
 
@@ -95,8 +102,8 @@ public class HandymanLoggedInViewModel
           email.get(), phone.get(), description.get(),
           new Address(city.get(), zip.get()),
           Integer.parseInt(hourlyRate.get()), new Skills(plumber, electrician, mason, groundworker),
-          tmpHandyman.getRating()
-
+          tmpHandyman.getRating(),
+          tmpHandyman.getContactVisibility()
       ));
     }catch(Exception e){
       e.printStackTrace();
@@ -118,6 +125,8 @@ public class HandymanLoggedInViewModel
   public StringProperty getConfirmPasswordProperty(){return confirmPassword;}
   public StringProperty getHourlyRateProperty(){return hourlyRate;}
   public StringProperty getErrorLabelProperty(){return error_label;}
+
+  public BooleanProperty getRBContactProperty(){return contact;}
 
   public BooleanProperty getRBPlumberProperty(){return plumber;}
   public BooleanProperty getRBMasonProperty(){return mason;}

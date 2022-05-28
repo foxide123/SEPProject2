@@ -15,12 +15,14 @@ public class Handyman implements Serializable
   private int hourlyRate;
   private Skills skills;
   private String rating;
+  private boolean contactVisibility;
 
   private static final long serialVersionUID = 2L;
 
   public Handyman(long CVR, String firstName, String lastName, String email,
       String phone, String description, Address address,
-      int hourlyRate, Skills skills, String rating)
+      int hourlyRate, Skills skills, String rating, boolean contactVisibility
+      )
   {
     this.CVR = CVR;
     this.firstName = firstName;
@@ -32,7 +34,13 @@ public class Handyman implements Serializable
     this.hourlyRate = hourlyRate;
     this.skills = skills;
     this.rating = rating;
+    this.contactVisibility = contactVisibility;
   }
+
+  public boolean getContactVisibility(){return contactVisibility;}
+
+  public void setContactVisibility(boolean contactVisibility){this.contactVisibility = contactVisibility;}
+
 
   public void setAddress(Address tmpAddress){
     this.address = tmpAddress;
@@ -42,13 +50,17 @@ public class Handyman implements Serializable
     return skills;
   }
 
-  public ArrayList<String> getSkillsList(){return skills.getSkills();}
+  public ArrayList<String> getSkillsList(){
+    return skills.getSkills();
+  }
 
   public void setSkills(Skills skills){
     this.skills=skills;
   }
 
-  public void setSkillsFromList(ArrayList<String> list){this.skills.setSkills(list);}
+  public void setSkillsFromList(ArrayList<String> list){
+    this.skills.setSkills(list);
+  }
 
 
   public void setCVR(int CVR) {

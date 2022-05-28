@@ -118,6 +118,31 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     } catch (Exception e){
       throw new RemoteException(e.getMessage());
     }
+  }
 
+  public void addApplied(JobOffer jobOffer, long cvr) throws RemoteException
+  {
+    try{
+      database.addApplied(jobOffer, cvr);
+    } catch (Exception e){
+      throw new RemoteException(e.getMessage());
+    }
+  }
+
+  public ArrayList<Handyman> getAppliedHandyman(String jobTitle) throws RemoteException{
+    try{
+      return database.getAppliedHandyman(jobTitle);
+    } catch (Exception e){
+      throw new RemoteException(e.getMessage());
+    }
+  }
+
+  public ArrayList<JobOffer> clientManageOffers(long CPR) throws RemoteException
+  {
+    try{
+      return database.clientManageOffers(CPR);
+    }catch(Exception e){
+      throw new RemoteException(e.getMessage());
+    }
   }
 }
