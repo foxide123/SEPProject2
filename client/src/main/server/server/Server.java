@@ -72,9 +72,9 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     }
   }
 
-  public void updateHandyman(Handyman handyman) throws Exception{
+  public void updateHandyman(Handyman handyman, String password) throws Exception{
     try{
-      database.updateHandyman(handyman);
+      database.updateHandyman(handyman, password);
     }catch(Exception e){
       throw new RemoteException(e.getMessage());
     }
@@ -100,10 +100,11 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
 
   }
 
-  public void updateClient(Client client) throws Exception{
+  public void updateClient(Client client, String password) throws Exception{
     try{
-      database.updateClient(client);
+      database.updateClient(client, password);
     }catch(Exception e){
+      e.printStackTrace();
       throw new RemoteException(e.getMessage());
     }
   }
@@ -125,6 +126,15 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     try{
       database.addApplied(jobOffer, cvr);
     } catch (Exception e){
+      throw new RemoteException(e.getMessage());
+    }
+  }
+
+  public ArrayList<JobOffer> getAppliedJobs(long CVR) throws RemoteException
+  {
+    try{
+      return database.getAppliedJobs(CVR);
+    }catch(Exception e){
       throw new RemoteException(e.getMessage());
     }
   }

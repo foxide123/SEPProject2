@@ -41,7 +41,7 @@ public class Database{
 
     public Handyman loginHandyman(int CVR, String password)
             throws Exception {
-        Handyman tmpHandyman = new Handyman(0, null, null, null, null,null,null,0,null,null, false);
+        Handyman tmpHandyman = new Handyman(0, null, null, null, null,null,null,0,null,null, null);
         String SQL = "SELECT * FROM handyman WHERE cvr=? AND password=?";
         ResultSet rs = null;
         PreparedStatement pstm = null;
@@ -152,7 +152,7 @@ public class Database{
             posted.setInt(8, insertAddress(handyman.getAddress()));
             posted.setInt(9, handyman.getHourlyRate());
             posted.setString(10, handyman.getRating());
-            posted.setBoolean(11,handyman.getContactVisibility());
+            posted.setString(11,handyman.getContactVisibility());
 
             posted.execute();
 
@@ -168,7 +168,7 @@ public class Database{
 
     public Handyman getHandyman(long CVR) throws Exception
     {
-        Handyman tmpHandyman = new Handyman(0, null, null, null,null,null,null,0,null,null,false);
+        Handyman tmpHandyman = new Handyman(0, null, null, null,null,null,null,0,null,null,null);
 
         String SQL = "SELECT * FROM handyman WHERE cvr=?";
         ResultSet rs = null;
@@ -333,25 +333,13 @@ public class Database{
     }
 
 
-    public void updateHandyman(Handyman handyman){
-            //Connection conn = null;
-            /*
-            * cvr,password,firstname,lastname,email,phone,
-            * description,address,hourlyRate, rating*/
-            String SQL = "UPDATE handyman SET "
-                + "firstName=?"
-                + "lastName=?"
-                + "email=?"
-                + "phone=?"
-                + "description=?"
-                + "address=?"
-                + "hourlyRate=?"
-                + "rating=?"
-                + "contact=?"
-                + " WHERE cvr=?";
+    public void updateHandyman(Handyman handyman, String password){
+        if(password.isEmpty())
+        {
+            String SQL = "UPDATE handyman SET firstName=?, lastName=?, email=?, phone=?, description=?, address=?, hourlyRate=?, rating=?, contact=? WHERE cvr=?";
             PreparedStatement posted = null;
             try {
-              //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+                //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
                 posted = conn.prepareStatement(SQL);
                 posted.setString(1, handyman.getFirstName());
                 posted.setString(2, handyman.getLastName());
@@ -361,13 +349,36 @@ public class Database{
                 posted.setInt(6, insertAddress(handyman.getAddress()));
                 posted.setInt(7, handyman.getHourlyRate());
                 posted.setString(8, handyman.getRating());
-                posted.setLong(9, handyman.getCVR());
-                posted.setBoolean(10,handyman.getContactVisibility());
+                posted.setString(9,handyman.getContactVisibility());
+                posted.setLong(10, handyman.getCVR());
 
                 posted.execute();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+        }else{
+            String SQL = "UPDATE handyman SET firstName=?, lastName=?, email=?, phone=?, description=?, address=?, hourlyRate=?, rating=?, contact=?, password=? WHERE cvr=?";
+            PreparedStatement posted = null;
+            try {
+                //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+                posted = conn.prepareStatement(SQL);
+                posted.setString(1, handyman.getFirstName());
+                posted.setString(2, handyman.getLastName());
+                posted.setString(3, handyman.getEmail());
+                posted.setString(4, handyman.getPhone());
+                posted.setString(5, handyman.getDescription());
+                posted.setInt(6, insertAddress(handyman.getAddress()));
+                posted.setInt(7, handyman.getHourlyRate());
+                posted.setString(8, handyman.getRating());
+                posted.setString(9,handyman.getContactVisibility());
+                posted.setString(10, password);
+                posted.setLong(11, handyman.getCVR());
+
+                posted.execute();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
@@ -387,7 +398,7 @@ public class Database{
                 preparedStatement.setInt(2, hourlyRate);
                 rs = preparedStatement.executeQuery();
                 while (rs.next()) {
-                    Handyman tmpHandyman = new Handyman(0, null, null, null, null, null, null, 0, null, null, false);
+                    Handyman tmpHandyman = new Handyman(0, null, null, null, null, null, null, 0, null, null, null);
                     process(rs, tmpHandyman);
                     tmpHandymanList.add(tmpHandyman);
                 }
@@ -414,33 +425,45 @@ public class Database{
     }
 
 
-    public void updateClient(Client client){
-        //Connection conn = null;
-        /*
-         * cvr,password,firstname,lastname,email,phone,
-         * description,address,hourlyRate, rating*/
-        String SQL = "UPDATE client SET "
-            + "firstName=?"
-            + "lastName=?"
-            + "email=?"
-            + "description=?"
-            + "address=?"
-            + " WHERE cpr=?";
-        PreparedStatement posted = null;
-        try {
-          //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
-            posted = conn.prepareStatement(SQL);
-            posted.setString(1, client.getFirstName());
-            posted.setString(2, client.getLastName());
-            posted.setString(3, client.getEmail());
-            posted.setString(4, client.getDescription());
-            posted.setInt(5, insertAddress(client.getAddress()));
-            posted.setLong(6, client.getCPR());
+    public void updateClient(Client client, String password){
 
-            posted.execute();
-        } catch (SQLException e) {
-            e.printStackTrace();
+        if(password.isEmpty()){
+            String SQL = "UPDATE client SET firstname=?, lastname=?, email=?, description=?, address=? WHERE cpr=?";
+            PreparedStatement posted = null;
+            try {
+                //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+                posted = conn.prepareStatement(SQL);
+                posted.setString(1, client.getFirstName());
+                posted.setString(2, client.getLastName());
+                posted.setString(3, client.getEmail());
+                posted.setString(4, client.getDescription());
+                posted.setInt(5, insertAddress(client.getAddress()));
+                posted.setLong(6, client.getCPR());
+
+                posted.execute();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }else{
+            String SQL = "UPDATE client SET firstname=?, lastname=?, email=?, description=?, address=?, password=? WHERE cpr=?";
+            PreparedStatement posted = null;
+            try {
+                //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+                posted = conn.prepareStatement(SQL);
+                posted.setString(1, client.getFirstName());
+                posted.setString(2, client.getLastName());
+                posted.setString(3, client.getEmail());
+                posted.setString(4, client.getDescription());
+                posted.setInt(5, insertAddress(client.getAddress()));
+                posted.setString(6, password);
+                posted.setLong(7, client.getCPR());
+
+                posted.execute();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+
     }
 
 
@@ -498,6 +521,53 @@ public class Database{
             e.printStackTrace();
         }
     }
+
+    public ArrayList<JobOffer> getAppliedJobs(long CVR) throws Exception{
+        ArrayList<String> tmpJobOfferTitleList = new ArrayList<>();
+        ArrayList<JobOffer> tmpJobOfferList = new ArrayList<>();
+
+        String SQL = "SELECT jobtitle from apply WHERE cvr=?";
+        ResultSet rs = null;
+        PreparedStatement preparedStatement = null;
+        //Connection conn = null;
+        try {
+            //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            preparedStatement = conn.prepareStatement(SQL);
+            preparedStatement.setLong(1, CVR);
+            rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                tmpJobOfferTitleList.add(rs.getString("jobtitle"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        for(int i=0; i<tmpJobOfferTitleList.size(); i++){
+            tmpJobOfferList.add(getJobOfferFromTitle(tmpJobOfferTitleList.get(i)));
+        }
+        return tmpJobOfferList;
+    }
+
+
+    public JobOffer getJobOfferFromTitle(String jobTitle){
+        JobOffer tmpJobOffer = new JobOffer(null, null, 0, null, 0, null);
+        String SQL = "SELECT * from job_offer WHERE jobtitle=?";
+        ResultSet rs = null;
+        PreparedStatement preparedStatement = null;
+        //Connection conn = null;
+        try {
+            //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            preparedStatement = conn.prepareStatement(SQL);
+            preparedStatement.setString(1, jobTitle);
+            rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                process(rs, tmpJobOffer);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return tmpJobOffer;
+    }
+
 
     public ArrayList<Handyman> getAppliedHandyman(String jobTitle) throws Exception
     {
@@ -661,7 +731,7 @@ public class Database{
         handyman.setHourlyRate(rs.getInt("hourlyRate"));
         handyman.setRating(rs.getString("rating"));
         handyman.setSkills(getSkills(rs.getLong("cvr")));
-        handyman.setContactVisibility(rs.getBoolean("contact"));
+        handyman.setContactVisibility(rs.getString("contact"));
     }
 
 

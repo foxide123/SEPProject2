@@ -4,9 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="624.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="main.client.view.client.SelectedHandymanView">
+<AnchorPane prefHeight="624.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.client.SelectedHandymanView">
    <children>
       <Label layoutX="188.0" layoutY="60.0" text="CVR" />
       <Label fx:id="CVR" layoutX="394.0" layoutY="60.0" text="Label" />

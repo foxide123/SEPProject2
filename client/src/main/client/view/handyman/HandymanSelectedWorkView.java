@@ -39,7 +39,7 @@ public class HandymanSelectedWorkView extends SwitchTabsView
 
   public void onBack(ActionEvent event) throws IOException
   {
-    viewHandler.openView("HandymanFindWorkResult");
+    viewHandler.openView("HandymanManageOffers");
   }
 
   public void onApply(ActionEvent event) throws Exception

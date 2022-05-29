@@ -88,8 +88,11 @@ public class HandymanLoggedInViewModel
       if(tmpHandyman.getSkills().getGroundWorkerBoolean() == true){
         groundworker.set(true);
       }
-      if(tmpHandyman.getContactVisibility()==true){
+
+      if(tmpHandyman.getContactVisibility().equals("true")){
         contact.set(true);
+      }else{
+        contact.set(false);
       }
 
   }
@@ -97,14 +100,20 @@ public class HandymanLoggedInViewModel
   public void onSave(boolean plumber, boolean electrician, boolean mason, boolean groundworker){
 
     try{
+      String contactBooleanString = null;
+      if(contact.get()==true){
+        contactBooleanString="true";
+      }else{
+        contactBooleanString="false";
+      }
       model.updateHandyman(new Handyman(
           Integer.parseInt(cvr.get()), firstName.get(), lastName.get(),
           email.get(), phone.get(), description.get(),
           new Address(city.get(), zip.get()),
           Integer.parseInt(hourlyRate.get()), new Skills(plumber, electrician, mason, groundworker),
           tmpHandyman.getRating(),
-          tmpHandyman.getContactVisibility()
-      ));
+          contactBooleanString
+      ), newPassword.get());
     }catch(Exception e){
       e.printStackTrace();
     }

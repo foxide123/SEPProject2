@@ -19,7 +19,6 @@
       <Label layoutX="181.0" layoutY="240.0" text="Zip" />
       <Label layoutX="181.0" layoutY="292.0" text="Cpr" />
       <Button layoutX="191.0" layoutY="422.0" mnemonicParsing="false" onAction="#onBack" text="Back" />
-      <Button layoutX="356.0" layoutY="422.0" mnemonicParsing="false" onAction="#onApply" text="Apply" />
       <Label layoutX="177.0" layoutY="338.0" text="Job Types" />
       <Label fx:id="jobTypes" layoutX="380.0" layoutY="338.0" text="JobTypes" />
       <Label fx:id="errorLabel" layoutX="276.0" layoutY="381.0" />

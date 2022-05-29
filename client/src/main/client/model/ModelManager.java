@@ -20,7 +20,6 @@ public class ModelManager implements Model
   private ArrayList<Handyman> findHandymanResultList;
   private ArrayList<JobOffer> findWorkResultList;
   private ArrayList<JobOffer> jobOffers;
-  private ArrayList<JobOffer> appliedOffers;
   private ArrayList<Handyman> appliedHandymanList;
   private Handyman appliedHandyman;
 
@@ -37,7 +36,6 @@ public class ModelManager implements Model
     this.findHandymanResultList = new ArrayList<>();
     this.findWorkResultList = new ArrayList<>();
     this.jobOffers = new ArrayList<>();
-    this.appliedOffers = new ArrayList<>();
     server = new Server();
   }
 
@@ -104,7 +102,24 @@ public class ModelManager implements Model
   public void addToAppliedJobs(JobOffer jobOffer) throws Exception
   {
     server.addApplied(jobOffer, getHandyman().getCVR());
-    appliedOffers.add(jobOffer);
+  }
+
+  public ArrayList<JobOffer> getAppliedJobs() throws RemoteException
+  {
+    return server.getAppliedJobs(getHandyman().getCVR());
+  }
+
+  public JobOffer getAppliedJobFromTitle(String jobTitle) throws RemoteException
+  {
+    ArrayList<JobOffer> tmpList;
+    tmpList = server.getAppliedJobs(getHandyman().getCVR());
+    for(int i=0; i<tmpList.size(); i++){
+      if(tmpList.get(i).getJobTitle().equals(jobTitle)){
+        support.firePropertyChange("JobOfferFound", null, tmpList.get(i));
+        return tmpList.get(i);
+      }
+    }
+    return null;
   }
 
   public ArrayList<Handyman> getAppliedHandymanList(String jobTitle) throws Exception
@@ -118,10 +133,6 @@ public class ModelManager implements Model
     support.firePropertyChange("AppliedHandyman",null,appliedHandyman);
   }
 
-
-  public ArrayList<JobOffer> getAppliedJobs(){
-    return appliedOffers;
-  }
 
   public void logInClient(int CPR, String password) throws Exception
   {
@@ -161,13 +172,13 @@ public class ModelManager implements Model
     support.firePropertyChange("HandymanSignedUp", null, handyman);
   }
 
-  public void updateHandyman(Handyman handyman) throws Exception{
-    server.updateHandyman(handyman);
+  public void updateHandyman(Handyman handyman, String password) throws Exception{
+    server.updateHandyman(handyman, password);
     support.firePropertyChange("HandymanUpdated",null,handyman);
   }
 
-  public void updateClient(Client client) throws Exception{
-    server.updateClient(client);
+  public void updateClient(Client client, String password) throws Exception{
+    server.updateClient(client, password);
     support.firePropertyChange("ClientUpdated",null,client);
   }
 

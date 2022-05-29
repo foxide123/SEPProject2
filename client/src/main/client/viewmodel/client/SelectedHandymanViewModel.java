@@ -52,7 +52,8 @@ public class SelectedHandymanViewModel
     this.hourlyRate.setValue(String.valueOf(handyman.getHourlyRate()));
     this.skills.setValue(String.valueOf(handyman.getSkillsList()));
     this.rating.setValue(handyman.getRating());
-    if(handyman.getContactVisibility()==true){
+
+    if(handyman.getContactVisibility().equals("true")){
       this.email.setValue(handyman.getEmail());
       this.phone.setValue(handyman.getPhone());
     }else{

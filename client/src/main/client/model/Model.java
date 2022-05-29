@@ -14,8 +14,8 @@ public interface Model
   void logInHandyman(int CVR, String password) throws Exception;
   void signUpClient(Client client, String password) throws Exception;
   void signUpHandyman(Handyman handyman, String password) throws Exception;
-  void updateHandyman(Handyman handyman) throws Exception;
-  void updateClient(Client client) throws Exception;
+  void updateHandyman(Handyman handyman, String password) throws Exception;
+  void updateClient(Client client, String password) throws Exception;
   void createJob(JobOffer job) throws Exception;
   ArrayList<JobOffer> getJobOffers() throws RemoteException;
   void findHandyman(Address address, Skills skills, int hourlyRate)
@@ -32,6 +32,7 @@ public interface Model
   void addToAppliedJobs(JobOffer jobOffer) throws Exception;
   ArrayList<Handyman> getAppliedHandymanList(String jobTitle) throws Exception;
   void setSelectedAppliedHandyman(Handyman handyman);
-  ArrayList<JobOffer> getAppliedJobs();
+  ArrayList<JobOffer> getAppliedJobs() throws RemoteException;
+  JobOffer getAppliedJobFromTitle(String jobTitle) throws RemoteException;
 
 }
