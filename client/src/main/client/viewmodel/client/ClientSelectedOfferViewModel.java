@@ -1,13 +1,15 @@
-package main.client.viewmodel.handyman;
+package main.client.viewmodel.client;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 import main.client.model.Model;
+import main.shared.model.Handyman;
 import main.shared.model.JobOffer;
 
 import java.beans.PropertyChangeEvent;
+import java.util.ArrayList;
 
-public class HandymanSelectedWorkViewModel
+public class ClientSelectedOfferViewModel
 {
   private Model model;
 
@@ -18,11 +20,13 @@ public class HandymanSelectedWorkViewModel
   private StringProperty zip;
   private StringProperty cpr;
   private StringProperty jobTypes;
+  private StringProperty email;
+  private StringProperty phone;
   private StringProperty errorLabel;
 
   private JobOffer jobOffer;
 
-  public HandymanSelectedWorkViewModel(Model model){
+  public ClientSelectedOfferViewModel(Model model){
     this.model = model;
     this.jobTitle = new SimpleStringProperty("");
     this.description = new SimpleStringProperty("");
@@ -32,7 +36,7 @@ public class HandymanSelectedWorkViewModel
     this.cpr = new SimpleStringProperty("");
     this.jobTypes = new SimpleStringProperty("");
     this.errorLabel = new SimpleStringProperty("");
-    model.addPropertyChangeListener("JobOfferFound", this::setOfferValues);
+    model.addPropertyChangeListener("ClientSelectedOffer", this::setOfferValues);
   }
 
   private void setOfferValues(PropertyChangeEvent propertyChangeEvent)
@@ -50,22 +54,20 @@ public class HandymanSelectedWorkViewModel
     for(int i=0; i<jobOffer.getJobType().getJobTypes().size(); i++){
       type+= jobOffer.getJobType().getJobTypes().get(i);
     }
-
-    /*
-    for(int i=0; i<jobOffer.getJobTypeList().size(); i++){
-      type += jobOffer.getJobTypeList().get(i) + " ";
-    }
-
-     */
     jobTypes.setValue(type);
+
+
   }
 
-  public void apply(){
-    if(model.getAppliedJobs().contains(jobOffer)){
-      errorLabel.set("You have already applied for the job!");
-    }else{
-      model.addToAppliedJobs(jobOffer);
-    }
+
+  public ArrayList<Handyman> getAppliedHandyman(String jobTitle)
+      throws Exception
+  {
+    return model.getAppliedHandymanList(jobTitle);
+  }
+
+  public void setSelectedAppliedHandyman(Handyman handyman){
+    model.setSelectedAppliedHandyman(handyman);
   }
 
   public StringProperty getJobTitleProperty(){return jobTitle;}

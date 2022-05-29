@@ -3,19 +3,18 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="main.client.view.handyman.HandymanSignUpView">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="912.0" prefWidth="1202.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.handyman.HandymanSignUpView">
    <children>
-      <Label layoutX="104.0" layoutY="68.0" text="Create account">
+      <Label layoutX="104.0" layoutY="4.0" prefHeight="60.0" prefWidth="232.0" text="Create account">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
@@ -29,9 +28,9 @@
             </Label>
          </children>
       </AnchorPane>
-      <VBox layoutX="104.0" layoutY="136.0" prefHeight="569.0" prefWidth="522.0" spacing="21.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="574.0">
+      <VBox layoutX="104.0" layoutY="70.0" prefHeight="742.0" prefWidth="524.0" spacing="21.0" AnchorPane.leftAnchor="104.0" AnchorPane.rightAnchor="574.0">
          <children>
-            <TextField fx:id="tf_cvr" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="182.0" promptText="CVR Number" />
+            <TextField fx:id="tf_cvr" minHeight="-Infinity" minWidth="-Infinity" prefHeight="33.0" prefWidth="524.0" promptText="CVR Number" />
             <HBox spacing="28.0">
                <children>
                   <TextField fx:id="tf_first_name" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="182.0" promptText="First name" HBox.hgrow="ALWAYS" />
@@ -56,63 +55,65 @@
             <TextField fx:id="tf_hourly_rate" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="182.0" promptText="Hourly rate" />
             <TextArea fx:id="tf_description" minHeight="-Infinity" minWidth="-Infinity" prefHeight="78.0" prefWidth="522.0" promptText="Write a small description about yourself." wrapText="true" />
             <TextField fx:id="tf_email" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="393.0" promptText="Email address" />
-            <Label text="Chose Skills" />
-            <HBox prefWidth="530.0">
+            <Label text="Make contact details visible just for applied offers">
+               <opaqueInsets>
+                  <Insets top="10.0" />
+               </opaqueInsets>
+            </Label>
+            <RadioButton fx:id="contactRadioButton" mnemonicParsing="false" />
+            <HBox prefHeight="43.0" prefWidth="524.0">
                <children>
-                  <RadioButton mnemonicParsing="false" text="Plumber" fx:id="rb_plumber">
+                  <Label text="Choose Skills" />
+                  <Pane prefHeight="43.0" prefWidth="31.0" />
+                  <RadioButton fx:id="rb_plumber" mnemonicParsing="false" prefHeight="42.0" prefWidth="78.0" text="Plumber" />
+                  <RadioButton fx:id="rb_electrician" mnemonicParsing="false" prefHeight="42.0" prefWidth="95.0" text="Electrician" />
+                  <RadioButton fx:id="rb_mason" mnemonicParsing="false" prefHeight="42.0" prefWidth="70.0" text="Mason" />
+                  <RadioButton fx:id="rb_groundworker" mnemonicParsing="false" prefHeight="43.0" prefWidth="98.0" text="Groundworker">
+                     <opaqueInsets>
+                        <Insets left="10.0" />
+                     </opaqueInsets>
+                  </RadioButton>
+               </children>
+            </HBox>
+            <HBox prefHeight="33.0" prefWidth="524.0">
+               <children>
+                  <TextField fx:id="tf_password" promptText="Password">
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
-                     <padding>
-                        <Insets right="10.0" />
-                     </padding>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Electrician" fx:id="rb_electrician">
-                     <padding>
-                        <Insets right="10.0" />
-                     </padding>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Mason" fx:id="rb_mason">
-                     <padding>
-                        <Insets right="10.0" />
-                     </padding>
-                  </RadioButton>
-                  <RadioButton mnemonicParsing="false" text="Groundworker" fx:id="rb_groundworker"/>
-                  <HBox alignment="CENTER_RIGHT" maxWidth="64.0" minWidth="64.0" prefHeight="25.0" prefWidth="64.0">
-                     <HBox.margin>
+                  </TextField>
+                  <Pane prefHeight="34.0" prefWidth="124.0" />
+                  <TextField fx:id="tf_password_confirm" prefHeight="26.0" prefWidth="130.0" promptText="Confirm Password">
+                     <opaqueInsets>
                         <Insets />
-                     </HBox.margin>
-                  </HBox>
+                     </opaqueInsets>
+                  </TextField>
                </children>
             </HBox>
-            <HBox spacing="28.0">
+            <HBox prefHeight="60.0" prefWidth="489.0">
                <children>
-                  <PasswordField fx:id="tf_password" minHeight="30.0" prefHeight="30.0" prefWidth="182.0" promptText="Passowrd" HBox.hgrow="ALWAYS" />
-                  <PasswordField fx:id="tf_password_confirm" minHeight="30.0" prefHeight="30.0" prefWidth="182.0" promptText="Confirm password" HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#onBack" prefHeight="26.0" prefWidth="80.0" text="Back">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Pane prefHeight="60.0" prefWidth="284.0">
+                     <children>
+                        <HBox layoutX="-77.0" layoutY="45.0" prefHeight="21.0" prefWidth="524.0">
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" />
+                              <Label fx:id="label_error" prefHeight="18.0" prefWidth="88.0" text="Error_label" textFill="RED">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </Pane>
+                  <Button mnemonicParsing="false" onAction="#onSignUp" prefHeight="26.0" prefWidth="61.0" text="Next" />
                </children>
             </HBox>
-            <Label fx:id="label_error" text="Error_label" textFill="RED">
-               <VBox.margin>
-                  <Insets bottom="-20.0" top="-12.0" />
-               </VBox.margin>
-            </Label>
-            <AnchorPane prefHeight="33.0" prefWidth="522.0">
-               <children>
-                  <Button alignment="CENTER" contentDisplay="RIGHT" layoutX="389.0" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#onSignUp" prefHeight="33.0" prefWidth="133.0" stylesheets="@../resources/utils/css/style.css" text="Next" textFill="WHITE" AnchorPane.rightAnchor="0.0">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Button>
-                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#onBack" prefHeight="33.0" prefWidth="133.0" stylesheets="@../resources/utils/css/style.css" text="Back" textFill="WHITE" AnchorPane.leftAnchor="0.0">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                  </Button>
-               </children>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </AnchorPane>
          </children>
       </VBox>
    </children>

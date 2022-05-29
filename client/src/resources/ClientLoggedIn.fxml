@@ -53,10 +53,13 @@
                   <PasswordField fx:id="tf_confirmPassword" layoutX="196.0" layoutY="10.0" minHeight="30.0" minWidth="158.0" prefHeight="30.0" promptText="Confirm password" HBox.hgrow="ALWAYS" />
                </children>
             </HBox>
-            <Label fx:id="label_error" text="Error_label" textFill="RED">
+            <Label fx:id="errorLabel" text="Error_label" textFill="RED">
                <VBox.margin>
                   <Insets bottom="-20.0" top="-12.0" />
                </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
             </Label>
             <AnchorPane prefHeight="30.0" prefWidth="530.0">
                <children>

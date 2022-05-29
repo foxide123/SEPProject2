@@ -20,7 +20,11 @@ public class ModelManager implements Model
   private ArrayList<Handyman> findHandymanResultList;
   private ArrayList<JobOffer> findWorkResultList;
   private ArrayList<JobOffer> jobOffers;
-  private ArrayList<JobOffer> appliedOffers;
+  private ArrayList<Handyman> appliedHandymanList;
+  private Handyman appliedHandyman;
+
+  private ArrayList<JobOffer> clientManageOfferList;
+  private JobOffer clientSelectedOffer;
 
 
   private ArrayList<Handyman> handymanAccounts;
@@ -32,7 +36,6 @@ public class ModelManager implements Model
     this.findHandymanResultList = new ArrayList<>();
     this.findWorkResultList = new ArrayList<>();
     this.jobOffers = new ArrayList<>();
-    this.appliedOffers = new ArrayList<>();
     server = new Server();
   }
 
@@ -85,15 +88,51 @@ public class ModelManager implements Model
     return null;
   }
 
-
-
-  public void addToAppliedJobs(JobOffer jobOffer){
-    appliedOffers.add(jobOffer);
+  public JobOffer getClientSelectedOffer(String title) throws RemoteException
+  {
+    for(int i=0; i<clientManageOfferList.size(); i++){
+      if(clientManageOfferList.get(i).getJobTitle().equals(title)){
+        support.firePropertyChange("ClientSelectedOffer", null, clientManageOfferList.get(i));
+        return clientManageOfferList.get(i);
+      }
+    }
+    return null;
   }
 
-  public ArrayList<JobOffer> getAppliedJobs(){
-    return appliedOffers;
+  public void addToAppliedJobs(JobOffer jobOffer) throws Exception
+  {
+    server.addApplied(jobOffer, getHandyman().getCVR());
   }
+
+  public ArrayList<JobOffer> getAppliedJobs() throws RemoteException
+  {
+    return server.getAppliedJobs(getHandyman().getCVR());
+  }
+
+  public JobOffer getAppliedJobFromTitle(String jobTitle) throws RemoteException
+  {
+    ArrayList<JobOffer> tmpList;
+    tmpList = server.getAppliedJobs(getHandyman().getCVR());
+    for(int i=0; i<tmpList.size(); i++){
+      if(tmpList.get(i).getJobTitle().equals(jobTitle)){
+        support.firePropertyChange("JobOfferFound", null, tmpList.get(i));
+        return tmpList.get(i);
+      }
+    }
+    return null;
+  }
+
+  public ArrayList<Handyman> getAppliedHandymanList(String jobTitle) throws Exception
+  {
+    appliedHandymanList = server.getAppliedHandyman(jobTitle);
+    return appliedHandymanList;
+  }
+
+  public void setSelectedAppliedHandyman(Handyman handyman){
+    appliedHandyman = handyman;
+    support.firePropertyChange("AppliedHandyman",null,appliedHandyman);
+  }
+
 
   public void logInClient(int CPR, String password) throws Exception
   {
@@ -133,13 +172,13 @@ public class ModelManager implements Model
     support.firePropertyChange("HandymanSignedUp", null, handyman);
   }
 
-  public void updateHandyman(Handyman handyman) throws Exception{
-    server.updateHandyman(handyman);
+  public void updateHandyman(Handyman handyman, String password) throws Exception{
+    server.updateHandyman(handyman, password);
     support.firePropertyChange("HandymanUpdated",null,handyman);
   }
 
-  public void updateClient(Client client) throws Exception{
-    server.updateClient(client);
+  public void updateClient(Client client, String password) throws Exception{
+    server.updateClient(client, password);
     support.firePropertyChange("ClientUpdated",null,client);
   }
 
@@ -148,8 +187,10 @@ public class ModelManager implements Model
     server.createJobOffer(job);
   }
 
-  public ArrayList<JobOffer> getJobOffers(){
-    return jobOffers;
+  public ArrayList<JobOffer> getJobOffers() throws RemoteException
+  {
+    clientManageOfferList = server.clientManageOffers(getClient().getCPR());
+    return clientManageOfferList;
   }
 
   public void addPropertyChangeListener(

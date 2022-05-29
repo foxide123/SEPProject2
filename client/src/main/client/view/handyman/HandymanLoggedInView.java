@@ -1,15 +1,13 @@
 package main.client.view.handyman;
 
-import javafx.scene.control.RadioButton;
-import main.client.view.ViewHandler;
-import main.client.viewmodel.handyman.HandymanLoggedInViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-
-import java.io.IOException;
+import main.client.view.ViewHandler;
+import main.client.viewmodel.handyman.HandymanLoggedInViewModel;
 
 public class HandymanLoggedInView extends SwitchTabsView
 {
@@ -27,6 +25,8 @@ public class HandymanLoggedInView extends SwitchTabsView
   @FXML private TextField confirmPassword;
   @FXML private TextField hourlyRate;
   @FXML private Label errorLabel;
+
+  @FXML private RadioButton rb_contact;
 
   @FXML private RadioButton rb_plumber;
   @FXML private RadioButton rb_electrician;
@@ -48,6 +48,8 @@ public class HandymanLoggedInView extends SwitchTabsView
     confirmPassword.textProperty().bindBidirectional(viewModel.getConfirmPasswordProperty());
     hourlyRate.textProperty().bindBidirectional(viewModel.getHourlyRateProperty());
     errorLabel.textProperty().bindBidirectional(viewModel.getErrorLabelProperty());
+
+    rb_contact.selectedProperty().bindBidirectional(viewModel.getRBContactProperty());
 
     rb_plumber.selectedProperty().bindBidirectional(viewModel.getRBPlumberProperty());
     rb_electrician.selectedProperty().bindBidirectional(viewModel.getRBElectricianProperty());

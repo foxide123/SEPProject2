@@ -6,8 +6,6 @@ import javafx.fxml.FXML;
 import main.client.model.Model;
 import main.shared.model.Address;
 import main.shared.model.Client;
-import main.shared.model.Handyman;
-import main.shared.model.Skills;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeSupport;
@@ -25,6 +23,7 @@ public class ClientLoggedInViewModel
   @FXML private StringProperty email;
   @FXML private StringProperty newPassword;
   @FXML private StringProperty confirmPassword;
+  @FXML private StringProperty errorLabel;
 
   private Client tmpClient;
 
@@ -39,7 +38,9 @@ public class ClientLoggedInViewModel
     this.email = new SimpleStringProperty("");
     this.newPassword = new SimpleStringProperty("");
     this.confirmPassword = new SimpleStringProperty("");
+    this.errorLabel = new SimpleStringProperty("");
     model.addPropertyChangeListener("ClientLoggedIn", this::setValues);
+    model.addPropertyChangeListener("ClientUpdated", this::setValues);
   }
 
   private void setValues(PropertyChangeEvent propertyChangeEvent)
@@ -58,10 +59,10 @@ public class ClientLoggedInViewModel
 
   public void onSave(){
     try{
-      model.updateClient(new Client(
-          Integer.parseInt(cpr.get()), firstName.get(), lastName.get(),
-          email.get(), new Address(city.get(), zip.get()),description.get()
-      ));
+        model.updateClient(new Client(
+            Integer.parseInt(cpr.get()), firstName.get(), lastName.get(),
+            email.get(), new Address(city.get(), zip.get()),description.get()
+        ), newPassword.get());
     }catch(Exception e){
       e.printStackTrace();
     }
@@ -76,13 +77,5 @@ public class ClientLoggedInViewModel
   public StringProperty getEmailProperty(){return email;}
   public StringProperty getNewPassword(){return newPassword;}
   public StringProperty getConfirmPassword(){return confirmPassword;}
-
-  public void propertyChange(PropertyChangeEvent evt)
-  {
-    Client client = (Client) evt.getNewValue();
-    System.out.println("cpr: " + client.getCPR());
-    System.out.println("email: " + client.getEmail());
-    System.out.println("firstname: " + client.getFirstName());
-    System.out.println("lastname: " + client.getLastName());
-  }
+  public StringProperty getErrorLabel(){return errorLabel;}
 }

@@ -45,8 +45,8 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     server.createHandymanAccount(handyman,password);
   }
 
-  public void updateHandyman(Handyman handyman) throws Exception{
-    server.updateHandyman(handyman);
+  public void updateHandyman(Handyman handyman, String password) throws Exception{
+    server.updateHandyman(handyman, password);
   }
 
   public ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate) throws Exception{
@@ -59,11 +59,34 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     return server.findWork(address,type, minBudget);
   }
 
-  public void updateClient(Client client) throws Exception{
-    server.updateClient(client);
+  public void updateClient(Client client, String password) throws Exception{
+    server.updateClient(client, password);
   }
 
   public void createJobOffer(JobOffer jobOffer) throws Exception{
     server.createJobOffer(jobOffer);
+  }
+
+  public void addApplied(JobOffer jobOffer, long cvr) throws Exception{
+    server.addApplied(jobOffer, cvr);
+  }
+
+  public ArrayList<JobOffer> getAppliedJobs(long CVR) throws RemoteException
+  {
+    try{
+      return server.getAppliedJobs(CVR);
+    }catch(Exception e){
+      e.printStackTrace();
+    }
+    return null;
+  }
+
+  public ArrayList<Handyman> getAppliedHandyman(String jobTitle) throws RemoteException{
+    return server.getAppliedHandyman(jobTitle);
+  }
+
+  public ArrayList<JobOffer> clientManageOffers(long CPR) throws RemoteException
+  {
+    return server.clientManageOffers(CPR);
   }
 }

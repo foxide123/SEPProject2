@@ -29,6 +29,8 @@ public class HandymanSignUpView
   @FXML private RadioButton rb_mason;
   @FXML private RadioButton rb_groundworker;
 
+  @FXML private RadioButton contactRadioButton;
+
   @FXML private Label label_error;
 
 
@@ -95,7 +97,7 @@ public class HandymanSignUpView
 
 
     if (viewModel.createHandymanAccount(rb_plumber.isSelected(), rb_electrician.isSelected(),
-        rb_mason.isSelected(), rb_groundworker.isSelected()))
+        rb_mason.isSelected(), rb_groundworker.isSelected(), contactRadioButton.isSelected()))
     {
       viewHandler.openView("HandymanLoggedIn");
     }

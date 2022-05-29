@@ -4,14 +4,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import main.client.view.ViewHandler;
-import main.client.viewmodel.handyman.HandymanSelectedWorkViewModel;
+import main.client.viewmodel.handyman.HandymanSelectedOfferViewModel;
 
 import java.io.IOException;
 
 public class HandymanSelectedWorkView extends SwitchTabsView
 {
   private ViewHandler viewHandler;
-  private HandymanSelectedWorkViewModel viewModel;
+  private HandymanSelectedOfferViewModel viewModel;
 
   @FXML Label jobTitle;
   @FXML Label description;
@@ -22,7 +22,7 @@ public class HandymanSelectedWorkView extends SwitchTabsView
   @FXML Label jobTypes;
   @FXML Label errorLabel;
 
-  public void init(ViewHandler viewHandler, HandymanSelectedWorkViewModel viewModel){
+  public void init(ViewHandler viewHandler, HandymanSelectedOfferViewModel viewModel){
     super.init(viewHandler);
     this.viewHandler = viewHandler;
     this.viewModel = viewModel;
@@ -39,10 +39,11 @@ public class HandymanSelectedWorkView extends SwitchTabsView
 
   public void onBack(ActionEvent event) throws IOException
   {
-    viewHandler.openView("HandymanFindWorkResult");
+    viewHandler.openView("HandymanManageOffers");
   }
 
-  public void onApply(ActionEvent event){
+  public void onApply(ActionEvent event) throws Exception
+  {
     viewModel.apply();
   }
 

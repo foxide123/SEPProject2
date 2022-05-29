@@ -10,6 +10,7 @@ import main.client.viewmodel.handyman.HandymanManageJobOffersViewModel;
 import main.shared.model.JobOffer;
 
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 public class HandymanManageJobOffersView extends SwitchTabsView
@@ -25,10 +26,18 @@ public class HandymanManageJobOffersView extends SwitchTabsView
     this.viewHandler = viewHandler;
     this.viewModel = viewModel;
 
-    setListValues();
+    try
+    {
+      setListValues();
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
-  public void setListValues(){
+  public void setListValues() throws RemoteException
+  {
     ArrayList<JobOffer> appliedList = viewModel.getAppliedJobs();
     final String[] selectedJobOffer = {null};
 
@@ -49,7 +58,8 @@ public class HandymanManageJobOffersView extends SwitchTabsView
             String s, String t1)
         {
           selectedJobOffer[0] = (String) listView.getSelectionModel().getSelectedItem();
-          if (viewModel.getJobOfferObject(selectedJobOffer[0]) != null)
+          System.out.println(selectedJobOffer[0]);
+          if (viewModel.getAppliedJobFromTitle(selectedJobOffer[0]) != null)
           {
             try
             {

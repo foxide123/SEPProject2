@@ -41,13 +41,22 @@ public class HandymanSignUpViewModel
     this.errorLabel = new SimpleStringProperty("");
   }
 
-  public boolean createHandymanAccount(boolean plumber, boolean electrician, boolean mason, boolean groundworker){
+  public boolean createHandymanAccount(boolean plumber, boolean electrician, boolean mason,
+      boolean groundworker, boolean contactVisibility){
     try {
+      String contactVisibilityString = null;
+      if(contactVisibility == true){
+        contactVisibilityString = "true";
+      }
+      if(contactVisibility == false){
+        contactVisibilityString = "false";
+      }
+
       if(passwordConfirm.get().equals(password.get())){
         model.signUpHandyman(
             new Handyman(Long.parseLong(cvr.get()), firstName.get(), lastName.get(), email.get(), phone.get(), description.get(),
                 new Address(city.get(),zip.get()), Integer.parseInt(hourlyRate.get()),
-                new Skills(plumber, electrician, mason, groundworker), null),
+                new Skills(plumber, electrician, mason, groundworker), null, contactVisibilityString),
             password.get()
         );
         errorLabel.set("Password doesn't match !");

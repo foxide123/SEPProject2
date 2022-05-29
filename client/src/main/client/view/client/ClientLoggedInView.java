@@ -2,13 +2,12 @@ package main.client.view.client;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import main.client.model.Model;
 import main.client.view.ViewHandler;
 import main.client.viewmodel.client.ClientLoggedInViewModel;
-
-import java.io.IOException;
 
 public class ClientLoggedInView extends SwitchTabsView
 {
@@ -26,6 +25,8 @@ public class ClientLoggedInView extends SwitchTabsView
   @FXML private TextField tf_newPassword;
   @FXML private TextField tf_confirmPassword;
 
+  @FXML Label errorLabel;
+
 
   public void init(ViewHandler viewHandler, ClientLoggedInViewModel viewModel){
     super.init(viewHandler);
@@ -40,6 +41,8 @@ public class ClientLoggedInView extends SwitchTabsView
     tf_email.textProperty().bindBidirectional(viewModel.getEmailProperty());
     tf_newPassword.textProperty().bindBidirectional(viewModel.getNewPassword());
     tf_confirmPassword.textProperty().bindBidirectional(viewModel.getConfirmPassword());
+
+    errorLabel.textProperty().bindBidirectional(viewModel.getErrorLabel());
 
   }
 
