@@ -21,7 +21,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../commons-net-3.8.0/commons-net-3.8.0.jar!/" />
+          <root url="jar://$USER_HOME$/commons-net-3.8.0/commons-net-3.8.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -32,9 +32,10 @@
         <CLASSES />
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$MODULE_DIR$/../../commons-net-3.8.0/commons-net-3.8.0-sources.jar!/" />
+          <root url="jar://$USER_HOME$/commons-net-3.8.0/commons-net-3.8.0-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="JavaFX11" level="application" />
   </component>
 </module>
