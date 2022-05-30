@@ -385,7 +385,7 @@ public class Database{
 
     public ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate){
             ArrayList<Handyman> tmpHandymanList = new ArrayList<>();
-
+            System.out.println("a");
 
             String SQL = "SELECT * from handyman WHERE address=? AND  hourlyRate<=?";
             ResultSet rs = null;
@@ -406,6 +406,64 @@ public class Database{
                 e.printStackTrace();
             }
             return findHandymanWithSkills(tmpHandymanList,skills);
+    }
+
+    public ArrayList<Handyman> findAllHandyman(){
+        ArrayList<Handyman> tmpHandymanList = new ArrayList<>();
+        ArrayList<Handyman> AllHandymanList = new ArrayList<>();
+        //String SQL = "SELECT handyman.cvr, client.cpr from handyman, client";
+        //System.out.println("a");
+        String SQL = "SELECT * from handyman";
+        ResultSet rs = null;
+        PreparedStatement preparedStatement = null;
+        //Connection conn = null;
+        //System.out.println("a2");
+        try {
+            //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            preparedStatement = conn.prepareStatement(SQL);
+            rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                Handyman tmpHandyman = new Handyman(0, null, null, null, null, null, null, 0, null, null, null);
+                process(rs, tmpHandyman);
+                tmpHandymanList.add(tmpHandyman);
+            }
+            for(int i=0; i<tmpHandymanList.size(); i++)
+            {
+                AllHandymanList.add(tmpHandymanList.get(i));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return AllHandymanList;
+    }
+
+    public ArrayList<Client> findAllClient(){
+        ArrayList<Client> tmpClientList = new ArrayList<>();
+        ArrayList<Client> AllClientList = new ArrayList<>();
+        //String SQL = "SELECT handyman.cvr, client.cpr from handyman, client";
+        System.out.println("a");
+        String SQL = "SELECT * from client";
+        ResultSet rs = null;
+        PreparedStatement preparedStatement = null;
+        //Connection conn = null;
+        //System.out.println("a2");
+        try {
+            //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            preparedStatement = conn.prepareStatement(SQL);
+            rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                Client tmpClient = new Client(0, null, null, null, null, null);
+                process(rs, tmpClient);
+                tmpClientList.add(tmpClient);
+            }
+            for(int i=0; i<tmpClientList.size(); i++)
+            {
+                AllClientList.add(tmpClientList.get(i));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return AllClientList;
     }
 
     public ArrayList<Handyman> findHandymanWithSkills(ArrayList<Handyman> tmpHandymanList, Skills skills){
@@ -545,6 +603,22 @@ public class Database{
             tmpJobOfferList.add(getJobOfferFromTitle(tmpJobOfferTitleList.get(i)));
         }
         return tmpJobOfferList;
+    }
+
+    public void handymanDeleteApplied(String jobTitle, long CVR){
+        String SQL = "DELETE FROM apply WHERE cvr=? AND jobtitle=?";
+        ResultSet rs = null;
+        PreparedStatement pstm = null;
+        //Connection conn = null;
+        try {
+            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            pstm = conn.prepareStatement(SQL);
+            pstm.setLong(1, CVR);
+            pstm.setString(2,jobTitle);
+            rs = pstm.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 

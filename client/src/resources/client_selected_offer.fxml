@@ -13,25 +13,25 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="853.0" prefWidth="594.0">
                <children>
                   <ListView fx:id="listView" layoutX="-2.0" layoutY="485.0" prefHeight="361.0" prefWidth="586.0" />
-                  <Button layoutX="262.0" layoutY="429.0" mnemonicParsing="false" onAction="#onBack" text="Back" />
+                  <Button layoutX="271.0" layoutY="459.0" mnemonicParsing="false" onAction="#onBack" text="Back" />
+                  <Label layoutX="169.0" layoutY="388.0" text="Job Types" />
+                  <Label layoutX="186.0" layoutY="340.0" text="Cpr" />
+                  <Label fx:id="jobTypes" layoutX="374.0" layoutY="384.0" text="JobTypes" />
+                  <Label fx:id="cpr" layoutX="389.0" layoutY="336.0" text="Cpr" />
+                  <Label layoutX="185.0" layoutY="298.0" text="Zip" />
+                  <Label fx:id="zip" layoutX="390.0" layoutY="298.0" text="Zip" />
+                  <Label fx:id="city" layoutX="388.0" layoutY="252.0" text="City" />
+                  <Label layoutX="190.0" layoutY="252.0" text="City" />
+                  <Label fx:id="budget" layoutX="385.0" layoutY="202.0" text="Budget" />
+                  <Label layoutX="189.0" layoutY="200.0" text="Budget" />
+                  <Label layoutX="185.0" layoutY="120.0" text="Description" />
                </children>
             </AnchorPane>
         </content>
       </ScrollPane>
       <Label fx:id="jobTitle" layoutX="382.0" layoutY="48.0" text="JobTitle" />
-      <Label fx:id="description" layoutX="382.0" layoutY="100.0" text="Description" />
-      <Label fx:id="budget" layoutX="383.0" layoutY="144.0" text="Budget" />
-      <Label fx:id="city" layoutX="392.0" layoutY="191.0" text="City" />
-      <Label fx:id="cpr" layoutX="393.0" layoutY="292.0" text="Cpr" />
-      <Label fx:id="zip" layoutX="393.0" layoutY="240.0" text="Zip" />
+      <Label fx:id="description" layoutX="340.0" layoutY="81.0" prefHeight="92.0" prefWidth="166.0" text="Description" wrapText="true" />
       <Label layoutX="181.0" layoutY="48.0" text="Job TItle" />
-      <Label layoutX="181.0" layoutY="100.0" text="Description" />
-      <Label layoutX="181.0" layoutY="144.0" text="Budget" />
-      <Label layoutX="181.0" layoutY="191.0" text="City" />
-      <Label layoutX="181.0" layoutY="240.0" text="Zip" />
-      <Label layoutX="181.0" layoutY="292.0" text="Cpr" />
-      <Label layoutX="177.0" layoutY="338.0" text="Job Types" />
-      <Label fx:id="jobTypes" layoutX="380.0" layoutY="338.0" text="JobTypes" />
       <Label fx:id="errorLabel" layoutX="276.0" layoutY="381.0" />
    </children>
 </AnchorPane>

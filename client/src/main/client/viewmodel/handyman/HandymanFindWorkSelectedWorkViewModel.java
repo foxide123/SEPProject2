@@ -7,9 +7,8 @@ import main.shared.model.JobOffer;
 
 import java.beans.PropertyChangeEvent;
 
-public class HandymanSelectedOfferViewModel
+public class HandymanFindWorkSelectedWorkViewModel
 {
-  private Model model;
 
   private StringProperty jobTitle;
   private StringProperty description;
@@ -22,7 +21,8 @@ public class HandymanSelectedOfferViewModel
 
   private JobOffer jobOffer;
 
-  public HandymanSelectedOfferViewModel(Model model){
+  private Model model;
+  public HandymanFindWorkSelectedWorkViewModel(Model model){
     this.model = model;
     this.jobTitle = new SimpleStringProperty("");
     this.description = new SimpleStringProperty("");
@@ -61,9 +61,9 @@ public class HandymanSelectedOfferViewModel
 
   }
 
-  public void delete() throws Exception
+  public void apply() throws Exception
   {
-      model.handymanDeleteApplied(jobTitle.get());
+    model.addToAppliedJobs(jobOffer);
   }
 
   public StringProperty getJobTitleProperty(){return jobTitle;}

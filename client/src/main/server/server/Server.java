@@ -81,6 +81,7 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   }
 
   public ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate) throws Exception{
+    System.out.println("b");
     return database.findHandyman(address,skills,hourlyRate);
   }
   /*
@@ -89,6 +90,16 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   }
 
    */
+
+  public ArrayList<Handyman> findAllHandyman() throws Exception{
+    //System.out.println("b");
+    return database.findAllHandyman();
+  }
+
+  public ArrayList<Client> findAllClient() throws Exception{
+    //System.out.println("b");
+    return database.findAllClient();
+  }
 
   @Override
   public ArrayList<JobOffer> findWork(Address address, JobType type, int minBudget) throws Exception {
@@ -134,6 +145,15 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   {
     try{
       return database.getAppliedJobs(CVR);
+    }catch(Exception e){
+      throw new RemoteException(e.getMessage());
+    }
+  }
+
+  public void handymanDeleteApplied(String jobTitle, long CVR) throws RemoteException
+  {
+    try{
+      database.handymanDeleteApplied(jobTitle, CVR);
     }catch(Exception e){
       throw new RemoteException(e.getMessage());
     }

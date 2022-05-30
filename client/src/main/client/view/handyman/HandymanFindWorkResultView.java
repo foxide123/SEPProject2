@@ -62,7 +62,7 @@ public class HandymanFindWorkResultView extends SwitchTabsView
                     {
                         try
                         {
-                            viewHandler.openView("SelectedWork");
+                            viewHandler.openView("FindWorkSelectedWork");
                         }
                         catch (IOException e)
                         {

@@ -25,9 +25,16 @@ public interface RemoteServerInterface extends Remote
 
   ArrayList<JobOffer> getAppliedJobs(long CVR) throws RemoteException;
 
+  void handymanDeleteApplied(String jobTitle, long CVR) throws RemoteException;
+
   ArrayList<Handyman> getAppliedHandyman(String jobTitle) throws RemoteException;
 
   ArrayList<Handyman> findHandyman(Address address, Skills skills, int hourlyRate) throws Exception;
+
+  ArrayList<Handyman> findAllHandyman() throws Exception;
+
+  ArrayList<Client> findAllClient() throws Exception;
+
   ArrayList<JobOffer> findWork(Address address, JobType type, int minBudget) throws Exception;
 
   ArrayList<JobOffer> clientManageOffers(long CPR) throws RemoteException;

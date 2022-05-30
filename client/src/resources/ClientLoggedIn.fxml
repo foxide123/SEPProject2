@@ -43,7 +43,7 @@
             <TextField fx:id="tf_city" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="182.0" promptText="City" />
             <HBox layoutX="10.0" layoutY="63.0" spacing="28.0">
                <children>
-                  <TextArea fx:id="tf_description" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="530.0" promptText="Write a small description about yourself." />
+                  <TextArea fx:id="tf_description" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="530.0" promptText="Write a small description about yourself." wrapText="true" />
                </children>
             </HBox>
             <TextField fx:id="tf_email" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="393.0" promptText="Email address" />
