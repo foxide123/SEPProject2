@@ -33,6 +33,7 @@ public interface Model
   ArrayList<Handyman> getAppliedHandymanList(String jobTitle) throws Exception;
   void setSelectedAppliedHandyman(Handyman handyman);
   ArrayList<JobOffer> getAppliedJobs() throws RemoteException;
+  void handymanDeleteApplied(String jobTitle) throws RemoteException;
   JobOffer getAppliedJobFromTitle(String jobTitle) throws RemoteException;
 
 }

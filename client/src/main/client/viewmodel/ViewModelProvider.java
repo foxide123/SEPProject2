@@ -25,6 +25,8 @@ public class ViewModelProvider
   private final HandymanFindWorkViewModel handymanFindWorkViewModel;
   private final HandymanFindWorkResultViewModel handymanFindWorkResultViewModel;
   private final HandymanSelectedOfferViewModel handymanSelectedWorkViewModel;
+  private final HandymanFindWorkSelectedWorkViewModel handymanFindWorkSelectedWorkViewModel;
+
   private final ClientSelectedOfferViewModel clientSelectedOfferViewModel;
 
   private final SelectedHandymanViewModel selectedHandymanViewModel;
@@ -55,6 +57,7 @@ public class ViewModelProvider
     this.handymanFindWorkViewModel = new HandymanFindWorkViewModel(model);
     this.handymanFindWorkResultViewModel = new HandymanFindWorkResultViewModel(model);
     this.handymanSelectedWorkViewModel = new HandymanSelectedOfferViewModel(model);
+    this.handymanFindWorkSelectedWorkViewModel = new HandymanFindWorkSelectedWorkViewModel(model);
     this.clientSelectedOfferViewModel = new ClientSelectedOfferViewModel(model);
 
     this.handymanJobRecomandationViewModel = new HandymanJobRecomandationViewModel(model);
@@ -91,6 +94,7 @@ public class ViewModelProvider
   public HandymanJobRecomandationViewModel getHandymanJobRecomandationViewModel(){return handymanJobRecomandationViewModel;}
   public HandymanManageJobOffersViewModel getHandymanManageJobOffersViewModel(){return handymanManageJobOffersViewModel;}
   public HandymanSelectedOfferViewModel getHandymanSelectedWorkViewModel(){return handymanSelectedWorkViewModel;}
+  public HandymanFindWorkSelectedWorkViewModel getHandymanFindWorkSelectedWorkViewModel(){return handymanFindWorkSelectedWorkViewModel;}
   public ClientSelectedOfferViewModel getClientSelectedOfferViewModel(){return clientSelectedOfferViewModel;}
 
   public SelectedHandymanViewModel getSelectedHandymanViewModel(){return selectedHandymanViewModel;}

@@ -547,6 +547,22 @@ public class Database{
         return tmpJobOfferList;
     }
 
+    public void handymanDeleteApplied(String jobTitle, long CVR){
+        String SQL = "DELETE FROM apply WHERE cvr=? AND jobtitle=?";
+        ResultSet rs = null;
+        PreparedStatement pstm = null;
+        //Connection conn = null;
+        try {
+            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            pstm = conn.prepareStatement(SQL);
+            pstm.setLong(1, CVR);
+            pstm.setString(2,jobTitle);
+            rs = pstm.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     public JobOffer getJobOfferFromTitle(String jobTitle){
         JobOffer tmpJobOffer = new JobOffer(null, null, 0, null, 0, null);

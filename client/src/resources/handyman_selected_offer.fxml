@@ -4,23 +4,24 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="490.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.handyman.HandymanSelectedWorkView">
+<AnchorPane prefHeight="588.0" prefWidth="593.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.handyman.HandymanSelectedWorkView">
    <children>
-      <Label fx:id="jobTitle" layoutX="382.0" layoutY="48.0" text="JobTitle" />
-      <Label fx:id="description" layoutX="382.0" layoutY="100.0" text="Description" />
-      <Label fx:id="budget" layoutX="383.0" layoutY="144.0" text="Budget" />
-      <Label fx:id="city" layoutX="392.0" layoutY="191.0" text="City" />
-      <Label fx:id="cpr" layoutX="393.0" layoutY="292.0" text="Cpr" />
-      <Label fx:id="zip" layoutX="393.0" layoutY="240.0" text="Zip" />
-      <Label layoutX="181.0" layoutY="48.0" text="Job TItle" />
-      <Label layoutX="181.0" layoutY="100.0" text="Description" />
-      <Label layoutX="181.0" layoutY="144.0" text="Budget" />
-      <Label layoutX="181.0" layoutY="191.0" text="City" />
-      <Label layoutX="181.0" layoutY="240.0" text="Zip" />
-      <Label layoutX="181.0" layoutY="292.0" text="Cpr" />
-      <Button layoutX="191.0" layoutY="422.0" mnemonicParsing="false" onAction="#onBack" text="Back" />
-      <Label layoutX="177.0" layoutY="338.0" text="Job Types" />
-      <Label fx:id="jobTypes" layoutX="380.0" layoutY="338.0" text="JobTypes" />
+      <Label fx:id="jobTitle" layoutX="363.0" layoutY="48.0" text="JobTitle" />
+      <Label fx:id="description" layoutX="345.0" layoutY="87.0" prefHeight="97.0" prefWidth="183.0" text="Description" wrapText="true" />
+      <Label fx:id="budget" layoutX="373.0" layoutY="208.0" text="Budget" />
+      <Label fx:id="city" layoutX="382.0" layoutY="253.0" text="City" />
+      <Label fx:id="cpr" layoutX="383.0" layoutY="354.0" text="Cpr" />
+      <Label fx:id="zip" layoutX="384.0" layoutY="301.0" text="Zip" />
+      <Label layoutX="189.0" layoutY="48.0" text="Job TItle" />
+      <Label layoutX="178.0" layoutY="125.0" text="Description" />
+      <Label layoutX="184.0" layoutY="208.0" text="Budget" />
+      <Label layoutX="188.0" layoutY="253.0" text="City" />
+      <Label layoutX="190.0" layoutY="301.0" text="Zip" />
+      <Label layoutX="189.0" layoutY="354.0" text="Cpr" />
+      <Button layoutX="191.0" layoutY="519.0" mnemonicParsing="false" onAction="#onBack" text="Back" />
+      <Label layoutX="177.0" layoutY="409.0" text="Job Types" />
+      <Label fx:id="jobTypes" layoutX="368.0" layoutY="409.0" text="JobTypes" />
       <Label fx:id="errorLabel" layoutX="276.0" layoutY="381.0" />
+      <Button layoutX="359.0" layoutY="519.0" mnemonicParsing="false" onAction="#onDelete" text="Delete" />
    </children>
 </AnchorPane>

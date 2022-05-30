@@ -81,6 +81,12 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     return null;
   }
 
+  public void handymanDeleteApplied(String jobTitle, long CVR)
+      throws RemoteException
+  {
+    server.handymanDeleteApplied(jobTitle, CVR);
+  }
+
   public ArrayList<Handyman> getAppliedHandyman(String jobTitle) throws RemoteException{
     return server.getAppliedHandyman(jobTitle);
   }

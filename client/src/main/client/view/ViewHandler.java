@@ -161,6 +161,13 @@ public class ViewHandler
       view.init(this, mvViewModel.getHandymanSelectedWorkViewModel());
       localStage.setTitle("SelectedWork");
     }
+    else if("FindWorkSelectedWork".equals(viewToOpen)){
+      loader.setLocation(getClass().getResource("/resources/handyman_find_work_selected_offer.fxml"));
+      root = loader.load();
+      HandymanFindWorkSelectedWorkView view = loader.getController();
+      view.init(this, mvViewModel.getHandymanFindWorkSelectedWorkViewModel());
+      localStage.setTitle("SelectedWork");
+    }
     else if("ClientSelectedWork".equals(viewToOpen)){
       loader.setLocation(getClass().getResource("/resources/client_selected_offer.fxml"));
       root = loader.load();

@@ -109,6 +109,11 @@ public class ModelManager implements Model
     return server.getAppliedJobs(getHandyman().getCVR());
   }
 
+  public void handymanDeleteApplied(String jobTitle) throws RemoteException
+  {
+    server.handymanDeleteApplied(jobTitle, getHandyman().getCVR());
+  }
+
   public JobOffer getAppliedJobFromTitle(String jobTitle) throws RemoteException
   {
     ArrayList<JobOffer> tmpList;
