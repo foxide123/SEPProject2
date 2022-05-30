@@ -104,4 +104,10 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   {
     return server.clientManageOffers(CPR);
   }
+
+  public void deleteAccount(String id)
+      throws Exception
+  {
+    server.deleteAccount(id);
+  }
 }

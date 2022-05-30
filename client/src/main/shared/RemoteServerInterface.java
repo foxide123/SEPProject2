@@ -38,5 +38,6 @@ public interface RemoteServerInterface extends Remote
   ArrayList<JobOffer> findWork(Address address, JobType type, int minBudget) throws Exception;
 
   ArrayList<JobOffer> clientManageOffers(long CPR) throws RemoteException;
+  void deleteAccount(String id) throws Exception;
 }
 

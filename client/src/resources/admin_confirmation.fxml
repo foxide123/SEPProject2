@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="45.0" prefWidth="325.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.view.admin.AdminConfirmationView">
    <children>
-      <Button layoutX="233.0" layoutY="10.0" mnemonicParsing="false" onAction="#confirmDelete" text="Confirm" />
+      <Button layoutX="233.0" layoutY="10.0" mnemonicParsing="false" onAction="#confirmDeleteButton" text="Confirm" />
       <Label layoutX="22.0" layoutY="14.0" text="Do you want to delete this user?" />
    </children>
 </AnchorPane>

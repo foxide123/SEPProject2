@@ -74,12 +74,10 @@ public class ModelManager implements Model
   public ArrayList<Client> findAllClient()
       throws Exception
   {
-    System.out.println("h");
     return findAllClientResultList = server.findAllClient();
   }
 
   public ArrayList<Client> findAllClientResult(){
-    System.out.println("h2");
     return findAllClientResultList;
   }
 
@@ -149,6 +147,12 @@ public class ModelManager implements Model
       }
     }
     return null;
+  }
+
+  public void deleteAccount(String id)
+      throws Exception
+  {
+    server.deleteAccount(id);
   }
 
   public ArrayList<Handyman> getAppliedHandymanList(String jobTitle) throws Exception

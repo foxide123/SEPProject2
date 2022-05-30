@@ -1,7 +1,8 @@
 package main.server.server;
 
-import main.shared.model.*;
 import main.shared.RemoteServerInterface;
+import main.shared.model.*;
+
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
@@ -90,6 +91,18 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
   }
 
    */
+
+  public void deleteAccount(String id) throws Exception{
+    //System.out.println("b");
+    try
+    {
+      database.deleteAccount(id);
+    }
+    catch (Exception e)
+    {
+      throw new RemoteException(e.getMessage());
+    }
+  }
 
   public ArrayList<Handyman> findAllHandyman() throws Exception{
     //System.out.println("b");

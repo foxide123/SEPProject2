@@ -10,6 +10,7 @@ import main.shared.model.Client;
 import main.shared.model.Handyman;
 
 import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 
 public class AdminMainView
@@ -17,6 +18,7 @@ public class AdminMainView
 
   private AdminMainViewModel viewModel;
   private ViewHandler viewHandler;
+  private static String selectedAcc;
 
   @FXML private ListView accountListView;
 
@@ -26,9 +28,14 @@ public class AdminMainView
     setListView();
   }
 
+  public static String getSelectedAccount()
+      throws RemoteException
+  {
+    return selectedAcc;
+  }
+
   public void setListView()
   {
-    System.out.println("g");
     ArrayList<Handyman> handymanList = viewModel.getAllHandymanList();
     ArrayList<Client> clientList = viewModel.getAllClientList();
     final String[] selectedAccount = {null};
@@ -41,11 +48,11 @@ public class AdminMainView
     {
       for (int i = 0; i < handymanList.size(); i++)
       {
-        accountListView.getItems().add(handymanList.get(i).getCVR() + "         type : handyman");
+        accountListView.getItems().add(handymanList.get(i).getCVR() + "");
       }
       for (int i = 0; i < clientList.size(); i++)
       {
-        accountListView.getItems().add(clientList.get(i).getCPR() + "         type : client");
+        accountListView.getItems().add(clientList.get(i).getCPR() + "");
       }
       accountListView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>()
       {
@@ -54,13 +61,11 @@ public class AdminMainView
             String s, String t1)
         {
           selectedAccount[0] = (String) accountListView.getSelectionModel().getSelectedItem();
+          selectedAcc = selectedAccount[0];
           try
           {
-            if (viewModel.getAllClientList() != null)
-            {
-              viewHandler.openView("AdminConfirmation");
-            }
-            if (viewModel.getAllHandymanList() != null)
+            System.out.println(selectedAccount[0]);
+            if (viewModel.getAllClientList() != null || viewModel.getAllHandymanList() != null)
             {
               viewHandler.openView("AdminConfirmation");
             }

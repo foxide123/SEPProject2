@@ -1,8 +1,8 @@
 package main.client.viewmodel.admin;
 
 import main.client.model.Model;
-import main.shared.model.Handyman;
 import main.shared.model.Client;
+import main.shared.model.Handyman;
 
 import java.util.ArrayList;
 

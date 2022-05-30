@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import main.client.view.ViewHandler;
 import main.client.viewmodel.admin.AdminConfirmationViewModel;
 
-import java.io.IOException;
+import java.rmi.RemoteException;
 
 public class AdminConfirmationView
 {
@@ -15,9 +15,14 @@ public class AdminConfirmationView
     this.viewModel = viewModel;
     this.viewHandler = viewHandler;
   }
-  @FXML private void confirmDelete() throws IOException
+  public void confirmDelete()
+      throws RemoteException, Exception
   {
+    viewModel.confirmDeletion(AdminMainView.getSelectedAccount());
+  }
+  @FXML private void confirmDeleteButton() throws Exception
+  {
+    confirmDelete();
     viewHandler.openView("AdminMain");
-
   }
 }

@@ -525,15 +525,42 @@ public class Database{
     }
 
 
-    public void deleteHandyman(int cvr){
-        String SQL = "DELETE FROM handyman WHERE cvr=?";
+    public void deleteAccount(String ID){
+        String SQL = "DELETE FROM skills WHERE cvr=?";
         ResultSet rs = null;
         PreparedStatement pstm = null;
         //Connection conn = null;
         try {
+            System.out.println("database check for cvr " + ID);
             //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
             pstm = conn.prepareStatement(SQL);
-            pstm.setInt(1, cvr);
+            pstm.setLong(1, Long.parseLong(ID));
+            rs = pstm.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        SQL = "DELETE FROM handyman WHERE cvr=?";
+        rs = null;
+        pstm = null;
+        //Connection conn = null;
+        try {
+            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            pstm = conn.prepareStatement(SQL);
+            pstm.setLong(1, Long.parseLong(ID));
+            rs = pstm.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        SQL = "DELETE FROM client WHERE cpr=?";
+        rs = null;
+        pstm = null;
+        //Connection conn = null;
+        try {
+            System.out.println("database check for cvr " + ID);
+            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            pstm = conn.prepareStatement(SQL);
+            pstm.setLong(1, Long.parseLong(ID));
             rs = pstm.executeQuery();
         } catch (SQLException e) {
             e.printStackTrace();

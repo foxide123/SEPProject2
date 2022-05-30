@@ -40,5 +40,5 @@ public interface Model
   ArrayList<JobOffer> getAppliedJobs() throws RemoteException;
   void handymanDeleteApplied(String jobTitle) throws RemoteException;
   JobOffer getAppliedJobFromTitle(String jobTitle) throws RemoteException;
-
+  void deleteAccount(String id) throws Exception;
 }
