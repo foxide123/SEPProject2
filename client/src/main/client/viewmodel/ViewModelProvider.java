@@ -1,6 +1,7 @@
 package main.client.viewmodel;
 
 import main.client.model.Model;
+import main.client.viewmodel.admin.AdminConfirmationViewModel;
 import main.client.viewmodel.admin.AdminLogInViewModel;
 import main.client.viewmodel.admin.AdminMainViewModel;
 import main.client.viewmodel.client.*;
@@ -34,6 +35,7 @@ public class ViewModelProvider
   private final HandymanJobRecomandationViewModel handymanJobRecomandationViewModel;
   private final HandymanManageJobOffersViewModel handymanManageJobOffersViewModel;
   private final AdminMainViewModel adminMainViewModel;
+  private final AdminConfirmationViewModel adminConfirmationViewModel;
 
   public ViewModelProvider(Model model) {
     this.clientLogInViewModel = new ClientLogInViewModel(model);
@@ -66,6 +68,7 @@ public class ViewModelProvider
     this.selectedHandymanViewModel = new SelectedHandymanViewModel(model);
 
     this.adminMainViewModel = new AdminMainViewModel(model);
+    this.adminConfirmationViewModel = new AdminConfirmationViewModel(model);
   }
 
   public ClientLogInViewModel getClientLogInViewModel(){return clientLogInViewModel;}
@@ -100,4 +103,6 @@ public class ViewModelProvider
   public SelectedHandymanViewModel getSelectedHandymanViewModel(){return selectedHandymanViewModel;}
 
   public AdminMainViewModel getAdminMainViewModel(){return adminMainViewModel;}
+
+  public AdminConfirmationViewModel getAdminConfirmationViewModel() {return adminConfirmationViewModel;}
 }

@@ -1,5 +1,6 @@
 package main.client.view;
 
+import main.client.view.admin.AdminConfirmationView;
 import main.client.view.admin.AdminMainView;
 import main.client.view.client.*;
 import main.client.view.handyman.*;
@@ -195,6 +196,13 @@ public class ViewHandler
       AdminMainView view = loader.getController();
       view.init(this, mvViewModel.getAdminMainViewModel());
       localStage.setTitle("Accounts");
+    }
+    else if("AdminConfirmation".equals(viewToOpen)){
+      loader.setLocation((getClass().getResource("/resources/admin_confirmation.fxml")));
+      root = loader.load();
+      AdminConfirmationView view = loader.getController();
+      view.init(this, mvViewModel.getAdminConfirmationViewModel());
+      localStage.setTitle("Confirm");
     }
     //you can only show one main.client.view per stage
     scene = new Scene(root);
