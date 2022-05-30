@@ -18,6 +18,8 @@ public class ModelManager implements Model
   private Handyman handyman;
   private Client client;
   private ArrayList<Handyman> findHandymanResultList;
+  private ArrayList<Handyman> findAllHandymanResultList;
+  private ArrayList<Client> findAllClientResultList;
   private ArrayList<JobOffer> findWorkResultList;
   private ArrayList<JobOffer> jobOffers;
   private ArrayList<Handyman> appliedHandymanList;
@@ -57,6 +59,28 @@ public class ModelManager implements Model
 
   public ArrayList<Handyman> findHandymanResult(){
     return findHandymanResultList;
+  }
+
+  public ArrayList<Handyman> findAllHandyman()
+      throws Exception
+  {
+    return findAllHandymanResultList = server.findAllHandyman();
+  }
+
+  public ArrayList<Handyman> findAllHandymanResult(){
+    return findAllHandymanResultList;
+  }
+
+  public ArrayList<Client> findAllClient()
+      throws Exception
+  {
+    System.out.println("h");
+    return findAllClientResultList = server.findAllClient();
+  }
+
+  public ArrayList<Client> findAllClientResult(){
+    System.out.println("h2");
+    return findAllClientResultList;
   }
 
   public void findWork(Address address, JobType type, int minBudget)

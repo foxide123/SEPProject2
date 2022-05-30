@@ -20,7 +20,12 @@ public interface Model
   ArrayList<JobOffer> getJobOffers() throws RemoteException;
   void findHandyman(Address address, Skills skills, int hourlyRate)
       throws Exception;
+  ArrayList<Handyman> findAllHandyman()
+      throws Exception;
+  ArrayList<Client> findAllClient()
+      throws Exception;
   ArrayList<Handyman> findHandymanResult();
+  ArrayList<Handyman> findAllHandymanResult();
   void addPropertyChangeListener(String eventName, PropertyChangeListener listener);
   void removePropertyChangeListener(String eventName, PropertyChangeListener listener);
   ArrayList<JobOffer> handymanFindWorkResult();
