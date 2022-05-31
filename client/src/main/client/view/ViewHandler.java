@@ -3,6 +3,9 @@ package main.client.view;
 import main.client.view.admin.AdminConfirmationView;
 import main.client.view.admin.AdminMainView;
 import main.client.view.client.*;
+import main.client.view.general.ChooseActorLogInView;
+import main.client.view.general.ChooseActorSignUpView;
+import main.client.view.general.LogInRegisterView;
 import main.client.view.handyman.*;
 import main.client.view.admin.AdminLogInView;
 import javafx.fxml.FXMLLoader;
@@ -153,6 +156,13 @@ public class ViewHandler
       root = loader.load();
       SelectedHandymanView view = loader.getController();
       view.init(this, mvViewModel.getSelectedHandymanViewModel());
+      localStage.setTitle("SelectedHandyman");
+    }
+    else if("ManageOffersSelectedHandyman".equals(viewToOpen)){
+      loader.setLocation(getClass().getResource("/resources/manage_offers_selected_handyman.fxml"));
+      root = loader.load();
+      ManageOffersSelectedHandymanView view = loader.getController();
+      view.init(this, mvViewModel.getManageOffersSelectedHandymanViewModel());
       localStage.setTitle("SelectedHandyman");
     }
     else if("SelectedWork".equals(viewToOpen)){

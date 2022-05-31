@@ -11,8 +11,6 @@ import main.client.viewmodel.handyman.HandymanLoggedInViewModel;
 
 public class HandymanLoggedInView extends SwitchTabsView
 {
-  private ViewHandler viewHandler;
-  private HandymanLoggedInViewModel viewModel;
   @FXML private TextField cvr;
   @FXML private TextField firstName;
   @FXML private TextField lastName;
@@ -32,6 +30,9 @@ public class HandymanLoggedInView extends SwitchTabsView
   @FXML private RadioButton rb_electrician;
   @FXML private RadioButton rb_mason;
   @FXML private RadioButton rb_groundworker;
+
+  private ViewHandler viewHandler;
+  private HandymanLoggedInViewModel viewModel;
 
   public void init(ViewHandler viewHandler, HandymanLoggedInViewModel viewModel){
     this.viewModel = viewModel;

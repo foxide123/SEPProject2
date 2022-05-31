@@ -21,6 +21,12 @@ public class ClientFindHandymanResultViewModel
     return model.findHandymanResult();
   }
 
+  public Handyman findHandymanWithCVR(long CVR) throws Exception
+  {
+    return model.findHandymanWithCVR(CVR);
+  }
+
+
   public StringProperty getLabelError(){
     return labelError;
   }

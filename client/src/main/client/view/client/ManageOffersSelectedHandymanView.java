@@ -4,14 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import main.client.view.ViewHandler;
-import main.client.viewmodel.client.SelectedHandymanViewModel;
+import main.client.viewmodel.client.ManageOffersSelectedHandymanViewModel;
 
 import java.io.IOException;
 
-public class SelectedHandymanView
+public class ManageOffersSelectedHandymanView
 {
-  private ViewHandler viewHandler;
-  private SelectedHandymanViewModel viewModel;
   @FXML Label CVR;
   @FXML Label firstName;
   @FXML Label lastName;
@@ -24,7 +22,10 @@ public class SelectedHandymanView
   @FXML Label email;
   @FXML Label phone;
 
-  public void init(ViewHandler viewHandler, SelectedHandymanViewModel viewModel){
+  private ViewHandler viewHandler;
+  private ManageOffersSelectedHandymanViewModel viewModel;
+
+  public void init(ViewHandler viewHandler, ManageOffersSelectedHandymanViewModel viewModel){
     this.viewHandler = viewHandler;
     this.viewModel = viewModel;
     this.CVR.textProperty().bindBidirectional(viewModel.getCVRProperty());
@@ -42,6 +43,6 @@ public class SelectedHandymanView
 
   public void onBack(ActionEvent event) throws IOException
   {
-    viewHandler.openView("ClientFindHandyman");
+    viewHandler.openView("ClientManageOffers");
   }
 }

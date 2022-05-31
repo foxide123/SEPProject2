@@ -2,7 +2,6 @@ package main.client.view.client;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.layout.Region;
 import main.client.view.ViewHandler;
 
 import java.io.IOException;
@@ -38,11 +37,4 @@ public class SwitchTabsView
   }
 
   //todo log out
-
-
-
-
-  public void reset() {
-
-  }
 }

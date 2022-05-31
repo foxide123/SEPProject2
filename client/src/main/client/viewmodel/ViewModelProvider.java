@@ -31,6 +31,7 @@ public class ViewModelProvider
   private final ClientSelectedOfferViewModel clientSelectedOfferViewModel;
 
   private final SelectedHandymanViewModel selectedHandymanViewModel;
+  private final ManageOffersSelectedHandymanViewModel manageOffersSelectedHandymanViewModel;
 
   private final HandymanJobRecomandationViewModel handymanJobRecomandationViewModel;
   private final HandymanManageJobOffersViewModel handymanManageJobOffersViewModel;
@@ -66,6 +67,7 @@ public class ViewModelProvider
     this.handymanManageJobOffersViewModel = new HandymanManageJobOffersViewModel(model);
 
     this.selectedHandymanViewModel = new SelectedHandymanViewModel(model);
+    this.manageOffersSelectedHandymanViewModel = new ManageOffersSelectedHandymanViewModel(model);
 
     this.adminMainViewModel = new AdminMainViewModel(model);
     this.adminConfirmationViewModel = new AdminConfirmationViewModel(model);
@@ -101,6 +103,7 @@ public class ViewModelProvider
   public ClientSelectedOfferViewModel getClientSelectedOfferViewModel(){return clientSelectedOfferViewModel;}
 
   public SelectedHandymanViewModel getSelectedHandymanViewModel(){return selectedHandymanViewModel;}
+  public ManageOffersSelectedHandymanViewModel getManageOffersSelectedHandymanViewModel(){return manageOffersSelectedHandymanViewModel;}
 
   public AdminMainViewModel getAdminMainViewModel(){return adminMainViewModel;}
 

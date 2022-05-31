@@ -1,6 +1,7 @@
-package main.client.view;
+package main.client.view.general;
 
 import javafx.event.ActionEvent;
+import main.client.view.ViewHandler;
 import main.client.viewmodel.LogInRegisterViewModel;
 
 import java.io.IOException;

@@ -10,8 +10,6 @@ import java.io.IOException;
 
 public class HandymanSignUpView
 {
-  private ViewHandler viewHandler;
-  private HandymanSignUpViewModel viewModel;
   @FXML private TextField tf_email;
   @FXML private TextField tf_password;
   @FXML private TextField tf_password_confirm;
@@ -33,8 +31,8 @@ public class HandymanSignUpView
 
   @FXML private Label label_error;
 
-
-  ToggleGroup toggleGroup = new ToggleGroup();
+  private ViewHandler viewHandler;
+  private HandymanSignUpViewModel viewModel;
 
 
   public void init(ViewHandler viewHandler, HandymanSignUpViewModel viewModel){

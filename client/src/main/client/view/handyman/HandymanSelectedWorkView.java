@@ -10,8 +10,6 @@ import java.io.IOException;
 
 public class HandymanSelectedWorkView extends SwitchTabsView
 {
-  private ViewHandler viewHandler;
-  private HandymanSelectedOfferViewModel viewModel;
 
   @FXML Label jobTitle;
   @FXML Label description;
@@ -21,6 +19,9 @@ public class HandymanSelectedWorkView extends SwitchTabsView
   @FXML Label cpr;
   @FXML Label jobTypes;
   @FXML Label errorLabel;
+
+  private ViewHandler viewHandler;
+  private HandymanSelectedOfferViewModel viewModel;
 
   public void init(ViewHandler viewHandler, HandymanSelectedOfferViewModel viewModel){
     super.init(viewHandler);

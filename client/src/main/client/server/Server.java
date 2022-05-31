@@ -62,6 +62,11 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     return server.findAllClient();
   }
 
+  public Handyman findHandymanWithCVR(long CVR) throws Exception
+  {
+    return server.findHandymanWithCVR(CVR);
+  }
+
   @Override public ArrayList<JobOffer> findWork(Address address, JobType type,
       int minBudget) throws Exception
   {
@@ -109,5 +114,10 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
       throws Exception
   {
     server.deleteAccount(id);
+  }
+
+  public JobType getJobType(String jobTitle) throws RemoteException
+  {
+    return server.getJobType(jobTitle);
   }
 }

@@ -57,6 +57,13 @@ public class ModelManager implements Model
     findHandymanResultList = server.findHandyman(address,skills,hourlyRate);
   }
 
+  public Handyman findHandymanWithCVR(long CVR) throws Exception
+  {
+    Handyman tmpHandyman = server.findHandymanWithCVR(CVR);
+    support.firePropertyChange("SelectedHandyman",null,tmpHandyman);
+    return tmpHandyman;
+  }
+
   public ArrayList<Handyman> findHandymanResult(){
     return findHandymanResultList;
   }
@@ -224,6 +231,11 @@ public class ModelManager implements Model
   {
     clientManageOfferList = server.clientManageOffers(getClient().getCPR());
     return clientManageOfferList;
+  }
+
+  public JobType getJobType(String jobTitle) throws RemoteException
+  {
+    return server.getJobType(jobTitle);
   }
 
   public void addPropertyChangeListener(

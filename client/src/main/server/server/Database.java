@@ -466,6 +466,27 @@ public class Database{
         return AllClientList;
     }
 
+
+    public Handyman findHandymanWithCVR(long CVR){
+        Handyman tmpHandyman = new Handyman(0, null, null, null, null, null, null, 0, null, null, null);
+        String SQL = "SELECT * from handyman WHERE cvr=?";
+        ResultSet rs = null;
+        PreparedStatement preparedStatement = null;
+        //Connection conn = null;
+        try {
+            //  conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            preparedStatement = conn.prepareStatement(SQL);
+            preparedStatement.setLong(1, CVR);
+            rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                process(rs, tmpHandyman);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return tmpHandyman;
+    }
+
     public ArrayList<Handyman> findHandymanWithSkills(ArrayList<Handyman> tmpHandymanList, Skills skills){
         ArrayList<Handyman> handymanList = new ArrayList<>();
         for(int i=0; i<tmpHandymanList.size(); i++){
@@ -744,7 +765,7 @@ public class Database{
     public ArrayList<JobOffer> findWork(Address address, JobType type, int minBudget)
     {
         ArrayList<JobOffer> jobOffers = new ArrayList<>();
-        String SQL = "SELECT * FROM job_offer WHERE  budget<=? AND address=?";
+        String SQL = "SELECT * FROM job_offer WHERE  budget>=? AND address=?";
         ResultSet rs = null;
         PreparedStatement preparedStatement = null;
         //Connection conn = null;
@@ -776,7 +797,6 @@ public class Database{
     }
 
     public JobType getJobType(String jobTitle){
-        ArrayList<String> jobTypes = new ArrayList<>();
         JobType jobType = new JobType(false, false, false, false);
 
         String SQL = "SELECT category FROM category WHERE jobtitle=?";
@@ -789,12 +809,11 @@ public class Database{
             pstm.setString(1, jobTitle);
             rs = pstm.executeQuery();
             while (rs.next()) {
-                jobTypes.add(rs.getString("category"));
+                process(rs, jobType);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        jobType.setValuesFromList(jobTypes);
         return jobType;
     }
 
@@ -854,5 +873,20 @@ public class Database{
         jobOffer.setLocation(getAddressByID(rs.getInt("address")));
         jobOffer.setCpr(rs.getLong("cpr"));
         jobOffer.setJobType(getJobType(rs.getString("jobTitle")));
+    }
+
+    private void process(ResultSet rs, JobType jobType) throws SQLException {
+       if(rs.getString("category").equals("plumbing")){
+           jobType.setPlumbing(true);
+       }
+        if(rs.getString("category").equals("electrical")){
+            jobType.setElectrical(true);
+        }
+        if(rs.getString("category").equals("masonry")){
+            jobType.setMasonry(true);
+        }
+        if(rs.getString("category").equals("groundworking")){
+            jobType.setGroundWorking(true);
+        }
     }
 }

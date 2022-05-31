@@ -1,7 +1,8 @@
-package main.client.view;
+package main.client.view.general;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import main.client.view.ViewHandler;
 import main.client.viewmodel.ChooseActorLogInViewModel;
 
 import java.io.IOException;

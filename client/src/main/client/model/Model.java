@@ -20,6 +20,7 @@ public interface Model
   ArrayList<JobOffer> getJobOffers() throws RemoteException;
   void findHandyman(Address address, Skills skills, int hourlyRate)
       throws Exception;
+  Handyman findHandymanWithCVR(long CVR) throws Exception;
   ArrayList<Handyman> findAllHandyman()
       throws Exception;
   ArrayList<Client> findAllClient()

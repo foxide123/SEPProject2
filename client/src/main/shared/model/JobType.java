@@ -17,9 +17,13 @@ public class JobType implements Serializable
     }
 
     public boolean getPlumbing(){return plumbing;}
+    public void setPlumbing(boolean value){plumbing = value;}
     public boolean getElectrical(){return electrical;}
+    public void setElectrical(boolean value){electrical = value;}
     public boolean getMasonry(){return masonry;}
+    public void setMasonry(boolean value){masonry = value;}
     public boolean getGroundworking(){return groundWorking;}
+    public void setGroundWorking(boolean value){groundWorking = value;}
 
     public ArrayList<String> getJobTypes(){
         ArrayList<String> tmpList = new ArrayList<>();

@@ -39,6 +39,7 @@ public class ClientLoggedInViewModel
     this.newPassword = new SimpleStringProperty("");
     this.confirmPassword = new SimpleStringProperty("");
     this.errorLabel = new SimpleStringProperty("");
+    model.addPropertyChangeListener("ClientSignedUp", this::setValues);
     model.addPropertyChangeListener("ClientLoggedIn", this::setValues);
     model.addPropertyChangeListener("ClientUpdated", this::setValues);
   }

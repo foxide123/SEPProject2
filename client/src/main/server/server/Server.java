@@ -114,6 +114,11 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     return database.findAllClient();
   }
 
+  public Handyman findHandymanWithCVR(long CVR) throws Exception
+  {
+    return database.findHandymanWithCVR(CVR);
+  }
+
   @Override
   public ArrayList<JobOffer> findWork(Address address, JobType type, int minBudget) throws Exception {
     try{
@@ -187,5 +192,10 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     }catch(Exception e){
       throw new RemoteException(e.getMessage());
     }
+  }
+
+  public JobType getJobType(String jobTitle)
+  {
+      return database.getJobType(jobTitle);
   }
 }

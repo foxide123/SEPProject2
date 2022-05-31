@@ -15,10 +15,11 @@ import java.util.ArrayList;
 
 public class HandymanManageJobOffersView extends SwitchTabsView
 {
-  private ViewHandler viewHandler;
-  private HandymanManageJobOffersViewModel viewModel;
   @FXML private ListView listView;
   @FXML private Label labelError;
+
+  private ViewHandler viewHandler;
+  private HandymanManageJobOffersViewModel viewModel;
 
   public void init(ViewHandler viewHandler, HandymanManageJobOffersViewModel viewModel)
   {
