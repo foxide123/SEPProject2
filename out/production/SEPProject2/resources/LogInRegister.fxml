@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="765.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="main.client.view.LogInRegisterView">
+            fx:controller="main.client.view.general.LogInRegisterView">
    <children>
       <Line endX="100.0" fill="WHITE" layoutX="500.0" layoutY="566.0" startX="100.0" startY="-368.0" />
       <Label layoutX="425.0" layoutY="118.0" text="Handyman Service">
