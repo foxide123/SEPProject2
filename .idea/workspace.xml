@@ -2,12 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc1c1454-4411-4737-9109-01fc7b7bf401" name="Changes" comment="Change">
+      <change afterPath="$PROJECT_DIR$/client/src/main/client/view/client/ManageOffersSelectedHandymanView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/client/ManageOffersSelectedHandymanViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/resources/manage_offers_selected_handyman.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/model/ModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/model/ModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/ChooseActorLogInView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/general/ChooseActorLogInView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/ChooseActorSignUpView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/general/ChooseActorSignUpView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/LogInRegisterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/general/LogInRegisterView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/client/ClientFindHandymanResultView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/client/ClientFindHandymanResultView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/client/SelectedHandymanView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/client/SelectedHandymanView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/client/SwitchTabsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/client/SwitchTabsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanLoggedInView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanLoggedInView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanManageJobOffersView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanManageJobOffersView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanSelectedWorkView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanSelectedWorkView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanSignUpView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/handyman/HandymanSignUpView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/viewmodel/ViewModelProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/ViewModelProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/viewmodel/client/ClientFindHandymanResultViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/client/ClientFindHandymanResultViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/client/viewmodel/client/ClientLoggedInViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/client/ClientLoggedInViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/server/server/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/server/server/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/server/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/server/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/shared/RemoteServerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/RemoteServerInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/shared/model/JobType.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/shared/model/JobType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/resources/ChooseActor_LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/resources/ChooseActor_LogIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/resources/ChooseActor_SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/resources/ChooseActor_SignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/resources/LogInRegister.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/resources/LogInRegister.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/ChooseActorLogInView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/ChooseActorSignUpView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/LogInRegisterView.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/ViewHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/client/ClientFindHandymanResultView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/client/ClientFindHandymanResultView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/client/SwitchTabsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/client/SwitchTabsView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanLoggedInView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanLoggedInView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanSignUpView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/handyman/HandymanSignUpView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/ViewModelProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/ViewModelProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/client/ClientFindHandymanResultViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/client/ClientFindHandymanResultViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/client/ClientLoggedInViewModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/client/ClientLoggedInViewModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/JobType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/shared/model/JobType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ChooseActor_LogIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ChooseActor_LogIn.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ChooseActor_SignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ChooseActor_SignUp.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientLoggedIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientLoggedIn.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanLoggedIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanLoggedIn.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanSignUp.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/HandymanSignUp.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/LogInRegister.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/LogInRegister.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/client_create_offer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/client_create_offer.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +100,7 @@
       <recent name="main.client.view.client" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -92,8 +133,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -267,21 +308,7 @@
       <option name="project" value="LOCAL" />
       <updated>1653776211226</updated>
     </task>
-    <task id="LOCAL-00024" summary="Change">
-      <created>1653940663233</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1653940663233</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Change">
-      <created>1653940764013</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1653940764014</updated>
-    </task>
-    <option name="localTasksCounter" value="26" />
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
