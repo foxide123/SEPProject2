@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc1c1454-4411-4737-9109-01fc7b7bf401" name="Changes" comment="Change">
-      <change afterPath="$PROJECT_DIR$/client/src/main/client/view/admin/AdminConfirmationView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/admin/AdminConfirmationViewModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/resources/admin_confirmation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEPProject2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SEPProject2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/ViewHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/view/admin/AdminMainView.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/view/admin/AdminMainView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/viewmodel/ViewModelProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/ViewModelProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/client/viewmodel/admin/AdminMainViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/client/viewmodel/admin/AdminMainViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/ViewHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/view/ViewHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/ViewModelProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/main/client/viewmodel/ViewModelProvider.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientLoggedIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEPProject2/resources/ClientLoggedIn.fxml" afterDir="false" />
@@ -67,7 +59,7 @@
       <recent name="main.client.view.client" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -100,8 +92,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -275,7 +267,21 @@
       <option name="project" value="LOCAL" />
       <updated>1653776211226</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Change">
+      <created>1653940663233</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1653940663233</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Change">
+      <created>1653940764013</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1653940764014</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
