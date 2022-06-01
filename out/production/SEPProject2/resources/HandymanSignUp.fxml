@@ -92,11 +92,6 @@
             </HBox>
             <HBox prefHeight="60.0" prefWidth="489.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#onBack" prefHeight="26.0" prefWidth="80.0" text="Back">
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </Button>
                   <Pane prefHeight="60.0" prefWidth="284.0">
                      <children>
                         <HBox layoutX="-77.0" layoutY="45.0" prefHeight="21.0" prefWidth="524.0">
@@ -109,6 +104,7 @@
                               </Label>
                            </children>
                         </HBox>
+                        <Button layoutX="37.0" layoutY="2.0" mnemonicParsing="false" onAction="#onBack" text="Back" />
                      </children>
                   </Pane>
                   <Button mnemonicParsing="false" onAction="#onSignUp" prefHeight="26.0" prefWidth="61.0" text="Next" />
