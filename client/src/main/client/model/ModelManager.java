@@ -17,6 +17,7 @@ public class ModelManager implements Model
 
   private Handyman handyman;
   private Client client;
+  private Admin admin;
   private ArrayList<Handyman> findHandymanResultList;
   private ArrayList<Handyman> findAllHandymanResultList;
   private ArrayList<Client> findAllClientResultList;
@@ -155,7 +156,7 @@ public class ModelManager implements Model
     }
     return null;
   }
-
+  
   public void deleteAccount(String id)
       throws Exception
   {
@@ -197,6 +198,18 @@ public class ModelManager implements Model
     }
     handyman = server.logInHandyman(CVR, password);
     support.firePropertyChange("HandymanLoggedIn", null, handyman);
+  }
+
+  @Override public void logInAdmin(String username, String password)
+      throws Exception
+  {
+    if(username.isEmpty() || password.isEmpty())
+    {
+      throw new Exception("Fill in CPR / password");
+    }
+    System.out.println(username + "(modelMngr)" + password);
+    admin = server.logInAdmin(username, password);
+    support.firePropertyChange("AdminLoggedIn", null, admin);
   }
 
   public void signUpClient(Client client, String password) throws Exception

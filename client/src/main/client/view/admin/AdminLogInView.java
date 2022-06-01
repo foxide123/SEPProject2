@@ -1,10 +1,10 @@
 package main.client.view.admin;
 
-import main.client.view.ViewHandler;
-import main.client.viewmodel.admin.AdminLogInViewModel;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import main.client.view.ViewHandler;
+import main.client.viewmodel.admin.AdminLogInViewModel;
 
 import java.io.IOException;
 
@@ -20,6 +20,8 @@ public class AdminLogInView
   public void init(ViewHandler viewHandler, AdminLogInViewModel viewModel){
     this.viewModel = viewModel;
     this.viewHandler = viewHandler;
+    tf_username.textProperty().bindBidirectional(viewModel.getUsernameProperty());
+    tf_password.textProperty().bindBidirectional(viewModel.getPasswordProperty());
   }
 
   @FXML private void onBack() throws IOException
@@ -27,7 +29,11 @@ public class AdminLogInView
     viewHandler.openView("LogInRegister");
   }
 
-  @FXML private void onLogIn() throws IOException{
-    viewHandler.openView("AdminMain");
+  @FXML private void onLogIn() throws IOException
+  {
+    if (viewModel.logInAdmin())
+    {
+      viewHandler.openView("AdminMain");
+    }
   }
 }

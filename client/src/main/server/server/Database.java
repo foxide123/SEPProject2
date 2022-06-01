@@ -545,45 +545,104 @@ public class Database{
 
     }
 
-
-    public void deleteAccount(String ID){
-        String SQL = "DELETE FROM skills WHERE cvr=?";
+    public Admin logInAdmin(String username, String password)
+        throws Exception {
+        Admin tmpAdmin = new Admin(null, null);
+        //System.out.println(username + "(database)" + password);
+        String SQL = "SELECT * FROM admin WHERE username=? AND password=?";
         ResultSet rs = null;
         PreparedStatement pstm = null;
         //Connection conn = null;
         try {
-            System.out.println("database check for cvr " + ID);
             //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+            pstm = conn.prepareStatement(SQL);
+            pstm.setString(1, username);
+            pstm.setString(2, password);
+            rs = pstm.executeQuery();
+            while (rs.next()) {
+                process(rs, tmpAdmin);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } /*finally {
+            close(rs, pstm, conn);
+        }*/
+        if (tmpAdmin.getUsername().equals(username) && tmpAdmin.getPassword().equals(password)) {
+            return tmpAdmin;
+        } else {
+            throw new Exception("Account not found");
+        }
+    }
+
+
+    public void deleteAccount(String ID)
+    {
+        String SQL = "DELETE FROM apply WHERE cvr=?";
+        ResultSet rs = null;
+        PreparedStatement pstm = null;
+        try
+        {
             pstm = conn.prepareStatement(SQL);
             pstm.setLong(1, Long.parseLong(ID));
             rs = pstm.executeQuery();
-        } catch (SQLException e) {
+        }
+        catch (SQLException e)
+        {
             e.printStackTrace();
         }
+        SQL = "DELETE FROM skills WHERE cvr=?";
+        rs = null;
+        pstm = null;
+        try
+        {
+            pstm = conn.prepareStatement(SQL);
+            pstm.setLong(1, Long.parseLong(ID));
+            rs = pstm.executeQuery();
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
         SQL = "DELETE FROM handyman WHERE cvr=?";
         rs = null;
         pstm = null;
-        //Connection conn = null;
-        try {
-            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+        try
+        {
             pstm = conn.prepareStatement(SQL);
             pstm.setLong(1, Long.parseLong(ID));
             rs = pstm.executeQuery();
-        } catch (SQLException e) {
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        SQL = "DELETE FROM job_offer WHERE cpr=?";
+        rs = null;
+        pstm = null;
+        try
+        {
+            pstm = conn.prepareStatement(SQL);
+            pstm.setLong(1, Long.parseLong(ID));
+            rs = pstm.executeQuery();
+        }
+        catch (SQLException e)
+        {
             e.printStackTrace();
         }
 
         SQL = "DELETE FROM client WHERE cpr=?";
         rs = null;
         pstm = null;
-        //Connection conn = null;
-        try {
-            System.out.println("database check for cvr " + ID);
-            //conn = DriverManager.getConnection(dataUrl, dataUser, dataPassword);
+        try
+        {
             pstm = conn.prepareStatement(SQL);
             pstm.setLong(1, Long.parseLong(ID));
             rs = pstm.executeQuery();
-        } catch (SQLException e) {
+        }
+        catch (SQLException e)
+        {
             e.printStackTrace();
         }
     }
@@ -817,6 +876,10 @@ public class Database{
         return jobType;
     }
 
+    private void process(ResultSet rs, Admin admin) throws SQLException {
+        admin.setUsername(rs.getString("username"));
+        admin.setPassword(rs.getString("password"));
+    }
 
     private void process(ResultSet rs, Address address) throws SQLException {
         address.setCity(rs.getString("city"));

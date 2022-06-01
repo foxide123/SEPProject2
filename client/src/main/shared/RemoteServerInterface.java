@@ -10,6 +10,7 @@ public interface RemoteServerInterface extends Remote
 {
   Handyman logInHandyman(int CVR, String password) throws Exception;
   Client loginClient(int CPR, String password) throws Exception;
+  Admin logInAdmin(String username, String password) throws Exception;
 
   void createClientAccount(Client client, String password) throws Exception;
 

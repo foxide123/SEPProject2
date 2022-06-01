@@ -51,6 +51,24 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     return null;
   }
 
+  @Override public Admin logInAdmin(String username, String password)
+      throws Exception
+  {
+    Admin admin = null;
+    try {
+      System.out.println(username + "(sServer)" + password);
+      admin = database.logInAdmin(username, password);
+    } catch (Exception e) {
+      throw new RemoteException(e.getMessage());
+    }
+    if(admin == null){
+      System.out.println("admin is null");
+    }else{
+      return admin;
+    }
+    return null;
+  }
+
   @Override public void createClientAccount(Client client, String password)
       throws Exception
   {

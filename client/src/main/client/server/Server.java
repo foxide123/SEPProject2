@@ -32,6 +32,13 @@ public class Server extends UnicastRemoteObject implements RemoteServerInterface
     return server.loginClient(CPR, password);
   }
 
+  @Override public Admin logInAdmin(String username, String password)
+      throws Exception
+  {
+    return server.logInAdmin(username, password);
+  }
+
+
   public void createClientAccount(Client client, String password)
       throws Exception
   {

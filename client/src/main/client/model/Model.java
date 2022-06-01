@@ -42,4 +42,5 @@ public interface Model
   void handymanDeleteApplied(String jobTitle) throws RemoteException;
   JobOffer getAppliedJobFromTitle(String jobTitle) throws RemoteException;
   void deleteAccount(String id) throws Exception;
+  void logInAdmin(String username, String password) throws Exception;
 }
